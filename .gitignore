@@ -1,1 +1,23 @@
+# Ignore image files
+images/*
+
+# Ignore data and datasets folders
+data/
+Datasets/
+
+# Ignore the data-science-book folder (if it's a generated book folder)
 data-science-book/
+
+# Ignore the PDF, BS4, and docs folders (if they contain generated content)
+pdf/
+bs4/
+docs/
+*.ipynb
+_bookdown_files
+*_files
+library/
+*.log*
+*.logs
+*.rds
+.DS_store
+*.Rproj

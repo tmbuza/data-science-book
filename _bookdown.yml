@@ -1,0 +1,18 @@
+delete_merged_file: true
+language:
+  ui:
+    chapter_name:
+
+book_filename: beginner
+
+output_dir: docs
+new_session: yes
+
+rmd_files:
+- index.Rmd
+- getting-started-py.Rmd
+- clustering.Rmd
+
+
+
+
