@@ -20,8 +20,8 @@ git add .
 # Commit files
 git commit -m "Initial commit"
 
-# Link to GitHub (replace with your repo URL)
-git remote add origin https://github.com/tmbuza/data-science-book.git
+# # Link to GitHub (replace with your repo URL)
+# git remote add origin https://github.com/tmbuza/data-science-book.git
 
 # Push to GitHub
 git push -u origin main
