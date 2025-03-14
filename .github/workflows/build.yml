@@ -5,6 +5,8 @@ on:
     branches:
       - main
   pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -14,7 +16,7 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v3
 
-      - name: 📖 convert notebooks
+      - name: 📖 Convert notebooks
         run: bash scripts/convert.sh
 
       - name: 📖 Build Books
