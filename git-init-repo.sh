@@ -1,7 +1,7 @@
 #!usr/bin/bash
 
-# Initialize a new Git repository
-git init
+# # Initialize a new Git repository
+# git init
 
 # Create the necessary directories
 mkdir notebooks book scripts .github .github/workflows
