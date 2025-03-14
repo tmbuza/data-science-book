@@ -3,7 +3,6 @@
 # Define the list of Jupyter Notebook filenames (without extension)
 NOTEBOOK_NAMES=(
     "getting-started-py"
-    "clustering"
 )
 
 # Define the output directory

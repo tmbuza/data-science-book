@@ -11,7 +11,7 @@ new_session: yes
 rmd_files:
 - index.Rmd
 - getting-started-py.Rmd
-- clustering.Rmd
+
 
 
 
