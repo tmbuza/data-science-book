@@ -4,6 +4,7 @@
 NOTEBOOK_NAMES=(
     "getting-started-py"
     "data-visualization"
+    "statistical-analysis"
 )
 
 # Define the output directory

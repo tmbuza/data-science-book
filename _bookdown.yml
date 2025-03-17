@@ -12,6 +12,7 @@ rmd_files:
 - index.Rmd
 - getting-started-py.Rmd
 - data-visualization.Rmd
+- statistical-analysis.Rmd
 
 
 

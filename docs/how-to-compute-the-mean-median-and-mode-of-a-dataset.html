@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 How to Install Basic Libaries for Python and R | Learn, Compare, and Master Data Science in Python &amp; R</title>
+  <title>25 How to compute the mean, median, and mode of a dataset? | Learn, Compare, and Master Data Science in Python &amp; R</title>
   <meta name="description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 How to Install Basic Libaries for Python and R | Learn, Compare, and Master Data Science in Python &amp; R" />
+  <meta property="og:title" content="25 How to compute the mean, median, and mode of a dataset? | Learn, Compare, and Master Data Science in Python &amp; R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   <meta name="github-repo" content="https://github.com/tmbuza/data-science-book/" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 How to Install Basic Libaries for Python and R | Learn, Compare, and Master Data Science in Python &amp; R" />
+  <meta name="twitter:title" content="25 How to compute the mean, median, and mode of a dataset? | Learn, Compare, and Master Data Science in Python &amp; R" />
   
   <meta name="twitter:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="setup-dev-envt.html"/>
-<link rel="next" href="set-project-dir.html"/>
+<link rel="prev" href="how-to-perform-a-t-test-in-python-and-r.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -321,46 +321,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="how-to-install-basic-libaries-for-python-and-r" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> How to Install Basic Libaries for Python and R<a href="how-to-install-basic-libaries-for-python-and-r.html#how-to-install-basic-libaries-for-python-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="explanation" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Explanation<a href="how-to-install-basic-libaries-for-python-and-r.html#explanation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Before you can load datasets in Python and R, you need to install the necessary libraries. Here’s how you can install the basic libraries required for this guide:</p>
-</div>
-<div id="python-code" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Python Code<a href="how-to-install-basic-libaries-for-python-and-r.html#python-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In your terminal, run the following command to install the necessary libraries for data manipulation, visualization, and machine learning:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb1-1" tabindex="-1"></a><span class="ex">pip</span> install pandas matplotlib scikit-learn</span></code></pre></div>
-</div>
-<div id="r-code" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> R Code<a href="how-to-install-basic-libaries-for-python-and-r.html#r-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In R, install the following packages to help with data manipulation and visualization:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>)}</span>
-<span id="cb2-2"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-3"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-4" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(caret)) {<span class="fu">install.packages</span>(<span class="st">&#39;caret&#39;</span>)}</span>
-<span id="cb2-5"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-5" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code></pre></div>
-<p>The <strong>tidyverse</strong> R package contains a collection of essential packages for data science, including:</p>
+<div id="how-to-compute-the-mean-median-and-mode-of-a-dataset" class="section level1 hasAnchor" number="25">
+<h1><span class="header-section-number">25</span> How to compute the mean, median, and mode of a dataset?<a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#how-to-compute-the-mean-median-and-mode-of-a-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="explanation-23" class="section level2 hasAnchor" number="25.1">
+<h2><span class="header-section-number">25.1</span> Explanation<a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#explanation-23" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><strong>ggplot2</strong> for data visualization<br />
-</li>
-<li><strong>dplyr</strong> for data manipulation<br />
-</li>
-<li><strong>tidyr</strong> for data tidying<br />
-</li>
-<li><strong>readr</strong> for reading and writing data files<br />
-</li>
-<li><strong>purrr</strong> for functional programming<br />
-</li>
-<li><strong>tibble</strong> for an improved data frame format<br />
-</li>
-<li><strong>stringr</strong> for string manipulation<br />
-</li>
-<li><strong>forcats</strong> for categorical variable handling</li>
+<li><strong>Mean</strong>: The average of all values in the dataset.</li>
+<li><strong>Median</strong>: The middle value when the data is sorted.</li>
+<li><strong>Mode</strong>: The value that appears most frequently in the dataset.</li>
 </ul>
-<p>The <strong>caret</strong> package (short for <em>Classification and Regression Training</em>) is widely used for machine learning in R. It provides a unified interface for training and evaluating models, making it easier to apply machine learning techniques.</p>
-<p>These libraries and packages will ensure you have the tools you need to get started with data analysis and visualization in both languages.</p>
-<hr />
+</div>
+<div id="python-code-23" class="section level2 hasAnchor" number="25.2">
+<h2><span class="header-section-number">25.2</span> Python Code<a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#python-code-23" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb104-2"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-2" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-3" tabindex="-1"></a><span class="co"># Load dataset</span></span>
+<span id="cb104-4"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-4" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb104-5"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-5" tabindex="-1"></a></span>
+<span id="cb104-6"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-6" tabindex="-1"></a><span class="co"># Compute mean, median, and mode</span></span>
+<span id="cb104-7"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-7" tabindex="-1"></a>mean_values <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">&quot;species&quot;</span>]).mean()</span>
+<span id="cb104-8"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-8" tabindex="-1"></a>median_values <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">&quot;species&quot;</span>]).median()</span>
+<span id="cb104-9"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-9" tabindex="-1"></a>mode_values <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">&quot;species&quot;</span>]).mode().iloc[<span class="dv">0</span>]</span>
+<span id="cb104-10"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-10" tabindex="-1"></a></span>
+<span id="cb104-11"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-11" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb104-12"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Mean:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb104-13"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-13" tabindex="-1"></a><span class="bu">print</span>(mean_values)</span>
+<span id="cb104-14"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-14" tabindex="-1"></a></span>
+<span id="cb104-15"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-15" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Median:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb104-16"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-16" tabindex="-1"></a><span class="bu">print</span>(median_values)</span>
+<span id="cb104-17"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-17" tabindex="-1"></a></span>
+<span id="cb104-18"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-18" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Mode:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb104-19"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-19" tabindex="-1"></a><span class="bu">print</span>(mode_values)</span></code></pre></div>
+<pre><code>Mean:
+
+sepal_length    5.843333
+sepal_width     3.057333
+petal_length    3.758000
+petal_width     1.199333
+dtype: float64
+
+Median:
+
+sepal_length    5.80
+sepal_width     3.00
+petal_length    4.35
+petal_width     1.30
+dtype: float64
+
+Mode:
+
+sepal_length    5.0
+sepal_width     3.0
+petal_length    1.4
+petal_width     0.2
+Name: 0, dtype: float64</code></pre>
+</div>
+<div id="r-code-22" class="section level2 hasAnchor" number="25.3">
+<h2><span class="header-section-number">25.3</span> R Code<a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#r-code-22" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-1" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb106-2"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb106-3"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-3" tabindex="-1"></a></span>
+<span id="cb106-4"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-4" tabindex="-1"></a><span class="co"># Load dataset</span></span>
+<span id="cb106-5"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb106-6"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-6" tabindex="-1"></a></span>
+<span id="cb106-7"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-7" tabindex="-1"></a><span class="co"># Compute mean, median, and mode</span></span>
+<span id="cb106-8"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-8" tabindex="-1"></a>mean_values <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb106-9"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-9" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>species) <span class="sc">%&gt;%</span></span>
+<span id="cb106-10"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-10" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), mean))</span>
+<span id="cb106-11"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-11" tabindex="-1"></a></span>
+<span id="cb106-12"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-12" tabindex="-1"></a>median_values <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb106-13"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-13" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>species) <span class="sc">%&gt;%</span></span>
+<span id="cb106-14"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-14" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), median))</span>
+<span id="cb106-15"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-15" tabindex="-1"></a></span>
+<span id="cb106-16"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-16" tabindex="-1"></a>mode_values <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb106-17"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-17" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>species) <span class="sc">%&gt;%</span></span>
+<span id="cb106-18"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-18" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(.), <span class="at">decreasing =</span> <span class="cn">TRUE</span>))[<span class="dv">1</span>]))</span>
+<span id="cb106-19"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-19" tabindex="-1"></a></span>
+<span id="cb106-20"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-20" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb106-21"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-21" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Mean:&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;Mean:&quot;</code></pre>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb108-1" tabindex="-1"></a><span class="fu">print</span>(mean_values)</span></code></pre></div>
+<pre><code># A tibble: 1 × 4
+  sepal_length sepal_width petal_length petal_width
+         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+1         5.84        3.06         3.76        1.20</code></pre>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb110-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Median:&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;Median:&quot;</code></pre>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb112-1" tabindex="-1"></a><span class="fu">print</span>(median_values)</span></code></pre></div>
+<pre><code># A tibble: 1 × 4
+  sepal_length sepal_width petal_length petal_width
+         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
+1          5.8           3         4.35         1.3</code></pre>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb114-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Mode:&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;Mode:&quot;</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb116-1" tabindex="-1"></a><span class="fu">print</span>(mode_values)</span></code></pre></div>
+<pre><code># A tibble: 1 × 4
+  sepal_length sepal_width petal_length petal_width
+  &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;      
+1 5            3           1.4          0.2        </code></pre>
+
 </div>
 </div>
             </section>
@@ -368,8 +427,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="setup-dev-envt.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="set-project-dir.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="how-to-perform-a-t-test-in-python-and-r.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 How to Install Basic Libaries for Python and R | Learn, Compare, and Master Data Science in Python &amp; R</title>
+  <title>22 How to Perform Statistical Analysis in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R</title>
   <meta name="description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 How to Install Basic Libaries for Python and R | Learn, Compare, and Master Data Science in Python &amp; R" />
+  <meta property="og:title" content="22 How to Perform Statistical Analysis in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   <meta name="github-repo" content="https://github.com/tmbuza/data-science-book/" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 How to Install Basic Libaries for Python and R | Learn, Compare, and Master Data Science in Python &amp; R" />
+  <meta name="twitter:title" content="22 How to Perform Statistical Analysis in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
   
   <meta name="twitter:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="setup-dev-envt.html"/>
-<link rel="next" href="set-project-dir.html"/>
+<link rel="prev" href="how-to-create-a-violin-plot-in-python-and-r.html"/>
+<link rel="next" href="how-to-calculate-skewness-and-kurtosis-in-python-and-r.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -321,46 +321,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="how-to-install-basic-libaries-for-python-and-r" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">2</span> How to Install Basic Libaries for Python and R<a href="how-to-install-basic-libaries-for-python-and-r.html#how-to-install-basic-libaries-for-python-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="explanation" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Explanation<a href="how-to-install-basic-libaries-for-python-and-r.html#explanation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Before you can load datasets in Python and R, you need to install the necessary libraries. Here’s how you can install the basic libraries required for this guide:</p>
+<div id="how-to-perform-statistical-analysis-in-python-and-r" class="section level1 hasAnchor" number="22">
+<h1><span class="header-section-number">22</span> How to Perform Statistical Analysis in Python and R?<a href="how-to-perform-statistical-analysis-in-python-and-r.html#how-to-perform-statistical-analysis-in-python-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="explanation-20" class="section level2 hasAnchor" number="22.1">
+<h2><span class="header-section-number">22.1</span> Explanation<a href="how-to-perform-statistical-analysis-in-python-and-r.html#explanation-20" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Statistical analysis helps us understand the characteristics of our dataset, identify patterns, and make data-driven decisions. In this section, we will cover basic statistical measures such as mean, median, variance, and correlation.</p>
 </div>
-<div id="python-code" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Python Code<a href="how-to-install-basic-libaries-for-python-and-r.html#python-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In your terminal, run the following command to install the necessary libraries for data manipulation, visualization, and machine learning:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb1-1" tabindex="-1"></a><span class="ex">pip</span> install pandas matplotlib scikit-learn</span></code></pre></div>
+<div id="python-code-20" class="section level2 hasAnchor" number="22.2">
+<h2><span class="header-section-number">22.2</span> Python Code<a href="how-to-perform-statistical-analysis-in-python-and-r.html#python-code-20" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb78-2"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-2" tabindex="-1"></a></span>
+<span id="cb78-3"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-3" tabindex="-1"></a><span class="co"># Load dataset</span></span>
+<span id="cb78-4"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-4" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb78-5"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-5" tabindex="-1"></a></span>
+<span id="cb78-6"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-6" tabindex="-1"></a><span class="co"># Summary statistics</span></span>
+<span id="cb78-7"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-7" tabindex="-1"></a>summary_stats <span class="op">=</span> df.describe()</span>
+<span id="cb78-8"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-8" tabindex="-1"></a></span>
+<span id="cb78-9"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-9" tabindex="-1"></a><span class="co"># Calculate variance for numerical columns</span></span>
+<span id="cb78-10"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-10" tabindex="-1"></a>variance <span class="op">=</span> df.var(numeric_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb78-11"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-11" tabindex="-1"></a></span>
+<span id="cb78-12"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-12" tabindex="-1"></a><span class="co"># Calculate correlation between numerical variables</span></span>
+<span id="cb78-13"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-13" tabindex="-1"></a>correlation <span class="op">=</span> df.corr(numeric_only<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb78-14"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-14" tabindex="-1"></a></span>
+<span id="cb78-15"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-15" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb78-16"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-16" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Summary Statistics:</span><span class="ch">\n</span><span class="st">&quot;</span>, summary_stats)</span>
+<span id="cb78-17"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-17" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Variance:</span><span class="ch">\n</span><span class="st">&quot;</span>, variance)</span>
+<span id="cb78-18"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb78-18" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Correlation:</span><span class="ch">\n</span><span class="st">&quot;</span>, correlation)</span></code></pre></div>
+<pre><code>Summary Statistics:
+        sepal_length  sepal_width  petal_length  petal_width
+count    150.000000   150.000000    150.000000   150.000000
+mean       5.843333     3.057333      3.758000     1.199333
+std        0.828066     0.435866      1.765298     0.762238
+min        4.300000     2.000000      1.000000     0.100000
+25%        5.100000     2.800000      1.600000     0.300000
+50%        5.800000     3.000000      4.350000     1.300000
+75%        6.400000     3.300000      5.100000     1.800000
+max        7.900000     4.400000      6.900000     2.500000
+
+Variance:
+ sepal_length    0.685694
+sepal_width     0.189979
+petal_length    3.116278
+petal_width     0.581006
+dtype: float64
+
+Correlation:
+               sepal_length  sepal_width  petal_length  petal_width
+sepal_length      1.000000    -0.117570      0.871754     0.817941
+sepal_width      -0.117570     1.000000     -0.428440    -0.366126
+petal_length      0.871754    -0.428440      1.000000     0.962865
+petal_width       0.817941    -0.366126      0.962865     1.000000</code></pre>
 </div>
-<div id="r-code" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> R Code<a href="how-to-install-basic-libaries-for-python-and-r.html#r-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In R, install the following packages to help with data manipulation and visualization:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-1" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(tidyverse)) {<span class="fu">install.packages</span>(<span class="st">&#39;tidyverse&#39;</span>)}</span>
-<span id="cb2-2"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-3"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-4" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(caret)) {<span class="fu">install.packages</span>(<span class="st">&#39;caret&#39;</span>)}</span>
-<span id="cb2-5"><a href="how-to-install-basic-libaries-for-python-and-r.html#cb2-5" tabindex="-1"></a><span class="fu">library</span>(caret)</span></code></pre></div>
-<p>The <strong>tidyverse</strong> R package contains a collection of essential packages for data science, including:</p>
-<ul>
-<li><strong>ggplot2</strong> for data visualization<br />
-</li>
-<li><strong>dplyr</strong> for data manipulation<br />
-</li>
-<li><strong>tidyr</strong> for data tidying<br />
-</li>
-<li><strong>readr</strong> for reading and writing data files<br />
-</li>
-<li><strong>purrr</strong> for functional programming<br />
-</li>
-<li><strong>tibble</strong> for an improved data frame format<br />
-</li>
-<li><strong>stringr</strong> for string manipulation<br />
-</li>
-<li><strong>forcats</strong> for categorical variable handling</li>
-</ul>
-<p>The <strong>caret</strong> package (short for <em>Classification and Regression Training</em>) is widely used for machine learning in R. It provides a unified interface for training and evaluating models, making it easier to apply machine learning techniques.</p>
-<p>These libraries and packages will ensure you have the tools you need to get started with data analysis and visualization in both languages.</p>
-<hr />
+<div id="r-code-20" class="section level2 hasAnchor" number="22.3">
+<h2><span class="header-section-number">22.3</span> R Code<a href="how-to-perform-statistical-analysis-in-python-and-r.html#r-code-20" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-1" tabindex="-1"></a><span class="co"># Load dataset</span></span>
+<span id="cb80-2"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-2" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb80-3"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-3" tabindex="-1"></a></span>
+<span id="cb80-4"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-4" tabindex="-1"></a><span class="co"># Summary statistics</span></span>
+<span id="cb80-5"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-5" tabindex="-1"></a>summary_stats <span class="ot">&lt;-</span> <span class="fu">summary</span>(df)</span>
+<span id="cb80-6"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-6" tabindex="-1"></a></span>
+<span id="cb80-7"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-7" tabindex="-1"></a><span class="co"># Calculate variance for numerical columns</span></span>
+<span id="cb80-8"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-8" tabindex="-1"></a>variance <span class="ot">&lt;-</span> <span class="fu">apply</span>(df[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>], <span class="dv">2</span>, var)</span>
+<span id="cb80-9"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-9" tabindex="-1"></a></span>
+<span id="cb80-10"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-10" tabindex="-1"></a><span class="co"># Calculate correlation between numerical variables</span></span>
+<span id="cb80-11"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-11" tabindex="-1"></a>correlation <span class="ot">&lt;-</span> <span class="fu">cor</span>(df[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span>
+<span id="cb80-12"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-12" tabindex="-1"></a></span>
+<span id="cb80-13"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-13" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb80-14"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb80-14" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Summary Statistics:&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;Summary Statistics:&quot;</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb82-1" tabindex="-1"></a><span class="fu">print</span>(summary_stats)</span></code></pre></div>
+<pre><code>  sepal_length    sepal_width     petal_length    petal_width   
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+   species         
+ Length:150        
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   </code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb84-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Variance:&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;\nVariance:&quot;</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb86-1" tabindex="-1"></a><span class="fu">print</span>(variance)</span></code></pre></div>
+<pre><code>sepal_length  sepal_width petal_length  petal_width 
+   0.6856935    0.1899794    3.1162779    0.5810063 </code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb88-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Correlation:&quot;</span>)</span></code></pre></div>
+<pre><code>[1] &quot;\nCorrelation:&quot;</code></pre>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="how-to-perform-statistical-analysis-in-python-and-r.html#cb90-1" tabindex="-1"></a><span class="fu">print</span>(correlation)</span></code></pre></div>
+<pre><code>             sepal_length sepal_width petal_length petal_width
+sepal_length    1.0000000  -0.1175698    0.8717538   0.8179411
+sepal_width    -0.1175698   1.0000000   -0.4284401  -0.3661259
+petal_length    0.8717538  -0.4284401    1.0000000   0.9628654
+petal_width     0.8179411  -0.3661259    0.9628654   1.0000000</code></pre>
 </div>
 </div>
             </section>
@@ -368,8 +424,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="setup-dev-envt.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="set-project-dir.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="how-to-create-a-violin-plot-in-python-and-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="how-to-calculate-skewness-and-kurtosis-in-python-and-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
