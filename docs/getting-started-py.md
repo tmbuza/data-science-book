@@ -5,19 +5,7 @@
 Before diving into the Q&A sections, it's important to ensure your environment is properly set up. This section will guide you through the steps to prepare everything you need to start working with both Python and R. To begin working with data science, you’ll need to set up your development environment. Follow the steps below to install and configure the necessary tools.
 
 
-```{r, echo=FALSE, include=FALSE}
-knitr::opts_chunk$set(
-  echo  =TRUE,
-  message  =FALSE,
-  warning  =FALSE,
-  cache  =FALSE,
-  comment  =NA
-)
 
-if(!require("tidyverse")) {
-  install.packages("tidyverse")
-  library(tidyverse)}
-```
 
 ## Install Python
 
@@ -178,7 +166,8 @@ print(f"Project directory structure created at {project_dir}")
 
 ## R Code
 
-```{r}
+
+``` r
 # Define project structure
 project_dir <- "./"
 data_dir <- file.path(project_dir, "data")
@@ -191,6 +180,10 @@ dir.create(scripts_dir, showWarnings = FALSE)
 dir.create(images_dir, showWarnings = FALSE)
 
 cat("Project directory structure created at", project_dir, "\n")
+```
+
+```
+Project directory structure created at ./ 
 ```
 
 ---
@@ -261,7 +254,8 @@ print("Dataset saved as 'data/iris_py.csv'")
 
 ## R Code
 
-```{r}
+
+``` r
 # Load necessary libraries
 library(readr)
 
@@ -273,6 +267,10 @@ write_csv(df, "data/iris_r.csv")
 
 # Confirmation message
 print("Dataset saved as 'data/iris_r.csv'")
+```
+
+```
+[1] "Dataset saved as 'data/iris_r.csv'"
 ```
 
 ---
@@ -322,7 +320,8 @@ print("Renamed dataset saved as 'data/iris.csv'")
 
 ## R Code
 
-```{r}
+
+``` r
 library(readr)
 library(dplyr)
 
@@ -341,6 +340,10 @@ df <- df %>%
 write_csv(df, "data/iris.csv")
 
 print("Renamed dataset saved as 'data/iris.csv'")
+```
+
+```
+[1] "Renamed dataset saved as 'data/iris.csv'"
 ```
 
 # How to load a dataset in Python and R?
@@ -386,7 +389,8 @@ print(iris.head())
 
 ## R Code
 
-```{r}
+
+``` r
 # Load necessary library
 library(readr)
 
@@ -395,6 +399,18 @@ df <- read_csv("data/iris.csv")
 
 # Display the first few rows
 head(df)
+```
+
+```
+# A tibble: 6 × 5
+  sepal_length sepal_width petal_length petal_width species
+         <dbl>       <dbl>        <dbl>       <dbl> <chr>  
+1          5.1         3.5          1.4         0.2 setosa 
+2          4.9         3            1.4         0.2 setosa 
+3          4.7         3.2          1.3         0.2 setosa 
+4          4.6         3.1          1.5         0.2 setosa 
+5          5           3.6          1.4         0.2 setosa 
+6          5.4         3.9          1.7         0.4 setosa 
 ```
 
 ---
@@ -474,7 +490,8 @@ print(iris.isnull().sum())
 
 ## R Code
 
-```{r}
+
+``` r
 # Load necessary library
 library(readr)
 library(dplyr)
@@ -484,15 +501,82 @@ df <- read_csv("data/iris.csv")
 
 # Display the structure of the dataset
 cat("Dataset Structure:\n")
-str(df)
+```
 
+```
+Dataset Structure:
+```
+
+``` r
+str(df)
+```
+
+```
+spc_tbl_ [150 × 5] (S3: spec_tbl_df/tbl_df/tbl/data.frame)
+ $ sepal_length: num [1:150] 5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+ $ sepal_width : num [1:150] 3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+ $ petal_length: num [1:150] 1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+ $ petal_width : num [1:150] 0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+ $ species     : chr [1:150] "setosa" "setosa" "setosa" "setosa" ...
+ - attr(*, "spec")=
+  .. cols(
+  ..   sepal_length = col_double(),
+  ..   sepal_width = col_double(),
+  ..   petal_length = col_double(),
+  ..   petal_width = col_double(),
+  ..   species = col_character()
+  .. )
+ - attr(*, "problems")=<externalptr> 
+```
+
+``` r
 # Show summary statistics
 cat("\nSummary Statistics:\n")
-summary(df)
+```
 
+```
+
+Summary Statistics:
+```
+
+``` r
+summary(df)
+```
+
+```
+  sepal_length    sepal_width     petal_length    petal_width   
+ Min.   :4.300   Min.   :2.000   Min.   :1.000   Min.   :0.100  
+ 1st Qu.:5.100   1st Qu.:2.800   1st Qu.:1.600   1st Qu.:0.300  
+ Median :5.800   Median :3.000   Median :4.350   Median :1.300  
+ Mean   :5.843   Mean   :3.057   Mean   :3.758   Mean   :1.199  
+ 3rd Qu.:6.400   3rd Qu.:3.300   3rd Qu.:5.100   3rd Qu.:1.800  
+ Max.   :7.900   Max.   :4.400   Max.   :6.900   Max.   :2.500  
+   species         
+ Length:150        
+ Class :character  
+ Mode  :character  
+                   
+                   
+                   
+```
+
+``` r
 # Check for missing values
 cat("\nMissing Values:\n")
+```
+
+```
+
+Missing Values:
+```
+
+``` r
 colSums(is.na(df))
+```
+
+```
+sepal_length  sepal_width petal_length  petal_width      species 
+           0            0            0            0            0 
 ```
 
 ---
@@ -549,7 +633,8 @@ print(df_cleaned.head())
 
 In R, we can use the is.na() function to detect missing values, and the na.omit() function to remove them.
 
-```{r}
+
+``` r
 library(dplyr)
 library(readr)
 
@@ -559,12 +644,31 @@ df <- read_csv("data/iris.csv")
 # Check for missing values
 missing_values <- colSums(is.na(df))
 print(missing_values)
+```
 
+```
+sepal_length  sepal_width petal_length  petal_width      species 
+           0            0            0            0            0 
+```
+
+``` r
 # Remove rows with missing data
 df_cleaned <- na.omit(df)
 
 # Check the cleaned data
 head(df_cleaned)
+```
+
+```
+# A tibble: 6 × 5
+  sepal_length sepal_width petal_length petal_width species
+         <dbl>       <dbl>        <dbl>       <dbl> <chr>  
+1          5.1         3.5          1.4         0.2 setosa 
+2          4.9         3            1.4         0.2 setosa 
+3          4.7         3.2          1.3         0.2 setosa 
+4          4.6         3.1          1.5         0.2 setosa 
+5          5           3.6          1.4         0.2 setosa 
+6          5.4         3.9          1.7         0.4 setosa 
 ```
 
 Handling missing data properly ensures that your analysis is accurate and that missing values do not introduce bias into your model or analysis.
@@ -609,7 +713,8 @@ print(setosa_df.head())
 In R, we can use the dplyr package to filter rows based on specific conditions. The filter() function is used for this purpose.
 
 
-```{r}
+
+``` r
 library(dplyr)
 library(readr)
 
@@ -621,6 +726,18 @@ setosa_df <- df %>% filter(species == 'setosa')
 
 # Show the first few rows of the filtered data
 head(setosa_df)
+```
+
+```
+# A tibble: 6 × 5
+  sepal_length sepal_width petal_length petal_width species
+         <dbl>       <dbl>        <dbl>       <dbl> <chr>  
+1          5.1         3.5          1.4         0.2 setosa 
+2          4.9         3            1.4         0.2 setosa 
+3          4.7         3.2          1.3         0.2 setosa 
+4          4.6         3.1          1.5         0.2 setosa 
+5          5           3.6          1.4         0.2 setosa 
+6          5.4         3.9          1.7         0.4 setosa 
 ```
 
 Filtering data allows you to narrow down your dataset and focus on specific insights or subsets of interest. In real-world projects, filtering is often one of the first steps in analyzing a dataset.
@@ -659,7 +776,8 @@ print(grouped_df)
 
 ## R Code
 
-```{r}
+
+``` r
 library(dplyr)
 library(readr)
 
@@ -673,6 +791,15 @@ grouped_df <- df %>%
 
 # Display the grouped data
 print(grouped_df)
+```
+
+```
+# A tibble: 3 × 5
+  species    sepal_length sepal_width petal_length petal_width
+  <chr>             <dbl>       <dbl>        <dbl>       <dbl>
+1 setosa             5.01        3.43         1.46       0.246
+2 versicolor         5.94        2.77         4.26       1.33 
+3 virginica          6.59        2.97         5.55       2.03 
 ```
 
 # How to Aggregate Data in Python and R?
@@ -710,7 +837,8 @@ print(agg_df)
 
 ## R Code
 
-```{r}
+
+``` r
 # Load necessary libraries
 library(readr)
 library(dplyr)
@@ -728,6 +856,15 @@ write_csv(agg_df, "data/iris_aggregated_r.csv")
 
 # Display the result
 print(agg_df)
+```
+
+```
+# A tibble: 3 × 2
+  species    mean_sepal_width
+  <chr>                 <dbl>
+1 setosa                 3.43
+2 versicolor             2.77
+3 virginica              2.97
 ```
 
 # How to Split a Dataset in Python and R?
@@ -768,7 +905,8 @@ print("Parts saved as iris_part1.csv and iris_part2.csv")
 
 ## R Code
 
-```{r}
+
+``` r
 # Load necessary libraries
 library(readr)
 
@@ -785,6 +923,10 @@ write_csv(part2, "data/iris_part2.csv")
 
 # Display a message to confirm
 cat("Parts saved as iris_part1.csv and iris_part2.csv\n")
+```
+
+```
+Parts saved as iris_part1.csv and iris_part2.csv
 ```
 
 
@@ -833,7 +975,8 @@ print(merged_df.head())
 
 ## R Code
 
-```{r}
+
+``` r
 # Load necessary library
 library(readr)
 
@@ -849,5 +992,15 @@ write_csv(merged_df, "data/iris_merged.csv")
 
 # Display the first few rows of the merged dataset
 head(merged_df)
+```
+
+```
+  species sepal_length sepal_width petal_length petal_width
+1  setosa          5.1         3.5          1.4         0.2
+2  setosa          5.1         3.5          1.4         0.2
+3  setosa          5.1         3.5          1.3         0.2
+4  setosa          5.1         3.5          1.5         0.2
+5  setosa          5.1         3.5          1.4         0.2
+6  setosa          5.1         3.5          1.7         0.4
 ```
 

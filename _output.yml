@@ -1,10 +1,32 @@
+bookdown::gitbook:
+  css: [style.css]
+  config:
+    toc:
+      before: |
+        <li><a href="https://complexdatainsights.com/beginner-data-science/docs/index.html">Q&A Data Science Series</a></li>
+      after: |
+        <li> <a href="https://complexdatainsights.com/">More on Complex Data Insights</a></li>      
+      toc_depth: 2
+      toc_float:
+        collapsed: yes
+    search: yes
+    edit: 
+    download: no
+    fontsettings:
+      size: 1
+
+
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
   latex_engine: xelatex
   citation_package: natbib
-  keep_tex: false
+  keep_tex: true
   classoption: openany
+  number_sections: true
+  toc: true
+  toc_depth: 3
+  df_print: kable
 
 bookdown::epub_book: default
 
@@ -19,19 +41,4 @@ bookdown::bs4_book:
     download: ["pdf", "epub"]
     search: yes
 
-bookdown::gitbook:
-  css: [style.css]
-  config:
-    toc:
-      before: |
-        <li><a href="https://complexdatainsights.com/beginner-data-science/bs4/index.html">TMB Data Science Series</a></li>
-      after: |
-        <li> <a href="https://complexdatainsights.com/">More on Complex Data Insights</a></li>      
-      toc_depth: 2
-      toc_float:
-        collapsed: false
-    search: yes
-    edit: 
-    download: no
-    fontsettings:
-      size: 1
+

@@ -46,3 +46,44 @@ h1 {
     background-color: #036281 !important;
     color: #fff;
 }
+
+/* Style the Header Section */
+#header {
+    background-color: #2c3e50; /* Dark blue */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-family: "Arial", sans-serif;
+    border-bottom: 3px solid #1a252f;
+}
+
+/* Title Styling */
+#header .title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Subtitle Styling */
+#header .subtitle {
+    font-size: 18px;
+    font-weight: normal;
+    opacity: 0.9;
+    margin: 5px 0;
+}
+
+/* Author Styling */
+#header .author {
+    font-size: 16px;
+    font-style: italic;
+    opacity: 0.85;
+    margin: 5px 0;
+}
+
+/* Date Styling */
+#header .date {
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.8;
+    margin-top: 5px;
+}

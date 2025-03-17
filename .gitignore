@@ -11,7 +11,7 @@ data-science-book/
 # Ignore the PDF, BS4, and docs folders (if they contain generated content)
 pdf/
 bs4/
-docs/
+git/
 # *.ipynb
 _bookdown_files
 *_files

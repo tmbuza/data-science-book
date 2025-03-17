@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>8 How to Handle Missing Data in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R</title>
+  <meta name="description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
+  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="8 How to Handle Missing Data in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
+  <meta name="github-repo" content="https://github.com/tmbuza/data-science-book/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 How to Handle Missing Data in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
+  
+  <meta name="twitter:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="how-to-explore-a-dataset-in-python-and-r.html"/>
+<link rel="next" href="how-to-filter-data-in-python-and-r.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="https://complexdatainsights.com/beginner-data-science/docs/index.html">Q&A Data Science Series</a></li>
+
+<li class="divider"></li>
+<li><a href="index.html#section" id="toc-section"></a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#motive"><i class="fa fa-check"></i>Motive</a></li>
+</ul></li>
+<li class="part"><span><b>I GETTING STARTED</b></span></li>
+<li class="chapter" data-level="1" data-path="setup-dev-envt.html"><a href="setup-dev-envt.html"><i class="fa fa-check"></i><b>1</b> Setting Up Your Development Environment</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="setup-dev-envt.html"><a href="setup-dev-envt.html#install-python"><i class="fa fa-check"></i><b>1.1</b> Install Python</a></li>
+<li class="chapter" data-level="1.2" data-path="setup-dev-envt.html"><a href="setup-dev-envt.html#install-r"><i class="fa fa-check"></i><b>1.2</b> Install R</a></li>
+<li class="chapter" data-level="1.3" data-path="setup-dev-envt.html"><a href="setup-dev-envt.html#install-vscode"><i class="fa fa-check"></i><b>1.3</b> Install VSCode</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="setup-dev-envt.html"><a href="setup-dev-envt.html#why-use-vscode"><i class="fa fa-check"></i><b>1.3.1</b> Why Use VSCode?</a></li>
+<li class="chapter" data-level="1.3.2" data-path="setup-dev-envt.html"><a href="setup-dev-envt.html#installation-steps"><i class="fa fa-check"></i><b>1.3.2</b> Installation Steps:</a></li>
+<li class="chapter" data-level="1.3.3" data-path="setup-dev-envt.html"><a href="setup-dev-envt.html#installing-extensions-in-vscode"><i class="fa fa-check"></i><b>1.3.3</b> <strong>Installing Extensions in VSCode</strong></a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II QUESTION &amp; ANSWER (Q&amp;A)</b></span></li>
+<li class="chapter" data-level="2" data-path="how-to-install-basic-libaries-for-python-and-r.html"><a href="how-to-install-basic-libaries-for-python-and-r.html"><i class="fa fa-check"></i><b>2</b> How to Install Basic Libaries for Python and R</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="how-to-install-basic-libaries-for-python-and-r.html"><a href="how-to-install-basic-libaries-for-python-and-r.html#explanation"><i class="fa fa-check"></i><b>2.1</b> Explanation</a></li>
+<li class="chapter" data-level="2.2" data-path="how-to-install-basic-libaries-for-python-and-r.html"><a href="how-to-install-basic-libaries-for-python-and-r.html#python-code"><i class="fa fa-check"></i><b>2.2</b> Python Code</a></li>
+<li class="chapter" data-level="2.3" data-path="how-to-install-basic-libaries-for-python-and-r.html"><a href="how-to-install-basic-libaries-for-python-and-r.html#r-code"><i class="fa fa-check"></i><b>2.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="set-project-dir.html"><a href="set-project-dir.html"><i class="fa fa-check"></i><b>3</b> How to Create a Project Directory in Python and R</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="set-project-dir.html"><a href="set-project-dir.html#explanation-1"><i class="fa fa-check"></i><b>3.1</b> Explanation</a></li>
+<li class="chapter" data-level="3.2" data-path="set-project-dir.html"><a href="set-project-dir.html#python-code-1"><i class="fa fa-check"></i><b>3.2</b> Python Code</a></li>
+<li class="chapter" data-level="3.3" data-path="set-project-dir.html"><a href="set-project-dir.html#r-code-1"><i class="fa fa-check"></i><b>3.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="how-to-save-a-dataset-in-python-and-r.html"><a href="how-to-save-a-dataset-in-python-and-r.html"><i class="fa fa-check"></i><b>4</b> How to Save a Dataset in Python and R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="how-to-save-a-dataset-in-python-and-r.html"><a href="how-to-save-a-dataset-in-python-and-r.html#explanation-2"><i class="fa fa-check"></i><b>4.1</b> Explanation</a></li>
+<li class="chapter" data-level="4.2" data-path="how-to-save-a-dataset-in-python-and-r.html"><a href="how-to-save-a-dataset-in-python-and-r.html#python-code-2"><i class="fa fa-check"></i><b>4.2</b> Python Code</a></li>
+<li class="chapter" data-level="4.3" data-path="how-to-save-a-dataset-in-python-and-r.html"><a href="how-to-save-a-dataset-in-python-and-r.html#r-code-2"><i class="fa fa-check"></i><b>4.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="how-to-rename-column-names-in-python-and-r.html"><a href="how-to-rename-column-names-in-python-and-r.html"><i class="fa fa-check"></i><b>5</b> How to Rename Column Names in Python and R?</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="how-to-rename-column-names-in-python-and-r.html"><a href="how-to-rename-column-names-in-python-and-r.html#explanation-3"><i class="fa fa-check"></i><b>5.1</b> Explanation</a></li>
+<li class="chapter" data-level="5.2" data-path="how-to-rename-column-names-in-python-and-r.html"><a href="how-to-rename-column-names-in-python-and-r.html#python-code-3"><i class="fa fa-check"></i><b>5.2</b> Python Code</a></li>
+<li class="chapter" data-level="5.3" data-path="how-to-rename-column-names-in-python-and-r.html"><a href="how-to-rename-column-names-in-python-and-r.html#r-code-3"><i class="fa fa-check"></i><b>5.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="how-to-load-a-dataset-in-python-and-r.html"><a href="how-to-load-a-dataset-in-python-and-r.html"><i class="fa fa-check"></i><b>6</b> How to load a dataset in Python and R?</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="how-to-load-a-dataset-in-python-and-r.html"><a href="how-to-load-a-dataset-in-python-and-r.html#explanation-4"><i class="fa fa-check"></i><b>6.1</b> Explanation</a></li>
+<li class="chapter" data-level="6.2" data-path="how-to-load-a-dataset-in-python-and-r.html"><a href="how-to-load-a-dataset-in-python-and-r.html#python-code-4"><i class="fa fa-check"></i><b>6.2</b> Python Code</a></li>
+<li class="chapter" data-level="6.3" data-path="how-to-load-a-dataset-in-python-and-r.html"><a href="how-to-load-a-dataset-in-python-and-r.html#r-code-4"><i class="fa fa-check"></i><b>6.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="how-to-explore-a-dataset-in-python-and-r.html"><a href="how-to-explore-a-dataset-in-python-and-r.html"><i class="fa fa-check"></i><b>7</b> How to Explore a Dataset in Python and R?</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="how-to-explore-a-dataset-in-python-and-r.html"><a href="how-to-explore-a-dataset-in-python-and-r.html#explanation-5"><i class="fa fa-check"></i><b>7.1</b> Explanation</a></li>
+<li class="chapter" data-level="7.2" data-path="how-to-explore-a-dataset-in-python-and-r.html"><a href="how-to-explore-a-dataset-in-python-and-r.html#python-code-5"><i class="fa fa-check"></i><b>7.2</b> Python Code</a></li>
+<li class="chapter" data-level="7.3" data-path="how-to-explore-a-dataset-in-python-and-r.html"><a href="how-to-explore-a-dataset-in-python-and-r.html#r-code-5"><i class="fa fa-check"></i><b>7.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="how-to-handle-missing-data-in-python-and-r.html"><a href="how-to-handle-missing-data-in-python-and-r.html"><i class="fa fa-check"></i><b>8</b> How to Handle Missing Data in Python and R?</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="how-to-handle-missing-data-in-python-and-r.html"><a href="how-to-handle-missing-data-in-python-and-r.html#explanation-6"><i class="fa fa-check"></i><b>8.1</b> Explanation</a></li>
+<li class="chapter" data-level="8.2" data-path="how-to-handle-missing-data-in-python-and-r.html"><a href="how-to-handle-missing-data-in-python-and-r.html#python-code-6"><i class="fa fa-check"></i><b>8.2</b> Python Code</a></li>
+<li class="chapter" data-level="8.3" data-path="how-to-handle-missing-data-in-python-and-r.html"><a href="how-to-handle-missing-data-in-python-and-r.html#r-code-6"><i class="fa fa-check"></i><b>8.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="how-to-filter-data-in-python-and-r.html"><a href="how-to-filter-data-in-python-and-r.html"><i class="fa fa-check"></i><b>9</b> How to Filter Data in Python and R?</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="how-to-filter-data-in-python-and-r.html"><a href="how-to-filter-data-in-python-and-r.html#explanation-7"><i class="fa fa-check"></i><b>9.1</b> Explanation</a></li>
+<li class="chapter" data-level="9.2" data-path="how-to-filter-data-in-python-and-r.html"><a href="how-to-filter-data-in-python-and-r.html#python-code-7"><i class="fa fa-check"></i><b>9.2</b> Python Code</a></li>
+<li class="chapter" data-level="9.3" data-path="how-to-filter-data-in-python-and-r.html"><a href="how-to-filter-data-in-python-and-r.html#r-code-7"><i class="fa fa-check"></i><b>9.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="how-to-group-data-in-python-and-r.html"><a href="how-to-group-data-in-python-and-r.html"><i class="fa fa-check"></i><b>10</b> How to Group Data in Python and R?</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="how-to-group-data-in-python-and-r.html"><a href="how-to-group-data-in-python-and-r.html#explanation-8"><i class="fa fa-check"></i><b>10.1</b> Explanation</a></li>
+<li class="chapter" data-level="10.2" data-path="how-to-group-data-in-python-and-r.html"><a href="how-to-group-data-in-python-and-r.html#python-code-8"><i class="fa fa-check"></i><b>10.2</b> Python Code</a></li>
+<li class="chapter" data-level="10.3" data-path="how-to-group-data-in-python-and-r.html"><a href="how-to-group-data-in-python-and-r.html#r-code-8"><i class="fa fa-check"></i><b>10.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="how-to-aggregate-data-in-python-and-r.html"><a href="how-to-aggregate-data-in-python-and-r.html"><i class="fa fa-check"></i><b>11</b> How to Aggregate Data in Python and R?</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="how-to-aggregate-data-in-python-and-r.html"><a href="how-to-aggregate-data-in-python-and-r.html#explanation-9"><i class="fa fa-check"></i><b>11.1</b> Explanation</a></li>
+<li class="chapter" data-level="11.2" data-path="how-to-aggregate-data-in-python-and-r.html"><a href="how-to-aggregate-data-in-python-and-r.html#python-code-9"><i class="fa fa-check"></i><b>11.2</b> Python Code</a></li>
+<li class="chapter" data-level="11.3" data-path="how-to-aggregate-data-in-python-and-r.html"><a href="how-to-aggregate-data-in-python-and-r.html#r-code-9"><i class="fa fa-check"></i><b>11.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="how-to-split-a-dataset-in-python-and-r.html"><a href="how-to-split-a-dataset-in-python-and-r.html"><i class="fa fa-check"></i><b>12</b> How to Split a Dataset in Python and R?</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="how-to-split-a-dataset-in-python-and-r.html"><a href="how-to-split-a-dataset-in-python-and-r.html#explanation-10"><i class="fa fa-check"></i><b>12.1</b> Explanation</a></li>
+<li class="chapter" data-level="12.2" data-path="how-to-split-a-dataset-in-python-and-r.html"><a href="how-to-split-a-dataset-in-python-and-r.html#python-code-10"><i class="fa fa-check"></i><b>12.2</b> Python Code</a></li>
+<li class="chapter" data-level="12.3" data-path="how-to-split-a-dataset-in-python-and-r.html"><a href="how-to-split-a-dataset-in-python-and-r.html#r-code-10"><i class="fa fa-check"></i><b>12.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="how-to-merge-datasets-in-python-and-r.html"><a href="how-to-merge-datasets-in-python-and-r.html"><i class="fa fa-check"></i><b>13</b> How to Merge Datasets in Python and R?</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="how-to-merge-datasets-in-python-and-r.html"><a href="how-to-merge-datasets-in-python-and-r.html#explanation-11"><i class="fa fa-check"></i><b>13.1</b> Explanation</a></li>
+<li class="chapter" data-level="13.2" data-path="how-to-merge-datasets-in-python-and-r.html"><a href="how-to-merge-datasets-in-python-and-r.html#python-code-11"><i class="fa fa-check"></i><b>13.2</b> Python Code</a></li>
+<li class="chapter" data-level="13.3" data-path="how-to-merge-datasets-in-python-and-r.html"><a href="how-to-merge-datasets-in-python-and-r.html#r-code-11"><i class="fa fa-check"></i><b>13.3</b> R Code</a></li>
+</ul></li>
+<li class="part"><span><b>III DATA VISUALIZATION</b></span></li>
+<li class="chapter" data-level="14" data-path="how-to-create-a-bar-plot-in-python-and-r.html"><a href="how-to-create-a-bar-plot-in-python-and-r.html"><i class="fa fa-check"></i><b>14</b> How to Create a Bar Plot in Python and R?</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="how-to-create-a-bar-plot-in-python-and-r.html"><a href="how-to-create-a-bar-plot-in-python-and-r.html#explanation-12"><i class="fa fa-check"></i><b>14.1</b> Explanation</a></li>
+<li class="chapter" data-level="14.2" data-path="how-to-create-a-bar-plot-in-python-and-r.html"><a href="how-to-create-a-bar-plot-in-python-and-r.html#python-code-12"><i class="fa fa-check"></i><b>14.2</b> Python Code</a></li>
+<li class="chapter" data-level="14.3" data-path="how-to-create-a-bar-plot-in-python-and-r.html"><a href="how-to-create-a-bar-plot-in-python-and-r.html#r-code-12"><i class="fa fa-check"></i><b>14.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="how-to-create-a-histogram-in-python-and-r.html"><a href="how-to-create-a-histogram-in-python-and-r.html"><i class="fa fa-check"></i><b>15</b> How to Create a Histogram in Python and R?</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="how-to-create-a-histogram-in-python-and-r.html"><a href="how-to-create-a-histogram-in-python-and-r.html#explanation-13"><i class="fa fa-check"></i><b>15.1</b> Explanation</a></li>
+<li class="chapter" data-level="15.2" data-path="how-to-create-a-histogram-in-python-and-r.html"><a href="how-to-create-a-histogram-in-python-and-r.html#python-code-13"><i class="fa fa-check"></i><b>15.2</b> Python Code</a></li>
+<li class="chapter" data-level="15.3" data-path="how-to-create-a-histogram-in-python-and-r.html"><a href="how-to-create-a-histogram-in-python-and-r.html#r-code-13"><i class="fa fa-check"></i><b>15.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="how-to-create-a-scatter-plot-in-python-and-r.html"><a href="how-to-create-a-scatter-plot-in-python-and-r.html"><i class="fa fa-check"></i><b>16</b> How to Create a Scatter Plot in Python and R?</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="how-to-create-a-scatter-plot-in-python-and-r.html"><a href="how-to-create-a-scatter-plot-in-python-and-r.html#explanation-14"><i class="fa fa-check"></i><b>16.1</b> Explanation</a></li>
+<li class="chapter" data-level="16.2" data-path="how-to-create-a-scatter-plot-in-python-and-r.html"><a href="how-to-create-a-scatter-plot-in-python-and-r.html#python-code-14"><i class="fa fa-check"></i><b>16.2</b> Python Code</a></li>
+<li class="chapter" data-level="16.3" data-path="how-to-create-a-scatter-plot-in-python-and-r.html"><a href="how-to-create-a-scatter-plot-in-python-and-r.html#r-code-14"><i class="fa fa-check"></i><b>16.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="how-to-create-a-line-plot-in-python-and-r.html"><a href="how-to-create-a-line-plot-in-python-and-r.html"><i class="fa fa-check"></i><b>17</b> How to Create a Line Plot in Python and R?</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="how-to-create-a-line-plot-in-python-and-r.html"><a href="how-to-create-a-line-plot-in-python-and-r.html#explanation-15"><i class="fa fa-check"></i><b>17.1</b> Explanation</a></li>
+<li class="chapter" data-level="17.2" data-path="how-to-create-a-line-plot-in-python-and-r.html"><a href="how-to-create-a-line-plot-in-python-and-r.html#python-code-15"><i class="fa fa-check"></i><b>17.2</b> Python Code</a></li>
+<li class="chapter" data-level="17.3" data-path="how-to-create-a-line-plot-in-python-and-r.html"><a href="how-to-create-a-line-plot-in-python-and-r.html#r-code-15"><i class="fa fa-check"></i><b>17.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="how-to-create-a-box-plot-in-python-and-r.html"><a href="how-to-create-a-box-plot-in-python-and-r.html"><i class="fa fa-check"></i><b>18</b> How to Create a Box Plot in Python and R?</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="how-to-create-a-box-plot-in-python-and-r.html"><a href="how-to-create-a-box-plot-in-python-and-r.html#explanation-16"><i class="fa fa-check"></i><b>18.1</b> Explanation</a></li>
+<li class="chapter" data-level="18.2" data-path="how-to-create-a-box-plot-in-python-and-r.html"><a href="how-to-create-a-box-plot-in-python-and-r.html#python-code-16"><i class="fa fa-check"></i><b>18.2</b> Python Code</a></li>
+<li class="chapter" data-level="18.3" data-path="how-to-create-a-box-plot-in-python-and-r.html"><a href="how-to-create-a-box-plot-in-python-and-r.html#r-code-16"><i class="fa fa-check"></i><b>18.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="how-to-create-a-heatmap-in-python-and-r.html"><a href="how-to-create-a-heatmap-in-python-and-r.html"><i class="fa fa-check"></i><b>19</b> How to Create a Heatmap in Python and R?</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="how-to-create-a-heatmap-in-python-and-r.html"><a href="how-to-create-a-heatmap-in-python-and-r.html#explanation-17"><i class="fa fa-check"></i><b>19.1</b> Explanation</a></li>
+<li class="chapter" data-level="19.2" data-path="how-to-create-a-heatmap-in-python-and-r.html"><a href="how-to-create-a-heatmap-in-python-and-r.html#python-code-17"><i class="fa fa-check"></i><b>19.2</b> Python Code</a></li>
+<li class="chapter" data-level="19.3" data-path="how-to-create-a-heatmap-in-python-and-r.html"><a href="how-to-create-a-heatmap-in-python-and-r.html#r-code-17"><i class="fa fa-check"></i><b>19.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="how-to-create-a-pair-plot-in-python-and-r.html"><a href="how-to-create-a-pair-plot-in-python-and-r.html"><i class="fa fa-check"></i><b>20</b> How to Create a Pair Plot in Python and R?</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="how-to-create-a-pair-plot-in-python-and-r.html"><a href="how-to-create-a-pair-plot-in-python-and-r.html#explanation-18"><i class="fa fa-check"></i><b>20.1</b> Explanation</a></li>
+<li class="chapter" data-level="20.2" data-path="how-to-create-a-pair-plot-in-python-and-r.html"><a href="how-to-create-a-pair-plot-in-python-and-r.html#python-code-18"><i class="fa fa-check"></i><b>20.2</b> Python Code</a></li>
+<li class="chapter" data-level="20.3" data-path="how-to-create-a-pair-plot-in-python-and-r.html"><a href="how-to-create-a-pair-plot-in-python-and-r.html#r-code-18"><i class="fa fa-check"></i><b>20.3</b> R Code</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="how-to-create-a-violin-plot-in-python-and-r.html"><a href="how-to-create-a-violin-plot-in-python-and-r.html"><i class="fa fa-check"></i><b>21</b> How to Create a Violin Plot in Python and R?</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="how-to-create-a-violin-plot-in-python-and-r.html"><a href="how-to-create-a-violin-plot-in-python-and-r.html#explanation-19"><i class="fa fa-check"></i><b>21.1</b> Explanation</a></li>
+<li class="chapter" data-level="21.2" data-path="how-to-create-a-violin-plot-in-python-and-r.html"><a href="how-to-create-a-violin-plot-in-python-and-r.html#python-code-19"><i class="fa fa-check"></i><b>21.2</b> Python Code</a></li>
+<li class="chapter" data-level="21.3" data-path="how-to-create-a-violin-plot-in-python-and-r.html"><a href="how-to-create-a-violin-plot-in-python-and-r.html#r-code-19"><i class="fa fa-check"></i><b>21.3</b> R Code</a></li>
+</ul></li>
+<li class="divider"></li>
+<li> <a href="https://complexdatainsights.com/">More on Complex Data Insights</a></li>      
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Learn, Compare, and Master Data Science in Python &amp; R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="how-to-handle-missing-data-in-python-and-r" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">8</span> How to Handle Missing Data in Python and R?<a href="how-to-handle-missing-data-in-python-and-r.html#how-to-handle-missing-data-in-python-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="explanation-6" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Explanation<a href="how-to-handle-missing-data-in-python-and-r.html#explanation-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Handling missing data is one of the most important steps in data cleaning. In this section, we’ll explore how to handle missing values in a dataset. There are several strategies for handling missing data, such as:</p>
+<ul>
+<li><strong>Removing missing values</strong></li>
+<li><strong>Imputing missing values</strong> (filling them with a specific value or a calculated statistic)</li>
+</ul>
+<p>In this guide, we will focus on removing missing values, though you can also explore imputation depending on your data and goals.</p>
+</div>
+<div id="python-code-6" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Python Code<a href="how-to-handle-missing-data-in-python-and-r.html#python-code-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In Python, we can use <strong>pandas</strong> to detect and handle missing data. The <code>isna()</code> and <code>dropna()</code> functions are commonly used for this task.</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb36-1"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb36-2"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-2" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-3" tabindex="-1"></a><span class="co"># Load dataset</span></span>
+<span id="cb36-4"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-4" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb36-5"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-5" tabindex="-1"></a>df</span>
+<span id="cb36-6"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-6" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
+<span id="cb36-7"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-7" tabindex="-1"></a><span class="bu">print</span>(df.isna().<span class="bu">sum</span>())</span>
+<span id="cb36-8"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-8" tabindex="-1"></a></span>
+<span id="cb36-9"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-9" tabindex="-1"></a><span class="co"># Remove rows with missing data</span></span>
+<span id="cb36-10"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-10" tabindex="-1"></a>df_cleaned <span class="op">=</span> df.dropna()</span>
+<span id="cb36-11"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-11" tabindex="-1"></a></span>
+<span id="cb36-12"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-12" tabindex="-1"></a><span class="co"># Check the cleaned data</span></span>
+<span id="cb36-13"><a href="how-to-handle-missing-data-in-python-and-r.html#cb36-13" tabindex="-1"></a><span class="bu">print</span>(df_cleaned.head())</span></code></pre></div>
+<pre><code>sepal_length    0
+sepal_width     0
+petal_length    0
+petal_width     0
+target          0
+species         0
+dtype: int64
+   sepal_length  sepal_width  petal_length  petal_width  target species
+0           5.1          3.5           1.4          0.2       0  setosa
+1           4.9          3.0           1.4          0.2       0  setosa
+2           4.7          3.2           1.3          0.2       0  setosa
+3           4.6          3.1           1.5          0.2       0  setosa
+4           5.0          3.6           1.4          0.2       0  setosa</code></pre>
+</div>
+<div id="r-code-6" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> R Code<a href="how-to-handle-missing-data-in-python-and-r.html#r-code-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In R, we can use the is.na() function to detect missing values, and the na.omit() function to remove them.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="how-to-handle-missing-data-in-python-and-r.html#cb38-1" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb38-2"><a href="how-to-handle-missing-data-in-python-and-r.html#cb38-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb38-3"><a href="how-to-handle-missing-data-in-python-and-r.html#cb38-3" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="how-to-handle-missing-data-in-python-and-r.html#cb38-4" tabindex="-1"></a><span class="co"># Load dataset</span></span>
+<span id="cb38-5"><a href="how-to-handle-missing-data-in-python-and-r.html#cb38-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb38-6"><a href="how-to-handle-missing-data-in-python-and-r.html#cb38-6" tabindex="-1"></a></span>
+<span id="cb38-7"><a href="how-to-handle-missing-data-in-python-and-r.html#cb38-7" tabindex="-1"></a><span class="co"># Check for missing values</span></span>
+<span id="cb38-8"><a href="how-to-handle-missing-data-in-python-and-r.html#cb38-8" tabindex="-1"></a>missing_values <span class="ot">&lt;-</span> <span class="fu">colSums</span>(<span class="fu">is.na</span>(df))</span>
+<span id="cb38-9"><a href="how-to-handle-missing-data-in-python-and-r.html#cb38-9" tabindex="-1"></a><span class="fu">print</span>(missing_values)</span></code></pre></div>
+<pre><code>sepal_length  sepal_width petal_length  petal_width      species 
+           0            0            0            0            0 </code></pre>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="how-to-handle-missing-data-in-python-and-r.html#cb40-1" tabindex="-1"></a><span class="co"># Remove rows with missing data</span></span>
+<span id="cb40-2"><a href="how-to-handle-missing-data-in-python-and-r.html#cb40-2" tabindex="-1"></a>df_cleaned <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(df)</span>
+<span id="cb40-3"><a href="how-to-handle-missing-data-in-python-and-r.html#cb40-3" tabindex="-1"></a></span>
+<span id="cb40-4"><a href="how-to-handle-missing-data-in-python-and-r.html#cb40-4" tabindex="-1"></a><span class="co"># Check the cleaned data</span></span>
+<span id="cb40-5"><a href="how-to-handle-missing-data-in-python-and-r.html#cb40-5" tabindex="-1"></a><span class="fu">head</span>(df_cleaned)</span></code></pre></div>
+<pre><code># A tibble: 6 × 5
+  sepal_length sepal_width petal_length petal_width species
+         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;  
+1          5.1         3.5          1.4         0.2 setosa 
+2          4.9         3            1.4         0.2 setosa 
+3          4.7         3.2          1.3         0.2 setosa 
+4          4.6         3.1          1.5         0.2 setosa 
+5          5           3.6          1.4         0.2 setosa 
+6          5.4         3.9          1.7         0.4 setosa </code></pre>
+<p>Handling missing data properly ensures that your analysis is accurate and that missing values do not introduce bias into your model or analysis.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="how-to-explore-a-dataset-in-python-and-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="how-to-filter-data-in-python-and-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 1
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection",
+    "toc_depth": 2,
+    "toc_float": {
+      "collapsed": true
+    }
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

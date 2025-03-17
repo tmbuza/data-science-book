@@ -38,19 +38,7 @@ github-repo: "https://github.com/tmbuza/data-science-book/"
 
 # {-}
 
-```{r setup, echo=FALSE, include=FALSE}
-knitr::opts_chunk$set(
-  echo  =TRUE,
-  message  =FALSE,
-  warning  =FALSE,
-  cache  =FALSE,
-  comment  =NA
-)
 
-if(!require("tidyverse")) {
-  install.packages("tidyverse")
-  library(tidyverse)}
-```
 
 
 ## Preface {-}
@@ -77,4 +65,4 @@ By working through this guide, learners will build a solid foundation in data sc
 
 ---
 
-Updated on `r format(Sys.Date(), '%b %d, %Y')`
+Updated on Mar 17, 2025

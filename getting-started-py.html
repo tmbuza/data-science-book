@@ -7516,8 +7516,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="(PART)-GETTING-STARTED-%7B-%7D">(PART) GETTING STARTED {-}<a class="anchor-link" href="#(PART)-GETTING-STARTED-%7B-%7D">¶</a></h1><h1 id="How-to-Set-Up-Your-Project-Directory-in-Python-and-R-%7B%23set-project-dir%7D">How to Set Up Your Project Directory in Python and R {#set-project-dir}<a class="anchor-link" href="#How-to-Set-Up-Your-Project-Directory-in-Python-and-R-%7B%23set-project-dir%7D">¶</a></h1><p><strong>Explanation</strong></p>
-<p>A well-organized project directory is key to efficient data science work. In this section, you will set up a project directory with separate folders for your datasets and scripts.</p>
+<h1 id="(PART)-GETTING-STARTED-%7B-%7D">(PART) GETTING STARTED {-}<a class="anchor-link" href="#(PART)-GETTING-STARTED-%7B-%7D">¶</a></h1><h1 id="Setting-Up-Your-Development-Environment-%7B%23setup-dev-envt%7D">Setting Up Your Development Environment {#setup-dev-envt}<a class="anchor-link" href="#Setting-Up-Your-Development-Environment-%7B%23setup-dev-envt%7D">¶</a></h1><p>Before diving into the Q&amp;A sections, it's important to ensure your environment is properly set up. This section will guide you through the steps to prepare everything you need to start working with both Python and R. To begin working with data science, you’ll need to set up your development environment. Follow the steps below to install and configure the necessary tools.</p>
 <pre><code class="language-{r,">{r,
 knitr::opts_chunk$set(
   echo  =TRUE,
@@ -7531,7 +7530,137 @@ if(!require("tidyverse")) {
   install.packages("tidyverse")
   library(tidyverse)}
 </code></pre>
+<h2 id="Install-Python">Install Python<a class="anchor-link" href="#Install-Python">¶</a></h2><ol>
+<li>Visit the official <a href="https://www.python.org/downloads/">Python website</a> to download and install the latest version of Python.</li>
+<li>During installation, ensure that you check the box to <strong>add Python to your PATH</strong>.</li>
+</ol>
+<h2 id="Install-R">Install R<a class="anchor-link" href="#Install-R">¶</a></h2><ol>
+<li>Visit the official <a href="https://cran.r-project.org/">R Project website</a> to download and install the latest version of R.</li>
+<li>Follow the installation instructions for your operating system.</li>
+</ol>
+<h2 id="Install-VSCode">Install VSCode<a class="anchor-link" href="#Install-VSCode">¶</a></h2><h3 id="Why-Use-VSCode?">Why Use VSCode?<a class="anchor-link" href="#Why-Use-VSCode?">¶</a></h3><p><strong>Visual Studio Code (VSCode)</strong> is a lightweight, free, and powerful code editor that supports multiple programming languages, including <strong>Python</strong> and <strong>R</strong>. It provides an interactive environment for writing, running, and debugging code efficiently.</p>
+<h3 id="Installation-Steps:">Installation Steps:<a class="anchor-link" href="#Installation-Steps:">¶</a></h3><ol>
+<li>Download and install <strong>Visual Studio Code (VSCode)</strong> from the <a href="https://code.visualstudio.com/">official VSCode website</a>.</li>
+<li>Once installed, open VSCode and install the necessary extensions to enable support for Python and R.</li>
+</ol>
+<h3 id="Installing-Extensions-in-VSCode"><strong>Installing Extensions in VSCode</strong><a class="anchor-link" href="#Installing-Extensions-in-VSCode">¶</a></h3><p>Extensions enhance the functionality of VSCode by adding language support, debugging tools, and other useful features.</p>
+<p><strong>For Python:</strong></p>
+<ul>
+<li>Open VSCode.</li>
+<li>Press <code>Ctrl + Shift + X</code> (Windows/Linux) or <code>Cmd + Shift + X</code> (Mac) to open the Extensions Marketplace.</li>
+<li>Search for <strong>Python</strong> (developed by Microsoft).</li>
+<li>Click <strong>Install</strong>.</li>
+<li>This extension provides:<ul>
+<li><strong>IntelliSense</strong> (code completion, function suggestions, and real-time error checking).</li>
+<li>Debugging support.</li>
+<li>Jupyter Notebook integration.</li>
+<li>Formatting and linting tools.</li>
+</ul>
+</li>
+</ul>
+<p><strong>For R:</strong></p>
+<ul>
+<li>In the Extensions Marketplace, search for <strong>R</strong>.</li>
+<li>Click <strong>Install</strong>.</li>
+<li>This extension provides:<ul>
+<li><strong>IntelliSense</strong> for R functions and datasets.</li>
+<li>Integrated R terminal for running scripts.</li>
+<li>Debugging support.</li>
+</ul>
+</li>
+</ul>
+<p><strong>What is IntelliSense?</strong></p>
+<p><strong>IntelliSense</strong> is an advanced code assistance feature that helps you write code faster and with fewer errors by providing <strong>autocomplete suggestions, function hints, and real-time error checking</strong>. It makes coding in Python and R easier by suggesting function names, displaying expected arguments, and highlighting errors before you run the code.</p>
+<p><strong>Verify Installation</strong></p>
+<p>After installing VSCode and the extensions:</p>
+<ul>
+<li>Open VSCode and check if the extensions are enabled.</li>
+<li>Open a Python or R script to ensure syntax highlighting and <strong>IntelliSense</strong> work correctly.</li>
+<li>If using R, ensure you have R installed on your system so that the R extension can detect it.</li>
+</ul>
+<p>Now, you're ready to start coding in both <strong>Python</strong> and <strong>R</strong> using VSCode! 🚀</p>
+<hr/>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="(PART)-QUESTION-&amp;-ANSWER-(Q&amp;A)-%7B-%7D">(PART) QUESTION &amp; ANSWER (Q&amp;A) {-}<a class="anchor-link" href="#(PART)-QUESTION-&amp;-ANSWER-(Q&amp;A)-%7B-%7D">¶</a></h1><h1 id="How-to-Install-Basic-Libaries-for-Python-and-R">How to Install Basic Libaries for Python and R<a class="anchor-link" href="#How-to-Install-Basic-Libaries-for-Python-and-R">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Before you can load datasets in Python and R, you need to install the necessary libraries. Here's how you can install the basic libraries required for this guide:</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2><p>In your terminal, run the following command to install the necessary libraries for data manipulation, visualization, and machine learning:</p>
+<div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>scikit-learn
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><p>In R, install the following packages to help with data manipulation and visualization:</p>
+<div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">require</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="nf">install.packages</span><span class="p">(</span><span class="s">'tidyverse'</span><span class="p">)}</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">require</span><span class="p">(</span><span class="n">caret</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="nf">install.packages</span><span class="p">(</span><span class="s">'caret'</span><span class="p">)}</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">caret</span><span class="p">)</span>
+</pre></div>
+<p>The <strong>tidyverse</strong> R package contains a collection of essential packages for data science, including:</p>
+<ul>
+<li><strong>ggplot2</strong> for data visualization</li>
+<li><strong>dplyr</strong> for data manipulation</li>
+<li><strong>tidyr</strong> for data tidying</li>
+<li><strong>readr</strong> for reading and writing data files</li>
+<li><strong>purrr</strong> for functional programming</li>
+<li><strong>tibble</strong> for an improved data frame format</li>
+<li><strong>stringr</strong> for string manipulation</li>
+<li><strong>forcats</strong> for categorical variable handling</li>
+</ul>
+<p>The <strong>caret</strong> package (short for <em>Classification and Regression Training</em>) is widely used for machine learning in R. It provides a unified interface for training and evaluating models, making it easier to apply machine learning techniques.</p>
+<p>These libraries and packages will ensure you have the tools you need to get started with data analysis and visualization in both languages.</p>
+<hr/>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Create-a-Project-Directory-in-Python-and-R-%7B%23set-project-dir%7D">How to Create a Project Directory in Python and R {#set-project-dir}<a class="anchor-link" href="#How-to-Create-a-Project-Directory-in-Python-and-R-%7B%23set-project-dir%7D">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>A well-organized project directory is key to efficient data science work. In this section, you will set up a project directory with separate folders for your datasets and scripts. Now that you have your environment set up, it’s time to create your project directory. This will help keep your files organized as you progress through the guide.</p>
+<p>Create a new folder for your project, such as <code>beginner-data-science</code>. Inside this folder, create the following subfolders:</p>
+<ul>
+<li><strong>data</strong>: This folder will store your datasets.</li>
+<li><strong>scripts</strong>: Store Python or R scripts here.</li>
+<li><strong>images</strong>: Use this folder for images related to the project.</li>
+</ul>
+<p><strong>Example Structure:</strong></p>
+<pre><code class="language-plaintext">plaintext
+beginner-data-science/
+  ├── data/
+  ├── scripts/
+  └── images/
+</code></pre>
+<hr/>
 <h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 </div>
 </div>
 </div>
@@ -7549,14 +7678,12 @@ if(!require("tidyverse")) {
 <span class="n">project_dir</span> <span class="o">=</span> <span class="s1">'./'</span>
 <span class="n">data_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="s1">'data'</span><span class="p">)</span>
 <span class="n">scripts_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="s1">'scripts'</span><span class="p">)</span>
-<span class="c1"># images_dir = os.path.join(project_dir, 'images')</span>
-<span class="n">output_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="s1">'output'</span><span class="p">)</span>
+<span class="n">images_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">project_dir</span><span class="p">,</span> <span class="s1">'images'</span><span class="p">)</span>
 
 <span class="c1"># Create directories</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">data_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">scripts_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1"># os.makedirs(images_dir, exist_ok=True)</span>
-<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">output_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">images_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Project directory structure created at </span><span class="si">{</span><span class="n">project_dir</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
@@ -7590,16 +7717,15 @@ project_dir &lt;- "./"
 data_dir &lt;- file.path(project_dir, "data")
 scripts_dir &lt;- file.path(project_dir, "scripts")
 images_dir &lt;- file.path(project_dir, "images")
-output_dir &lt;- file.path(project_dir, "output")
 
 # Create directories
 dir.create(data_dir, showWarnings = FALSE)
 dir.create(scripts_dir, showWarnings = FALSE)
 dir.create(images_dir, showWarnings = FALSE)
-dir.create(output_dir, showWarnings = FALSE)
 
 cat("Project directory structure created at", project_dir, "\n")
 </code></pre>
+<hr/>
 </div>
 </div>
 </div>
@@ -7610,8 +7736,28 @@ cat("Project directory structure created at", project_dir, "\n")
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Save-a-Dataset-in-Python-and-R">How to Save a Dataset in Python and R<a class="anchor-link" href="#How-to-Save-a-Dataset-in-Python-and-R">¶</a></h1><p><strong>Explanation</strong></p>
-<p>Saving datasets is essential for storing processed data, sharing results, and reusing data in later analysis. In Python, we commonly use pandas to save datasets in CSV format. In R, readr::write_csv() and write.csv() are common functions for saving datasets.</p>
+<h1 id="How-to-Save-a-Dataset-in-Python-and-R">How to Save a Dataset in Python and R<a class="anchor-link" href="#How-to-Save-a-Dataset-in-Python-and-R">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Saving datasets is essential for storing processed data, sharing results, and reusing data in later analysis. In Python, we commonly use pandas to save datasets in CSV format. In R, readr::write_csv() and write.csv() are common functions for saving datasets. You will need to:</p>
+<ol>
+<li>Iris dataset is available from <a href="https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data">this link</a>.</li>
+<li>Also comes with some python libraries such as sklearn.datasets in python and data() in R.</li>
+</ol>
+<p>Note! When working with datasets in both Python and R, it’s essential to save them in a structured format. However, the column names in the Iris dataset differ slightly between Python and R:</p>
+<ul>
+<li>Python (pandas version) uses:<ul>
+<li>sepal length (cm), sepal width (cm), petal length (cm), petal width (cm), species</li>
+</ul>
+</li>
+<li>R (datasets::iris version) uses:<ul>
+<li>Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, Species</li>
+</ul>
+</li>
+</ul>
+<p>To maintain consistency, we will save two separate versions:</p>
+<ul>
+<li>iris-py.csv (from Python)</li>
+<li>iris-r.csv (from R)</li>
+</ul>
+<p>This ensures that each dataset retains its original structure before standardization.</p>
 <h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
 </div>
 </div>
@@ -7628,16 +7774,16 @@ cat("Project directory structure created at", project_dir, "\n")
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
 
 <span class="c1"># Load the full iris dataset</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  
-<span class="n">df</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">frame</span>  <span class="c1"># Converts to DataFrame</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">frame</span>
 
 <span class="c1"># Add species names</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">"species"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"target"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s2">"setosa"</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">"versicolor"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">"virginica"</span><span class="p">})</span>
 
-<span class="c1"># Save dataset with all columns</span>
-<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># Save the dataset as "iris-py.csv"</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/iris_py.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Dataset saved as 'data/iris.csv'"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Dataset saved as 'data/iris_py.csv'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7650,7 +7796,40 @@ cat("Project directory structure created at", project_dir, "\n")
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Dataset saved as 'data/iris.csv'
+<pre>Dataset saved as 'data/iris_py.csv'
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Add species names</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">"species"</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">"target"</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s2">"setosa"</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="s2">"versicolor"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">"virginica"</span><span class="p">})</span>
+
+<span class="c1"># Save dataset with all columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/iris_py.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Dataset saved as 'data/iris_py.csv'"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Dataset saved as 'data/iris_py.csv'
 </pre>
 </div>
 </div>
@@ -7671,11 +7850,12 @@ library(readr)
 df &lt;- datasets::iris
 
 # Save the dataset with species included using write_csv from readr
-write_csv(df, "data/iris.csv")
+write_csv(df, "data/iris_r.csv")
 
 # Confirmation message
-print("Dataset saved as 'data/iris.csv'")
+print("Dataset saved as 'data/iris_r.csv'")
 </code></pre>
+<hr/>
 </div>
 </div>
 </div>
@@ -7686,8 +7866,16 @@ print("Dataset saved as 'data/iris.csv'")
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Load-a-Dataset-in-Python-and-R-%7B%23loading-a-dataset%7D">How to Load a Dataset in Python and R {#loading-a-dataset}<a class="anchor-link" href="#How-to-Load-a-Dataset-in-Python-and-R-%7B%23loading-a-dataset%7D">¶</a></h1><p><strong>Explanation</strong></p>
-<p>After saving a dataset, we often need to load it back into our program for analysis. In Python, pandas.read_csv() is commonly used to load CSV files. In R, we use read_csv() or readr::read_csv() to achieve the same result.</p>
+<h1 id="How-to-Rename-Column-Names-in-Python-and-R?">How to Rename Column Names in Python and R?<a class="anchor-link" href="#How-to-Rename-Column-Names-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Since the column names differ between Python and R versions of the dataset, we will standardize them to ensure consistency. The renamed column names will be:</p>
+<ul>
+<li>sepal_length</li>
+<li>sepal_width</li>
+<li>petal_length</li>
+<li>petal_width</li>
+<li>species</li>
+</ul>
+<p>This makes it easier to work with the dataset across different tools and languages.</p>
+<p>After Renaming, we will save the final dataset as iris.csv.</p>
 <h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
 </div>
 </div>
@@ -7697,16 +7885,25 @@ print("Dataset saved as 'data/iris.csv'")
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># Load dataset from CSV file</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+<span class="c1"># Load dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris_py.csv"</span><span class="p">)</span>
 
-<span class="c1"># Display the first few rows</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="c1"># Rename columns</span>
+<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">'sepal length (cm)'</span><span class="p">:</span> <span class="s1">'sepal_length'</span><span class="p">,</span> 
+                   <span class="s1">'sepal width (cm)'</span><span class="p">:</span> <span class="s1">'sepal_width'</span><span class="p">,</span>
+                   <span class="s1">'petal length (cm)'</span><span class="p">:</span> <span class="s1">'petal_length'</span><span class="p">,</span>
+                   <span class="s1">'petal width (cm)'</span><span class="p">:</span> <span class="s1">'petal_width'</span><span class="p">,</span>
+                   <span class="s1">'species'</span><span class="p">:</span> <span class="s1">'species'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Save the standardized dataset</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Renamed dataset saved as 'data/iris.csv'"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7719,19 +7916,98 @@ print("Dataset saved as 'data/iris.csv'")
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>   sepal length (cm)  sepal width (cm)  petal length (cm)  petal width (cm)  \
-0                5.1               3.5                1.4               0.2   
-1                4.9               3.0                1.4               0.2   
-2                4.7               3.2                1.3               0.2   
-3                4.6               3.1                1.5               0.2   
-4                5.0               3.6                1.4               0.2   
+<pre>Renamed dataset saved as 'data/iris.csv'
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
+library(readr)
+library(dplyr)
 
-   target species  
-0       0  setosa  
-1       0  setosa  
-2       0  setosa  
-3       0  setosa  
-4       0  setosa  
+# Load dataset
+df &lt;- read_csv("data/iris_r.csv")
+
+# Rename columns
+df &lt;- df %&gt;%
+  rename(sepal_length = Sepal.Length,
+         sepal_width = Sepal.Width,
+         petal_length = Petal.Length,
+         petal_width = Petal.Width,
+         species = Species)
+
+# Save the standardized dataset
+write_csv(df, "data/iris.csv")
+
+print("Renamed dataset saved as 'data/iris.csv'")
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-load-a-dataset-in-Python-and-R?">How to load a dataset in Python and R?<a class="anchor-link" href="#How-to-load-a-dataset-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Loading a dataset is one of the first steps in any data analysis project. In this case, we'll load the Iris dataset, a popular dataset for beginner data science projects, in both Python and R. The dataset has been saved as <code>iris.csv</code> in your <code>data</code> folder.</p>
+<p>We will use <strong>pandas</strong> in Python and <strong>readr</strong> in R to load the dataset into a dataframe.</p>
+<ul>
+<li><p>In Python we will use the <code>pandas</code> library, which is a powerful tool for data manipulation and analysis.</p>
+</li>
+<li><p>The <code>read_csv()</code> function in pandas will allow us to read the <code>iris.csv</code> file into a dataframe.</p>
+</li>
+<li><p>In R we will use the <code>readr</code> package, which provides modern and faster alternatives to base R functions.</p>
+</li>
+<li><p>The <code>read_csv()</code> function in <code>readr</code> is similar to pandas in Python and offers a streamlined approach for loading CSV files.</p>
+</li>
+</ul>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load the dataset</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/iris.csv'</span><span class="p">)</span>
+
+<span class="c1"># Show the first few rows</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>   sepal_length  sepal_width  petal_length  petal_width  target species
+0           5.1          3.5           1.4          0.2       0  setosa
+1           4.9          3.0           1.4          0.2       0  setosa
+2           4.7          3.2           1.3          0.2       0  setosa
+3           4.6          3.1           1.5          0.2       0  setosa
+4           5.0          3.6           1.4          0.2       0  setosa
 </pre>
 </div>
 </div>
@@ -7754,6 +8030,7 @@ df &lt;- read_csv("data/iris.csv")
 # Display the first few rows
 head(df)
 </code></pre>
+<hr/>
 </div>
 </div>
 </div>
@@ -7764,8 +8041,13 @@ head(df)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Check-the-Structure-of-a-Dataset-in-Python-and-R-%7B%23checking-dataset-structure%7D">How to Check the Structure of a Dataset in Python and R {#checking-dataset-structure}<a class="anchor-link" href="#How-to-Check-the-Structure-of-a-Dataset-in-Python-and-R-%7B%23checking-dataset-structure%7D">¶</a></h1><p><strong>Explanation</strong></p>
-<p>Understanding a dataset’s structure helps in selecting the right data processing techniques. In Python, df.info() provides an overview of column names, data types, and missing values. In R, str(df) serves the same purpose.</p>
+<h1 id="How-to-Explore-a-Dataset-in-Python-and-R?">How to Explore a Dataset in Python and R?<a class="anchor-link" href="#How-to-Explore-a-Dataset-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>After loading a dataset, it is important to explore its structure, summary statistics, and key properties before performing any analysis. This helps in understanding the data and identifying potential issues such as missing values or outliers.</p>
+<p>In this section, we will:</p>
+<ul>
+<li>View the structure of the dataset.</li>
+<li>Get summary statistics.</li>
+<li>Check for missing values.</li>
+</ul>
 <h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
 </div>
 </div>
@@ -7775,16 +8057,25 @@ head(df)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="c1"># Load dataset</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+<span class="c1"># Load the dataset</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/iris.csv'</span><span class="p">)</span>
 
-<span class="c1"># Display dataset structure</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+<span class="c1"># Display basic information about the dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Dataset Information:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+
+<span class="c1"># Show summary statistics</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Summary Statistics:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+
+<span class="c1"># Check for missing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Missing Values:"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -7797,19 +8088,41 @@ head(df)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>&lt;class 'pandas.core.frame.DataFrame'&gt;
+<pre>Dataset Information:
+&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 150 entries, 0 to 149
-Data columns (total 5 columns):
+Data columns (total 6 columns):
  #   Column        Non-Null Count  Dtype  
 ---  ------        --------------  -----  
- 0   Sepal.Length  150 non-null    float64
- 1   Sepal.Width   150 non-null    float64
- 2   Petal.Length  150 non-null    float64
- 3   Petal.Width   150 non-null    float64
- 4   Species       150 non-null    object 
-dtypes: float64(4), object(1)
-memory usage: 6.0+ KB
+ 0   sepal_length  150 non-null    float64
+ 1   sepal_width   150 non-null    float64
+ 2   petal_length  150 non-null    float64
+ 3   petal_width   150 non-null    float64
+ 4   target        150 non-null    int64  
+ 5   species       150 non-null    object 
+dtypes: float64(4), int64(1), object(1)
+memory usage: 7.2+ KB
 None
+
+Summary Statistics:
+       sepal_length  sepal_width  petal_length  petal_width      target
+count    150.000000   150.000000    150.000000   150.000000  150.000000
+mean       5.843333     3.057333      3.758000     1.199333    1.000000
+std        0.828066     0.435866      1.765298     0.762238    0.819232
+min        4.300000     2.000000      1.000000     0.100000    0.000000
+25%        5.100000     2.800000      1.600000     0.300000    0.000000
+50%        5.800000     3.000000      4.350000     1.300000    1.000000
+75%        6.400000     3.300000      5.100000     1.800000    2.000000
+max        7.900000     4.400000      6.900000     2.500000    2.000000
+
+Missing Values:
+sepal_length    0
+sepal_width     0
+petal_length    0
+petal_width     0
+target          0
+species         0
+dtype: int64
 </pre>
 </div>
 </div>
@@ -7825,13 +8138,24 @@ None
 <h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
 # Load necessary library
 library(readr)
+library(dplyr)
 
-# Load dataset from CSV file
+# Load the dataset
 df &lt;- read_csv("data/iris.csv")
 
-# Display dataset structure
+# Display the structure of the dataset
+cat("Dataset Structure:\n")
 str(df)
+
+# Show summary statistics
+cat("\nSummary Statistics:\n")
+summary(df)
+
+# Check for missing values
+cat("\nMissing Values:\n")
+colSums(is.na(df))
 </code></pre>
+<hr/>
 </div>
 </div>
 </div>
@@ -7842,8 +8166,184 @@ str(df)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-View-Summary-Statistics-of-a-Dataset-in-Python-and-R-%7B%23summary-statistics%7D">How to View Summary Statistics of a Dataset in Python and R {#summary-statistics}<a class="anchor-link" href="#How-to-View-Summary-Statistics-of-a-Dataset-in-Python-and-R-%7B%23summary-statistics%7D">¶</a></h1><p><strong>Explanation</strong></p>
-<p>Summary statistics provide insights into the dataset, such as the mean, median, min, max, and quartiles for numerical columns. In Python, df.describe() gives a quick statistical summary. In R, summary(df) does the same.</p>
+<h1 id="How-to-Handle-Missing-Data-in-Python-and-R?">How to Handle Missing Data in Python and R?<a class="anchor-link" href="#How-to-Handle-Missing-Data-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Handling missing data is one of the most important steps in data cleaning. In this section, we’ll explore how to handle missing values in a dataset. There are several strategies for handling missing data, such as:</p>
+<ul>
+<li><strong>Removing missing values</strong></li>
+<li><strong>Imputing missing values</strong> (filling them with a specific value or a calculated statistic)</li>
+</ul>
+<p>In this guide, we will focus on removing missing values, though you can also explore imputation depending on your data and goals.</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2><p>In Python, we can use <strong>pandas</strong> to detect and handle missing data. The <code>isna()</code> and <code>dropna()</code> functions are commonly used for this task.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+<span class="n">df</span>
+<span class="c1"># Check for missing values</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
+
+<span class="c1"># Remove rows with missing data</span>
+<span class="n">df_cleaned</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+
+<span class="c1"># Check the cleaned data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df_cleaned</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>sepal_length    0
+sepal_width     0
+petal_length    0
+petal_width     0
+target          0
+species         0
+dtype: int64
+   sepal_length  sepal_width  petal_length  petal_width  target species
+0           5.1          3.5           1.4          0.2       0  setosa
+1           4.9          3.0           1.4          0.2       0  setosa
+2           4.7          3.2           1.3          0.2       0  setosa
+3           4.6          3.1           1.5          0.2       0  setosa
+4           5.0          3.6           1.4          0.2       0  setosa
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><p>In R, we can use the is.na() function to detect missing values, and the na.omit() function to remove them.</p>
+<pre><code class="language-{r}">{r}
+library(dplyr)
+library(readr)
+
+# Load dataset
+df &lt;- read_csv("data/iris.csv")
+
+# Check for missing values
+missing_values &lt;- colSums(is.na(df))
+print(missing_values)
+
+# Remove rows with missing data
+df_cleaned &lt;- na.omit(df)
+
+# Check the cleaned data
+head(df_cleaned)
+</code></pre>
+<p>Handling missing data properly ensures that your analysis is accurate and that missing values do not introduce bias into your model or analysis.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Filter-Data-in-Python-and-R?">How to Filter Data in Python and R?<a class="anchor-link" href="#How-to-Filter-Data-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Filtering data is a common task in data science. It allows you to select specific rows based on conditions or criteria, helping you focus on the subset of data that is most relevant to your analysis.</p>
+<p>In this section, we will learn how to filter data using conditions in both Python and R. We'll demonstrate filtering rows based on specific column values.</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2><p>In Python, we use <strong>pandas</strong> to filter data. The <code>loc[]</code> method is useful for selecting rows based on specific conditions.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+
+<span class="c1"># Filter rows where species is 'setosa'</span>
+<span class="n">setosa_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">'species'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'setosa'</span><span class="p">]</span>
+
+<span class="c1"># Show the first few rows of the filtered data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">setosa_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>   sepal_length  sepal_width  petal_length  petal_width  target species
+0           5.1          3.5           1.4          0.2       0  setosa
+1           4.9          3.0           1.4          0.2       0  setosa
+2           4.7          3.2           1.3          0.2       0  setosa
+3           4.6          3.1           1.5          0.2       0  setosa
+4           5.0          3.6           1.4          0.2       0  setosa
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><p>In R, we can use the dplyr package to filter rows based on specific conditions. The filter() function is used for this purpose.</p>
+<pre><code class="language-{r}">{r}
+library(dplyr)
+library(readr)
+
+# Load dataset
+df &lt;- read_csv("data/iris.csv")
+
+# Filter rows where species is 'setosa'
+setosa_df &lt;- df %&gt;% filter(species == 'setosa')
+
+# Show the first few rows of the filtered data
+head(setosa_df)
+</code></pre>
+<p>Filtering data allows you to narrow down your dataset and focus on specific insights or subsets of interest. In real-world projects, filtering is often one of the first steps in analyzing a dataset.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Group-Data-in-Python-and-R?">How to Group Data in Python and R?<a class="anchor-link" href="#How-to-Group-Data-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Grouping data is a common task when summarizing and analyzing datasets. In this section, we’ll group the Iris dataset by the Species column and calculate summary statistics (e.g., mean) for each group.</p>
+<p>In Python, we use <strong>pandas</strong> for this task, while in R we use <strong>dplyr</strong>. Let’s explore how to group the data by species and calculate the mean of each numeric column.</p>
 <h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
 </div>
 </div>
@@ -7861,8 +8361,11 @@ str(df)
 <span class="c1"># Load dataset</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
 
-<span class="c1"># Display summary statistics</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
+<span class="c1"># Group by 'Species' and calculate the mean for each group</span>
+<span class="n">grouped_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'species'</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Display the grouped data</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grouped_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7875,15 +8378,11 @@ str(df)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>       Sepal.Length  Sepal.Width  Petal.Length  Petal.Width
-count    150.000000   150.000000    150.000000   150.000000
-mean       5.843333     3.057333      3.758000     1.199333
-std        0.828066     0.435866      1.765298     0.762238
-min        4.300000     2.000000      1.000000     0.100000
-25%        5.100000     2.800000      1.600000     0.300000
-50%        5.800000     3.000000      4.350000     1.300000
-75%        6.400000     3.300000      5.100000     1.800000
-max        7.900000     4.400000      6.900000     2.500000
+<pre>            sepal_length  sepal_width  petal_length  petal_width  target
+species                                                                 
+setosa             5.006        3.428         1.462        0.246     0.0
+versicolor         5.936        2.770         4.260        1.326     1.0
+virginica          6.588        2.974         5.552        2.026     2.0
 </pre>
 </div>
 </div>
@@ -7897,258 +8396,19 @@ max        7.900000     4.400000      6.900000     2.500000
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
-# Load necessary library
-library(readr)
-
-# Load dataset from CSV file
-df &lt;- read_csv("data/iris.csv")
-
-# Display summary statistics
-summary(df)
-</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Check-for-Missing-Values-in-a-Dataset-in-Python-and-R-%7B%23checking-for-missing-values%7D">How to Check for Missing Values in a Dataset in Python and R {#checking-for-missing-values}<a class="anchor-link" href="#How-to-Check-for-Missing-Values-in-a-Dataset-in-Python-and-R-%7B%23checking-for-missing-values%7D">¶</a></h1><p><strong>Explanation</strong></p>
-<p>Missing values can affect data analysis and machine learning models, so it’s important to detect them.</p>
-<ul>
-<li>In Python, df.isnull().sum() shows the number of missing values per column.</li>
-<li>In R, colSums(is.na(df)) performs a similar check.</li>
-</ul>
-<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="c1"># Load dataset</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
-
-<span class="c1"># Check for missing values</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>sepal length (cm)    0
-sepal width (cm)     0
-petal length (cm)    0
-petal width (cm)     0
-target               0
-species              0
-dtype: int64
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
-# Load necessary library
-library(readr)
-
-# Load dataset from CSV file
-df &lt;- read_csv("data/iris.csv")
-
-# Check for missing values
-colSums(is.na(df))
-</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Rename-Columns-in-a-Dataset-in-Python-and-R-%7B%23renaming-columns%7D">How to Rename Columns in a Dataset in Python and R {#renaming-columns}<a class="anchor-link" href="#How-to-Rename-Columns-in-a-Dataset-in-Python-and-R-%7B%23renaming-columns%7D">¶</a></h1><p><strong>Explanation</strong></p>
-<p>Renaming columns makes datasets easier to work with, especially if column names are long or unclear.</p>
-<ul>
-<li>In Python, df.rename(columns={}) allows renaming specific columns.</li>
-<li>In R, colnames(df) &lt;- c(...) is used to rename all columns at once, or names(df)[index] &lt;- "new_name" for renaming specific ones.</li>
-</ul>
-<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="c1"># Load dataset</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
-
-<span class="c1"># Rename specific columns with the correct names</span>
-<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">"Sepal.Length"</span><span class="p">:</span> <span class="s2">"sepal_length"</span><span class="p">,</span> 
-                   <span class="s2">"Sepal.Width"</span><span class="p">:</span> <span class="s2">"sepal_width"</span><span class="p">,</span> 
-                   <span class="s2">"Petal.Length"</span><span class="p">:</span> <span class="s2">"petal_length"</span><span class="p">,</span> 
-                   <span class="s2">"Petal.Width"</span><span class="p">:</span> <span class="s2">"petal_width"</span><span class="p">,</span> 
-                   <span class="s2">"Species"</span><span class="p">:</span> <span class="s2">"species"</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Display the first few rows to confirm the changes</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>   sepal_length  sepal_width  petal_length  petal_width species
-0           5.1          3.5           1.4          0.2  setosa
-1           4.9          3.0           1.4          0.2  setosa
-2           4.7          3.2           1.3          0.2  setosa
-3           4.6          3.1           1.5          0.2  setosa
-4           5.0          3.6           1.4          0.2  setosa
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
-# Load necessary library
-library(readr)
-
-# Load dataset from CSV file
-df &lt;- read_csv("data/iris.csv")
-
-# Rename all columns
-colnames(df) &lt;- c("sepal_length", "sepal_width", "petal_length", "petal_width", "species")
-
-# Display new column names
-head(df)
-</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Filter-Rows-in-a-Dataset-in-Python-and-R">How to Filter Rows in a Dataset in Python and R<a class="anchor-link" href="#How-to-Filter-Rows-in-a-Dataset-in-Python-and-R">¶</a></h1><p><strong>Explanation</strong></p>
-<p>Filtering allows you to extract specific rows that meet a given condition.</p>
-<ul>
-<li>In Python, you can use boolean indexing: df[df["column"] == value].</li>
-<li>In R, you can use subset(df, column == value) or df[df$column == value, ].</li>
-</ul>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="c1"># Load dataset</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
-
-<span class="c1"># Filter rows where species is "setosa"</span>
-<span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"setosa"</span><span class="p">]</span>
-
-<span class="c1"># Display filtered rows</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">filtered_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>   sepal_length  sepal_width  petal_length  petal_width species
-0           5.1          3.5           1.4          0.2  setosa
-1           4.9          3.0           1.4          0.2  setosa
-2           4.7          3.2           1.3          0.2  setosa
-3           4.6          3.1           1.5          0.2  setosa
-4           5.0          3.6           1.4          0.2  setosa
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
-# If necessary, install the tidyverse package
-if(!require("tidyverse")) {install.packages("tidyverse")}
-
-# Load the dplyr package from tidyverse
 library(dplyr)
+library(readr)
 
 # Load dataset
 df &lt;- read_csv("data/iris.csv")
 
-# Filter rows where species is 'setosa'
-setosa_df &lt;- filter(df, "species" == "setosa")
+# Group by 'species' and calculate the mean for each group
+grouped_df &lt;- df %&gt;%
+  group_by(species) %&gt;%
+  summarise(across(where(is.numeric), mean))
 
-# Display the filtered dataset
-print(setosa_df)
+# Display the grouped data
+print(grouped_df)
 </code></pre>
 </div>
 </div>
@@ -8160,13 +8420,8 @@ print(setosa_df)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Visualize-a-Dataset-in-Python-and-R">How to Visualize a Dataset in Python and R<a class="anchor-link" href="#How-to-Visualize-a-Dataset-in-Python-and-R">¶</a></h1><p><strong>Explanation</strong></p>
-<p>Visualization is a powerful way to explore data.</p>
-<ul>
-<li>In Python, we can use matplotlib or seaborn for plotting.</li>
-<li>In R, ggplot2 is one of the most commonly used packages for visualization.</li>
-</ul>
-<p>We’ll create a simple scatter plot to visualize the relationship between two features: sepal length and sepal width, and color the points based on the species.</p>
+<h1 id="How-to-Aggregate-Data-in-Python-and-R?">How to Aggregate Data in Python and R?<a class="anchor-link" href="#How-to-Aggregate-Data-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Aggregation helps summarize datasets by computing statistics such as mean, median, count, or sum for different groups. This is useful when analyzing patterns within the dataset.</p>
+<p>For example, in the iris dataset, we can find the average sepal width per species to compare flower characteristics.</p>
 <h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
 </div>
 </div>
@@ -8176,34 +8431,22 @@ print(setosa_df)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># Load the dataset</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
 
-<span class="c1"># Rename the columns to match the names you expect</span>
-<span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
-    <span class="s1">'Sepal.Length'</span><span class="p">:</span> <span class="s1">'sepal_length'</span><span class="p">,</span> 
-    <span class="s1">'Sepal.Width'</span><span class="p">:</span> <span class="s1">'sepal_width'</span><span class="p">,</span> 
-    <span class="s1">'Petal.Length'</span><span class="p">:</span> <span class="s1">'petal_length'</span><span class="p">,</span> 
-    <span class="s1">'Petal.Width'</span><span class="p">:</span> <span class="s1">'petal_width'</span><span class="p">,</span> 
-    <span class="s1">'Species'</span><span class="p">:</span> <span class="s1">'species'</span><span class="p">},</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Aggregate: Calculate mean sepal width per species</span>
+<span class="n">agg_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"species"</span><span class="p">)[</span><span class="s2">"sepal_width"</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 
-<span class="c1"># Create a scatter plot</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">'sepal_length'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">'sepal_width'</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">'species'</span><span class="p">)</span>
+<span class="c1"># Save the aggregated data</span>
+<span class="n">agg_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/iris_aggregated_py.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="c1"># Add title and labels</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"Sepal Length vs Sepal Width"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">"Sepal Length (cm)"</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">"Sepal Width (cm)"</span><span class="p">)</span>
-
-<span class="c1"># Show the plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1"># Display the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">agg_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -8215,8 +8458,12 @@ print(setosa_df)
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
-<img alt="No description has been provided for this image" class="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjgAAAHFCAYAAAD/kYOsAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjcuMiwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8pXeV/AAAACXBIWXMAAA9hAAAPYQGoP6dpAACnQElEQVR4nOzdd3iUxdrA4d/2bHohgSRAAoRO6KIQaYLSBBVBKSJgL+j5xILYsaHYwIaK5yiKigKKIgqKFJWO9CI1jRBI78n2748cclx2N9lNL899XXtpZt59Z3bZ8uy8M/MobDabDSGEEEKIRkRZ1x0QQgghhKhuEuAIIYQQotGRAEcIIYQQjY4EOEIIIYRodCTAEUIIIUSjIwGOEEIIIRodCXCEEEII0ehIgCOEEEKIRkcCHCGEEEI0OhLgiCZt586d3HDDDbRu3RqdTkfz5s3p378/Dz/8cF13rcyMGTOIjo526zhfX9+a71Albdu2jeeee46cnByHuujoaK699tra75SbkpOTue++++jQoQN6vZ7g4GBiY2O58847SU5OruvuAfDpp5+iUChISEhweczKlStRKBR8/fXXDnU9evRAoVCwfv16h7p27drRu3dvADZv3oxCoWDz5s0V9unS125RURHPPfec0/s+99xzKBQKMjIyKjyvEO6QAEc0WWvXrmXAgAHk5eWxYMECfvnlFxYtWkRcXJzTLwBRNdu2bWPevHlOA5z67OzZs/Tu3Ztff/2V2bNn89NPP/Gf//yHyZMns3v3bs6cOVPXXXTbkCFDUCgUbNq0ya48KyuLQ4cO4ePj41B39uxZzpw5w9ChQwHo3bs327dvLwt4PFFUVMS8efPcCo6EqCp1XXdAiLqyYMEC2rRpw/r161Gr//dWmDRpEgsWLKjDnon6ZMmSJWRkZLBr1y7atGlTVn799dfzxBNPYLVa67B3nmnWrBndunVzCDC2bNmCWq3m9ttvdwhwLv59McDx9/fniiuuqJX+ClEVMoIjmqzMzEyaNWtmF9xcpFQ6vjW+/vpr+vfvj4+PD76+vowYMYJ9+/bZHXPxMtGRI0cYNmwYPj4+hIaGMmvWLIqKiuyOfe+99xg0aBBhYWH4+PgQGxvLggULMJlM1ftAL7FhwwaGDRuGv78/3t7exMXF8dtvv9kdc/FywZEjR5g8eTIBAQE0b96c2267jdzcXLtjc3JyuP322wkODsbX15cxY8Zw5swZFAoFzz33XNn5Hn30UQDatGmDQqFweplj3bp19O7dG71eT6dOnfjPf/5T7mMxmUyEhYUxbdo0h7qcnBz0ej2zZ88GwGq18uKLL9KxY0f0ej2BgYF0796dRYsWldtGZmYmSqWSsLAwp/WXvlb27NnDuHHjCA4OxsvLi169evHNN9/YHXPxctKvv/7KzJkzCQ4OxsfHh7FjxzqMCP36669cd911tGzZEi8vL2JiYrj77rsrfSln6NChHD9+nNTU1LKyzZs3c9lllzF69Gj++usv8vPz7epUKhUDBw4s+9vZv92nn35Kx44d0el0dO7cmc8++8yuPiEhgdDQUADmzZtX9hqYMWOG3XEXLlyo8DUnhDskwBFNVv/+/dm5cycPPvggO3fuLDewePnll5k8eTJdunThm2++4fPPPyc/P5+BAwdy9OhRu2NNJhOjR49m2LBhrF69mlmzZvHhhx9y88032x13+vRppkyZwueff86PP/7I7bffzmuvvcbdd99dI48XYNmyZVxzzTX4+/uzdOlSvvnmG4KDgxkxYoRDkANw44030qFDB1atWsXjjz/Ol19+yUMPPVRWb7VaGTt2LF9++SVz5szhu+++4/LLL2fkyJF257njjjt44IEHAPj222/Zvn27w2WOAwcO8PDDD/PQQw/x/fff0717d26//XZ+//13l49Ho9Fwyy23sGrVKvLy8uzqvvrqK0pKSpg5cyZQOmL33HPPMXnyZNauXcvXX3/N7bffXuEls/79+2O1Whk/fjzr1693aOefNm3aRFxcHDk5OXzwwQd8//339OzZk5tvvplPP/3U4fjbb78dpVLJl19+ycKFC9m1axdDhgyx69Pp06fp378/ixcv5pdffuGZZ55h586dXHnllZUKhi+OxPwzQNm0aRODBw8mLi4OhULBH3/8YVfXu3dvAgICXJ7z008/ZebMmXTu3JlVq1bx1FNP8cILL7Bx48ayY8LDw1m3bl3Z4774Gnj66aftzlXRa04It9mEaKIyMjJsV155pQ2wATaNRmMbMGCAbf78+bb8/Pyy45KSkmxqtdr2wAMP2N0/Pz/f1qJFC9tNN91UVjZ9+nQbYFu0aJHdsS+99JINsP35559O+2KxWGwmk8n22Wef2VQqlS0rK8vunFFRURU+nunTp9t8fHxc1hcW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NBoNHTt2dPjSr6zbbruNr7/+mlmzZtGyZUuGDx9uVz927Fi6detG3759CQ0NJTExkYULFxIVFUX79u1dnvell15i69at3HzzzfTs2RO9Xk98fDzvvvsumZmZvPbaa2XHfvjhh4waNYoRI0YwY8YMIiMjycrK4tixY+zdu5cVK1bYnXvPnj3ccccdTJw4keTkZJ588kkiIyO57777AOjUqRPt2rXj8ccfx2azERwczJo1a/j111+r9Fz5+/vTu3dvVq9ejVKpLJt/c9HgwYNZuHAhUP78Gyj9N37hhRe44447uOGGG7jzzjvJycnhueeec7hs5efnR1RUFN9//z3Dhg0jODiYZs2aubVTtxAeq+NJzkLUma+//to2ZcoUW/v27W2+vr42jUZja926tW3atGm2o0ePOhy/evVq29ChQ23+/v42nU5ni4qKsk2YMMG2YcOGsmMurmQ6ePCgbciQITa9Xm8LDg623XvvvbaCggK7861Zs8bWo0cPm5eXly0yMtL26KOP2n7++We7FSoXz+nuKir+uyLs0ts/779lyxbbmDFjbMHBwTaNRmOLjIy0jRkzxrZixYqyYy6uaElPT7drw9lKnaysLNvMmTNtgYGBNm9vb9vVV19t27Fjh9PVZHPnzrVFRESUrUi6+DijoqJsY8aMcXhMgwcPtg0ePLjCx26zla7madWqlQ2wPfnkkw71b7zxhm3AgAG2Zs2a2bRara1169a222+/3ZaQkFDueXfs2GG7//77bT169LAFBwfbVCqVLTQ01DZy5EjbTz/95HD8gQMHbDfddJMtLCzMptFobC1atLBdddVVtg8++KDsmIvP4y+//GKbNm2aLTAw0KbX622jR4+2nTx50u58R48etV199dU2Pz8/W1BQkG3ixIllq5v+uRrJ3VVUFz322GM2wNa3b1+HutWrV9sAm1artRUWFtrVXbqK6qKPP/7Y1r59e5tWq7V16NDB9p///Mfpa3fDhg22Xr162XQ6nQ2wTZ8+3WazefaaE8IdCpvtH2OKQogqmTFjBitXrqSgoKCuu1KnvvzyS6ZOncrWrVsrtZKmsbu4b8zu3bvdmuAshPCcXKISQlTJV199RUpKCrGxsSiVSnbs2MFrr73GoEGDJLgRQtQZCXCEEFXi5+fH8uXLefHFFyksLCQ8PJwZM2bw4osv1nXXhBBNmFyiEkII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A926z4wZM8jJyWH16tVVars+qFepGoYMGULPnj1ZuHAhUHp5KSUlhc8++wwoXSberVs37r77bu688062b9/OPffcw1dffeX2MnFJ1SBE9Sg2WlApFWjVdb5WQTRR1ZKqoR4qKCjAYDC4vDLhLqPRSFZWFs2bN3c5jeNSubm52Gw2twOi6tZkUjWkpqaSlJRU9nebNm346aefeOihh3jvvfeIiIjg7bfflj1whKgDknldNBYWq4W9aXtJL0on1DuU3mG9UdVhqgZfX198fX1d1huNRrTaikdMtVotLVq08KjtgIAAj46vz+rVT6/NmzeXjd4AfPrpp2zevNnumMGDB7N3714MBgPx8fHcc889tdtJIYQQjcaGxA2MWDWC29bfxpw/5nDb+tsYsWoEGxI31FibH374IZGRkVitVrvycePGMX36dJ577jl69uxZVj5jxgyuv/565s+fT0REBB06dABg27Zt9OzZEy8vL/r27cvq1atRKBRll7Y2b96MQqEgJycHKP1ODQwMZP369XTu3BlfX19GjhxJamqqQ1sXWa1WXn31VWJiYtDpdLRu3ZqXXnqprH7OnDl06NABb29v2rZty9NPP+1y25baVq8CHCGEEKK2bEjcwOzNs7lQZL+/U1pRGrM3z66xIGfixIlkZGSwadOmsrLs7GzWr1/P1KlTnd7nt99+49ixY/z666/8+OOP5OfnM3bsWGJjY9m7dy8vvPACc+bMqbDtoqIiXn/9dT7//HN+//13kpKSeOSRR1weP3fuXF599VWefvppjh49ypdffmm3XYufnx+ffvopR48eZdGiRSxZsoS33nrLg2ej5tTrS1RCCCFETbBYLbyy6xVsOE5DtWFDgYJXd73K0FZDq/1yVXBwMCNHjuTLL79k2LBhAKxYsYLg4GCGDRvGtm3bHO7j4+PDxx9/XHZp6oMPPkChULBkyRK8vLzo0qULKSkp3HnnneW2bTKZ+OCDD2jXrh0As2bN4vnnn3d6bH5+PosWLeLdd99l+vTpALRr144rr7yy7Jinnnqq7P+jo6N5+OGH+frrr3nsscc8eEZqhozgCFGLcouMJGYWci6nuOKDhRA1Zm/aXoeRm3+yYeN80Xn2pu2tkfanTp3KqlWrMBgMAHzxxRdMmjTJ6QpigNjYWLt5N8ePH6d79+52E3H79etXYbve3t5lwQ1AeHg4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"/>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>      species  sepal_width
+0      setosa        3.428
+1  versicolor        2.770
+2   virginica        2.974
+</pre>
 </div>
 </div>
 </div>
@@ -8229,25 +8476,201 @@ print(setosa_df)
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
-# Install and load necessary libraries
-if (!require("ggplot2")) install.packages("ggplot2")
-library(ggplot2)
-if (!require("readr")) install.packages("readr")
+# Load necessary libraries
 library(readr)
+library(dplyr)
 
 # Load the dataset
 df &lt;- read_csv("data/iris.csv")
 
-# Rename the columns to match the names you expect
-colnames(df) &lt;- c("sepal_length", "sepal_width", "petal_length", "petal_width", "species")
+# Aggregate: Calculate mean sepal width per species
+agg_df &lt;- df %&gt;%
+  group_by(species) %&gt;%
+  summarise(mean_sepal_width = mean(sepal_width, na.rm = TRUE))
 
-# Create a scatter plot
-ggplot(df, aes(x = sepal_length, y = sepal_width, color = species)) +
-  geom_point() +
-  labs(title = "Sepal Length vs Sepal Width", 
-       x = "Sepal Length (cm)", 
-       y = "Sepal Width (cm)") +
-  theme_bw()
+# Save the aggregated data
+write_csv(agg_df, "data/iris_aggregated_r.csv")
+
+# Display the result
+print(agg_df)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Split-a-Dataset-in-Python-and-R?">How to Split a Dataset in Python and R?<a class="anchor-link" href="#How-to-Split-a-Dataset-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Splitting a dataset into multiple parts is useful when you want to work with subsets of data. In this case, we will split the iris dataset into two parts:
+x</p>
+<ul>
+<li><strong>iris_part1.csv</strong>: Contains columns sepal_length, sepal_width, and species.</li>
+<li><strong>iris_part2.csv</strong>: Contains columns petal_length, petal_width, and species.</li>
+</ul>
+<p>These parts will later be merged based on the <strong>species</strong> column.</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load the iris dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+
+<span class="c1"># Split into two parts</span>
+<span class="n">part1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'sepal_length'</span><span class="p">,</span> <span class="s1">'sepal_width'</span><span class="p">,</span> <span class="s1">'species'</span><span class="p">]]</span>
+<span class="n">part2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'petal_length'</span><span class="p">,</span> <span class="s1">'petal_width'</span><span class="p">,</span> <span class="s1">'species'</span><span class="p">]]</span>
+
+<span class="c1"># Save the parts as separate CSV files</span>
+<span class="n">part1</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/iris_part1.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">part2</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/iris_part2.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Display a message to confirm</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Parts saved as iris_part1.csv and iris_part2.csv"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Parts saved as iris_part1.csv and iris_part2.csv
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
+# Load necessary libraries
+library(readr)
+
+# Load the iris dataset
+df &lt;- read_csv("data/iris.csv")
+
+# Split into two parts
+part1 &lt;- df[, c("sepal_length", "sepal_width", "species")]
+part2 &lt;- df[, c("petal_length", "petal_width", "species")]
+
+# Save the parts as separate CSV files
+write_csv(part1, "data/iris_part1.csv")
+write_csv(part2, "data/iris_part2.csv")
+
+# Display a message to confirm
+cat("Parts saved as iris_part1.csv and iris_part2.csv\n")
+</code></pre>
+<p>Now that we have created the two parts, we can proceed to merge them using the steps outlined previously.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Merge-Datasets-in-Python-and-R?">How to Merge Datasets in Python and R?<a class="anchor-link" href="#How-to-Merge-Datasets-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Merging datasets is a common task when working with multiple data sources. In the iris dataset, we may want to combine different subsets of data based on a common column, such as the species.</p>
+<p>In this example, we assume there are two datasets:</p>
+<ul>
+<li>iris_part1.csv (contains sepal_length, sepal_width, and species)</li>
+<li>iris_part2.csv (contains petal_length, petal_width, and species)</li>
+</ul>
+<p>We will merge them on the species column.</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Load the two parts of the iris dataset (with renamed columns)</span>
+<span class="n">part1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris_part1.csv"</span><span class="p">)</span>
+<span class="n">part2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris_part2.csv"</span><span class="p">)</span>
+
+<span class="c1"># Merge the datasets based on the 'species' column</span>
+<span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">part1</span><span class="p">,</span> <span class="n">part2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">'species'</span><span class="p">)</span>
+
+<span class="c1"># Save the merged dataset as a new CSV file</span>
+<span class="n">merged_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"data/iris_merged.csv"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Display the first few rows of the merged dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">merged_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>   sepal_length  sepal_width species  petal_length  petal_width
+0           5.1          3.5  setosa           1.4          0.2
+1           5.1          3.5  setosa           1.4          0.2
+2           5.1          3.5  setosa           1.3          0.2
+3           5.1          3.5  setosa           1.5          0.2
+4           5.1          3.5  setosa           1.4          0.2
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
+# Load necessary library
+library(readr)
+
+# Load the two parts of the iris dataset (with renamed columns)
+part1 &lt;- read_csv("data/iris_part1.csv")
+part2 &lt;- read_csv("data/iris_part2.csv")
+
+# Merge the datasets based on the 'species' column
+merged_df &lt;- merge(part1, part2, by = "species")
+
+# Save the merged dataset as a new CSV file
+write_csv(merged_df, "data/iris_merged.csv")
+
+# Display the first few rows of the merged dataset
+head(merged_df)
 </code></pre>
 </div>
 </div>
