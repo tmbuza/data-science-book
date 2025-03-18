@@ -28,4 +28,7 @@ format.md
 ./*.ipynb
 ./*.Rmd
 ./*.html
-*.html
+
+statistical-analysis.html
+machine-learning.html
+statistical-analysis.html

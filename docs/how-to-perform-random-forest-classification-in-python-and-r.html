@@ -402,33 +402,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="python-code-32" class="section level2 hasAnchor" number="35.2">
 <h2><span class="header-section-number">35.2</span> Python Code<a href="how-to-perform-random-forest-classification-in-python-and-r.html#python-code-32" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb160"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb160-1"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb160-2"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-2" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb160-3"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-3" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
-<span id="cb160-4"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-4" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, confusion_matrix</span>
-<span id="cb160-5"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-5" tabindex="-1"></a></span>
-<span id="cb160-6"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-6" tabindex="-1"></a><span class="co"># Load dataset (you can use any dataset)</span></span>
-<span id="cb160-7"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-7" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
-<span id="cb160-8"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-8" tabindex="-1"></a></span>
-<span id="cb160-9"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-9" tabindex="-1"></a><span class="co"># Select independent variables (predictors)</span></span>
-<span id="cb160-10"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-10" tabindex="-1"></a>X <span class="op">=</span> df[[<span class="st">&#39;sepal_length&#39;</span>, <span class="st">&#39;sepal_width&#39;</span>, <span class="st">&#39;petal_length&#39;</span>, <span class="st">&#39;petal_width&#39;</span>]]  <span class="co"># Features</span></span>
-<span id="cb160-11"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-11" tabindex="-1"></a></span>
-<span id="cb160-12"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-12" tabindex="-1"></a><span class="co"># Select target variable (species)</span></span>
-<span id="cb160-13"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-13" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">&#39;species&#39;</span>]  <span class="co"># Target</span></span>
-<span id="cb160-14"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-14" tabindex="-1"></a></span>
-<span id="cb160-15"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-15" tabindex="-1"></a><span class="co"># Split data into training and testing sets</span></span>
-<span id="cb160-16"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-16" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb160-17"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-17" tabindex="-1"></a></span>
-<span id="cb160-18"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-18" tabindex="-1"></a><span class="co"># Fit the random forest classifier</span></span>
-<span id="cb160-19"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-19" tabindex="-1"></a>model <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">100</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb160-20"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-20" tabindex="-1"></a>model.fit(X_train, y_train)</span>
-<span id="cb160-21"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-21" tabindex="-1"></a></span>
-<span id="cb160-22"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-22" tabindex="-1"></a><span class="co"># Make predictions</span></span>
-<span id="cb160-23"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-23" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span>
-<span id="cb160-24"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-24" tabindex="-1"></a></span>
-<span id="cb160-25"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-25" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
-<span id="cb160-26"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-26" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Accuracy:&quot;</span>, accuracy_score(y_test, y_pred))</span>
-<span id="cb160-27"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb160-27" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Confusion Matrix:</span><span class="ch">\n</span><span class="st">&quot;</span>, confusion_matrix(y_test, y_pred))</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb163-1"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb163-2"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-2" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb163-3"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-3" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestClassifier</span>
+<span id="cb163-4"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-4" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, confusion_matrix</span>
+<span id="cb163-5"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-5" tabindex="-1"></a></span>
+<span id="cb163-6"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-6" tabindex="-1"></a><span class="co"># Load dataset (you can use any dataset)</span></span>
+<span id="cb163-7"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-7" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb163-8"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-8" tabindex="-1"></a></span>
+<span id="cb163-9"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-9" tabindex="-1"></a><span class="co"># Select independent variables (predictors)</span></span>
+<span id="cb163-10"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-10" tabindex="-1"></a>X <span class="op">=</span> df[[<span class="st">&#39;sepal_length&#39;</span>, <span class="st">&#39;sepal_width&#39;</span>, <span class="st">&#39;petal_length&#39;</span>, <span class="st">&#39;petal_width&#39;</span>]]  <span class="co"># Features</span></span>
+<span id="cb163-11"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-11" tabindex="-1"></a></span>
+<span id="cb163-12"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-12" tabindex="-1"></a><span class="co"># Select target variable (species)</span></span>
+<span id="cb163-13"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-13" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">&#39;species&#39;</span>]  <span class="co"># Target</span></span>
+<span id="cb163-14"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-14" tabindex="-1"></a></span>
+<span id="cb163-15"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-15" tabindex="-1"></a><span class="co"># Split data into training and testing sets</span></span>
+<span id="cb163-16"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-16" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb163-17"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-17" tabindex="-1"></a></span>
+<span id="cb163-18"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-18" tabindex="-1"></a><span class="co"># Fit the random forest classifier</span></span>
+<span id="cb163-19"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-19" tabindex="-1"></a>model <span class="op">=</span> RandomForestClassifier(n_estimators<span class="op">=</span><span class="dv">100</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb163-20"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-20" tabindex="-1"></a>model.fit(X_train, y_train)</span>
+<span id="cb163-21"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-21" tabindex="-1"></a></span>
+<span id="cb163-22"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-22" tabindex="-1"></a><span class="co"># Make predictions</span></span>
+<span id="cb163-23"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-23" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span>
+<span id="cb163-24"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-24" tabindex="-1"></a></span>
+<span id="cb163-25"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-25" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
+<span id="cb163-26"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-26" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Accuracy:&quot;</span>, accuracy_score(y_test, y_pred))</span>
+<span id="cb163-27"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb163-27" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Confusion Matrix:</span><span class="ch">\n</span><span class="st">&quot;</span>, confusion_matrix(y_test, y_pred))</span></code></pre></div>
 <pre><code>Accuracy: 1.0
 Confusion Matrix:
  [[19  0  0]
@@ -437,32 +437,32 @@ Confusion Matrix:
 </div>
 <div id="r-code-31" class="section level2 hasAnchor" number="35.3">
 <h2><span class="header-section-number">35.3</span> R Code<a href="how-to-perform-random-forest-classification-in-python-and-r.html#r-code-31" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-1" tabindex="-1"></a><span class="co"># Load required library</span></span>
-<span id="cb162-2"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-2" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
-<span id="cb162-3"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-3" tabindex="-1"></a></span>
-<span id="cb162-4"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-4" tabindex="-1"></a><span class="co"># Load dataset (use any dataset)</span></span>
-<span id="cb162-5"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
-<span id="cb162-6"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-6" tabindex="-1"></a></span>
-<span id="cb162-7"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-7" tabindex="-1"></a><span class="co"># Create training and test sets</span></span>
-<span id="cb162-8"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-8" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb162-9"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-9" tabindex="-1"></a>trainIndex <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(df<span class="sc">$</span>species, <span class="at">p =</span> <span class="fl">0.7</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb162-10"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-10" tabindex="-1"></a>trainData <span class="ot">&lt;-</span> df[trainIndex, ]</span>
-<span id="cb162-11"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-11" tabindex="-1"></a>testData <span class="ot">&lt;-</span> df[<span class="sc">-</span>trainIndex, ]</span>
-<span id="cb162-12"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-12" tabindex="-1"></a></span>
-<span id="cb162-13"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-13" tabindex="-1"></a><span class="co"># Train the model using Random Forest</span></span>
-<span id="cb162-14"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-14" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">train</span>(species <span class="sc">~</span> sepal_length <span class="sc">+</span> sepal_width <span class="sc">+</span> petal_length <span class="sc">+</span> petal_width,</span>
-<span id="cb162-15"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-15" tabindex="-1"></a>               <span class="at">data =</span> trainData,</span>
-<span id="cb162-16"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-16" tabindex="-1"></a>               <span class="at">method =</span> <span class="st">&quot;rf&quot;</span>,</span>
-<span id="cb162-17"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-17" tabindex="-1"></a>               <span class="at">trControl =</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">&quot;cv&quot;</span>, <span class="at">number =</span> <span class="dv">10</span>))</span>
-<span id="cb162-18"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-18" tabindex="-1"></a></span>
-<span id="cb162-19"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-19" tabindex="-1"></a><span class="co"># Display the model details</span></span>
-<span id="cb162-20"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-20" tabindex="-1"></a><span class="fu">print</span>(model)</span>
-<span id="cb162-21"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-21" tabindex="-1"></a></span>
-<span id="cb162-22"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-22" tabindex="-1"></a><span class="co"># Predict using the random forest model</span></span>
-<span id="cb162-23"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-23" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, testData)</span>
-<span id="cb162-24"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-24" tabindex="-1"></a></span>
-<span id="cb162-25"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-25" tabindex="-1"></a><span class="co"># Evaluate the model using confusion matrix</span></span>
-<span id="cb162-26"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb162-26" tabindex="-1"></a><span class="fu">confusionMatrix</span>(pred, testData<span class="sc">$</span>species)</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-1" tabindex="-1"></a><span class="co"># Load required library</span></span>
+<span id="cb165-2"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-2" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
+<span id="cb165-3"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-3" tabindex="-1"></a></span>
+<span id="cb165-4"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-4" tabindex="-1"></a><span class="co"># Load dataset (use any dataset)</span></span>
+<span id="cb165-5"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb165-6"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-6" tabindex="-1"></a></span>
+<span id="cb165-7"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-7" tabindex="-1"></a><span class="co"># Create training and test sets</span></span>
+<span id="cb165-8"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-8" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb165-9"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-9" tabindex="-1"></a>trainIndex <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(df<span class="sc">$</span>species, <span class="at">p =</span> <span class="fl">0.7</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb165-10"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-10" tabindex="-1"></a>trainData <span class="ot">&lt;-</span> df[trainIndex, ]</span>
+<span id="cb165-11"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-11" tabindex="-1"></a>testData <span class="ot">&lt;-</span> df[<span class="sc">-</span>trainIndex, ]</span>
+<span id="cb165-12"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-12" tabindex="-1"></a></span>
+<span id="cb165-13"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-13" tabindex="-1"></a><span class="co"># Train the model using Random Forest</span></span>
+<span id="cb165-14"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-14" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">train</span>(species <span class="sc">~</span> sepal_length <span class="sc">+</span> sepal_width <span class="sc">+</span> petal_length <span class="sc">+</span> petal_width,</span>
+<span id="cb165-15"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-15" tabindex="-1"></a>               <span class="at">data =</span> trainData,</span>
+<span id="cb165-16"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-16" tabindex="-1"></a>               <span class="at">method =</span> <span class="st">&quot;rf&quot;</span>,</span>
+<span id="cb165-17"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-17" tabindex="-1"></a>               <span class="at">trControl =</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">&quot;cv&quot;</span>, <span class="at">number =</span> <span class="dv">10</span>))</span>
+<span id="cb165-18"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-18" tabindex="-1"></a></span>
+<span id="cb165-19"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-19" tabindex="-1"></a><span class="co"># Display the model details</span></span>
+<span id="cb165-20"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-20" tabindex="-1"></a><span class="fu">print</span>(model)</span>
+<span id="cb165-21"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-21" tabindex="-1"></a></span>
+<span id="cb165-22"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-22" tabindex="-1"></a><span class="co"># Predict using the random forest model</span></span>
+<span id="cb165-23"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-23" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, testData)</span>
+<span id="cb165-24"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-24" tabindex="-1"></a></span>
+<span id="cb165-25"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-25" tabindex="-1"></a><span class="co"># Evaluate the model using confusion matrix</span></span>
+<span id="cb165-26"><a href="how-to-perform-random-forest-classification-in-python-and-r.html#cb165-26" tabindex="-1"></a><span class="fu">confusionMatrix</span>(pred, testData<span class="sc">$</span>species)</span></code></pre></div>
 </div>
 </div>
             </section>

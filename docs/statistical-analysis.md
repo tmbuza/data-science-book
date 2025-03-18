@@ -33,29 +33,31 @@ print("\nCorrelation:\n", correlation)
 ```
 
     Summary Statistics:
-            sepal_length  sepal_width  petal_length  petal_width
-    count    150.000000   150.000000    150.000000   150.000000
-    mean       5.843333     3.057333      3.758000     1.199333
-    std        0.828066     0.435866      1.765298     0.762238
-    min        4.300000     2.000000      1.000000     0.100000
-    25%        5.100000     2.800000      1.600000     0.300000
-    50%        5.800000     3.000000      4.350000     1.300000
-    75%        6.400000     3.300000      5.100000     1.800000
-    max        7.900000     4.400000      6.900000     2.500000
+            sepal_length  sepal_width  petal_length  petal_width      target
+    count    150.000000   150.000000    150.000000   150.000000  150.000000
+    mean       5.843333     3.057333      3.758000     1.199333    1.000000
+    std        0.828066     0.435866      1.765298     0.762238    0.819232
+    min        4.300000     2.000000      1.000000     0.100000    0.000000
+    25%        5.100000     2.800000      1.600000     0.300000    0.000000
+    50%        5.800000     3.000000      4.350000     1.300000    1.000000
+    75%        6.400000     3.300000      5.100000     1.800000    2.000000
+    max        7.900000     4.400000      6.900000     2.500000    2.000000
     
     Variance:
      sepal_length    0.685694
     sepal_width     0.189979
     petal_length    3.116278
     petal_width     0.581006
+    target          0.671141
     dtype: float64
     
     Correlation:
-                   sepal_length  sepal_width  petal_length  petal_width
-    sepal_length      1.000000    -0.117570      0.871754     0.817941
-    sepal_width      -0.117570     1.000000     -0.428440    -0.366126
-    petal_length      0.871754    -0.428440      1.000000     0.962865
-    petal_width       0.817941    -0.366126      0.962865     1.000000
+                   sepal_length  sepal_width  petal_length  petal_width    target
+    sepal_length      1.000000    -0.117570      0.871754     0.817941  0.782561
+    sepal_width      -0.117570     1.000000     -0.428440    -0.366126 -0.426658
+    petal_length      0.871754    -0.428440      1.000000     0.962865  0.949035
+    petal_width       0.817941    -0.366126      0.962865     1.000000  0.956547
+    target            0.782561    -0.426658      0.949035     0.956547  1.000000
 
 
 ## R Code
@@ -176,6 +178,7 @@ print("\nKurtosis:\n", kurt)
     sepal_width     0.315767
     petal_length   -0.272128
     petal_width    -0.101934
+    target          0.000000
     dtype: float64
     
     Kurtosis:
@@ -183,6 +186,7 @@ print("\nKurtosis:\n", kurt)
     sepal_width     0.180976
     petal_length   -1.395536
     petal_width    -1.336067
+    target         -1.500000
     dtype: float64
 
 
@@ -323,6 +327,7 @@ print(mode_values)
     sepal_width     3.057333
     petal_length    3.758000
     petal_width     1.199333
+    target          1.000000
     dtype: float64
     
     Median:
@@ -331,6 +336,7 @@ print(mode_values)
     sepal_width     3.00
     petal_length    4.35
     petal_width     1.30
+    target          1.00
     dtype: float64
     
     Mode:
@@ -339,6 +345,7 @@ print(mode_values)
     sepal_width     3.0
     petal_length    1.4
     petal_width     0.2
+    target          0.0
     Name: 0, dtype: float64
 
 
@@ -854,7 +861,7 @@ else:
     Model:                            OLS   Adj. R-squared:                  0.007
     Method:                 Least Squares   F-statistic:                     2.074
     Date:                Tue, 18 Mar 2025   Prob (F-statistic):              0.152
-    Time:                        14:56:34   Log-Likelihood:                -86.732
+    Time:                        15:22:54   Log-Likelihood:                -86.732
     No. Observations:                 150   AIC:                             177.5
     Df Residuals:                     148   BIC:                             183.5
     Df Model:                           1                                         
@@ -984,7 +991,7 @@ print(model.summary())
     Model:                            OLS   Adj. R-squared:                  1.000
     Method:                 Least Squares   F-statistic:                 9.587e+29
     Date:                Tue, 18 Mar 2025   Prob (F-statistic):               0.00
-    Time:                        14:56:34   Log-Likelihood:                 4724.3
+    Time:                        15:22:54   Log-Likelihood:                 4724.3
     No. Observations:                 150   AIC:                            -9439.
     Df Residuals:                     145   BIC:                            -9424.
     Df Model:                           4                                         

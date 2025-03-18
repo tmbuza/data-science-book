@@ -14,6 +14,7 @@ rmd_files:
   - data-visualization.Rmd
   - statistical-analysis.Rmd
   - machine-learning.Rmd
+  - beginner-closing.Rmd
 
 
 

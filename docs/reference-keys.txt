@@ -133,15 +133,3 @@ how-to-perform-logistic-regression-in-python-and-r
 explanation-30
 python-code-30
 r-code-29
-how-to-perform-decision-tree-classification-in-python-and-r
-explanation-31
-python-code-31
-r-code-30
-how-to-perform-random-forest-classification-in-python-and-r
-explanation-32
-python-code-32
-r-code-31
-how-to-perform-support-vector-machine-svm-classification-in-python-and-r
-explanation-33
-python-code-33
-r-code-32

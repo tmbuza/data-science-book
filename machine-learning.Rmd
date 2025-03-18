@@ -70,295 +70,44 @@ print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 
 ## R Code
 
-```{r, eval=FALSE}
-library(caret)
+```{r message=FALSE, warning=FALSE, comment=NA}
+# Import necessary libraries
+library(readr)   # For reading data
+library(caret)   # For model training and evaluation
+library(dplyr)   # For data manipulation
 
-# Load dataset (use any binary classification dataset)
-df <- read.csv("data/iris.csv")
+# Load dataset with show_col_types = FALSE
+df <- read_csv("data/iris.csv", show_col_types = FALSE)
+
+# Select independent variables (predictors)
+X <- df %>% select(sepal_length, sepal_width, petal_length, petal_width)
 
 # Create a binary dependent variable (response)
 df$is_setosa <- ifelse(df$species == 'setosa', 1, 0)  # Convert 'setosa' to 1, others to 0
+y <- df$is_setosa  # Target variable
 
-# Create training and test sets
-set.seed(123)  # For reproducibility
-trainIndex <- createDataPartition(df$is_setosa, p = 0.7, list = FALSE)
-trainData <- df[trainIndex, ]
-testData <- df[-trainIndex, ]
+# Split data into training and testing sets (70% training, 30% testing)
+set.seed(42)  # For reproducibility
+trainIndex <- createDataPartition(y, p = 0.7, list = FALSE)
+X_train <- X[trainIndex, ]
+y_train <- y[trainIndex]
+X_test <- X[-trainIndex, ]
+y_test <- y[-trainIndex]
 
-# Train the logistic regression model
-model <- train(is_setosa ~ sepal_length + sepal_width + petal_length + petal_width,
-               data = trainData,
-               method = "glm",
-               family = "binomial",
-               trControl = trainControl(method = "cv", number = 10))
+# Fit the logistic regression model
+model <- glm(is_setosa ~ sepal_length + sepal_width + petal_length + petal_width, 
+             data = df[trainIndex, ], family = binomial())
 
-# Display the model details
-print(model)
+# Make predictions on the test set
+y_pred_prob <- predict(model, X_test, type = "response")
+y_pred <- ifelse(y_pred_prob > 0.5, 1, 0)  # Convert probabilities to binary outcomes
 
-# Predict the probabilities using the logistic regression model
-pred_probs <- predict(model, testData, type = "prob")[, 2]  # Get the probability of class 1
+# Evaluate the model
+accuracy <- mean(y_pred == y_test)
+conf_matrix <- table(Predicted = y_pred, Actual = y_test)
 
-# Convert probabilities to class predictions (0 or 1)
-pred_class <- ifelse(pred_probs > 0.5, 1, 0)
+# Print results
+cat("Accuracy:", accuracy, "\n")
 
-# Evaluate the model using confusion matrix
-conf_matrix <- confusionMatrix(factor(pred_class), factor(testData$is_setosa))
-
-# Print confusion matrix
 print(conf_matrix)
-```
-
-# How to Perform Decision Tree Classification in Python and R?
-
-## Explanation
-
-**Decision Trees** are a non-linear model used for both classification and regression. They split the dataset into subsets based on the most significant features, creating a tree-like structure where each internal node represents a feature or attribute, and each leaf node represents a decision or class label.
-
-The decision tree algorithm works by selecting the feature that best splits the data at each node based on certain criteria (e.g., Gini impurity, entropy for classification, and variance reduction for regression). 
-
-- **Classification Trees**: Used when the target variable is categorical. For example, in a binary classification problem, the decision tree can predict class 0 or class 1 based on the input features.
-- **Regression Trees**: Used when the target variable is continuous.
-
-The tree is built recursively by selecting the best splits at each node and stopping when a stopping criterion (e.g., maximum depth, minimum samples per leaf) is met.
-
-## Python Code
-
-
-
-```python
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix
-
-# Load dataset (you can use any dataset)
-df = pd.read_csv("data/iris.csv")
-
-# Select independent variables (predictors)
-X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]  # Features
-
-# Select target variable (species)
-y = df['species']  # Target
-
-# Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-# Fit the decision tree classifier
-model = DecisionTreeClassifier(random_state=42)
-model.fit(X_train, y_train)
-
-# Make predictions
-y_pred = model.predict(X_test)
-
-# Evaluate the model
-print("Accuracy:", accuracy_score(y_test, y_pred))
-print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
-```
-
-    Accuracy: 1.0
-    Confusion Matrix:
-     [[19  0  0]
-     [ 0 13  0]
-     [ 0  0 13]]
-
-
-## R Code
-
-```{r, eval=FALSE}
-# Load required library
-library(caret)
-
-# Load dataset (use any dataset)
-df <- read.csv("data/iris.csv")
-
-# Create training and test sets
-set.seed(123)  # For reproducibility
-trainIndex <- createDataPartition(df$species, p = 0.7, list = FALSE)
-trainData <- df[trainIndex, ]
-testData <- df[-trainIndex, ]
-
-# Train the model using decision tree classifier
-model <- train(species ~ sepal_length + sepal_width + petal_length + petal_width,
-               data = trainData,
-               method = "rpart",
-               trControl = trainControl(method = "cv", number = 10))
-
-# Display the model details
-print(model)
-
-# Predict using the decision tree model
-pred <- predict(model, testData)
-
-# Evaluate the model using confusion matrix
-confusionMatrix(pred, testData$species)
-```
-
-# How to Perform Random Forest Classification in Python and R?
-
-## Explanation
-
-**Random Forest** is an ensemble learning method that combines multiple decision trees to improve classification accuracy. Instead of relying on a single decision tree, random forest aggregates the predictions of many trees, reducing overfitting and improving generalization.
-
-- **Bagging (Bootstrap Aggregating)**: Random Forest uses bagging, which means training multiple models (decision trees) on random subsets of the data. Each tree is trained on a different random sample, and the final prediction is made by averaging (for regression) or majority voting (for classification) of all the trees' predictions.
-- **Random Feature Selection**: At each split in the decision tree, a random subset of features is selected, ensuring that trees are diverse and reducing the correlation between them.
-
-The main advantages of random forest are its robustness, the ability to handle a large number of features, and its capacity to deal with overfitting.
-
-## Python Code
-
-
-
-
-```python
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix
-
-# Load dataset (you can use any dataset)
-df = pd.read_csv("data/iris.csv")
-
-# Select independent variables (predictors)
-X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]  # Features
-
-# Select target variable (species)
-y = df['species']  # Target
-
-# Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-# Fit the random forest classifier
-model = RandomForestClassifier(n_estimators=100, random_state=42)
-model.fit(X_train, y_train)
-
-# Make predictions
-y_pred = model.predict(X_test)
-
-# Evaluate the model
-print("Accuracy:", accuracy_score(y_test, y_pred))
-print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
-```
-
-    Accuracy: 1.0
-    Confusion Matrix:
-     [[19  0  0]
-     [ 0 13  0]
-     [ 0  0 13]]
-
-
-## R Code
-
-```{r, eval=FALSE}
-# Load required library
-library(caret)
-
-# Load dataset (use any dataset)
-df <- read.csv("data/iris.csv")
-
-# Create training and test sets
-set.seed(123)  # For reproducibility
-trainIndex <- createDataPartition(df$species, p = 0.7, list = FALSE)
-trainData <- df[trainIndex, ]
-testData <- df[-trainIndex, ]
-
-# Train the model using Random Forest
-model <- train(species ~ sepal_length + sepal_width + petal_length + petal_width,
-               data = trainData,
-               method = "rf",
-               trControl = trainControl(method = "cv", number = 10))
-
-# Display the model details
-print(model)
-
-# Predict using the random forest model
-pred <- predict(model, testData)
-
-# Evaluate the model using confusion matrix
-confusionMatrix(pred, testData$species)
-```
-
-# How to Perform Support Vector Machine (SVM) Classification in Python and R?
-
-## Explanation
-
-**Support Vector Machine (SVM)** is a powerful supervised learning algorithm that can be used for both classification and regression tasks. It works by finding the hyperplane that best separates data points of different classes in a high-dimensional space.
-
-- **Linear SVM**: Finds a straight line or hyperplane that divides the classes.
-- **Non-linear SVM**: Uses kernel functions (like Radial Basis Function (RBF)) to transform the data into higher dimensions to make it linearly separable.
-
-The main objective of SVM is to maximize the margin between the two classes. The margin is the distance between the hyperplane and the closest data points from either class, known as support vectors.
-
-The SVM classifier works well for both linear and non-linear classification problems.
-
-## Python Code
-
-
-
-
-```python
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, confusion_matrix
-
-# Load dataset (you can use any dataset)
-df = pd.read_csv("data/iris.csv")
-
-# Select independent variables (predictors)
-X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]  # Features
-
-# Select target variable (species)
-y = df['species']  # Target
-
-# Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-# Fit the SVM classifier
-model = SVC(kernel='linear', random_state=42)
-model.fit(X_train, y_train)
-
-# Make predictions
-y_pred = model.predict(X_test)
-
-# Evaluate the model
-print("Accuracy:", accuracy_score(y_test, y_pred))
-print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
-```
-
-    Accuracy: 1.0
-    Confusion Matrix:
-     [[19  0  0]
-     [ 0 13  0]
-     [ 0  0 13]]
-
-
-## R Code
-
-```{r, eval=FALSE}
-# Load required library
-library(caret)
-
-# Load dataset (use any dataset)
-df <- read.csv("data/iris.csv")
-
-# Create training and test sets
-set.seed(123)  # For reproducibility
-trainIndex <- createDataPartition(df$species, p = 0.7, list = FALSE)
-trainData <- df[trainIndex, ]
-testData <- df[-trainIndex, ]
-
-# Train the model using SVM with a linear kernel
-model <- train(species ~ sepal_length + sepal_width + petal_length + petal_width,
-               data = trainData,
-               method = "svmLinear",
-               trControl = trainControl(method = "cv", number = 10))
-
-# Display the model details
-print(model)
-
-# Predict using the SVM model
-pred <- predict(model, testData)
-
-# Evaluate the model using confusion matrix
-confusionMatrix(pred, testData$species)
 ```

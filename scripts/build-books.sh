@@ -6,6 +6,7 @@ NOTEBOOK_NAMES=(
     "data-visualization"
     "statistical-analysis"
     "machine-learning"
+    "beginner-closing"
 )
 
 # Define the output directory
