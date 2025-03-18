@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>25 How to compute the mean, median, and mode of a dataset? | Learn, Compare, and Master Data Science in Python &amp; R</title>
+  <title>29 How to Perform a Chi-Square Test in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R</title>
   <meta name="description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="25 How to compute the mean, median, and mode of a dataset? | Learn, Compare, and Master Data Science in Python &amp; R" />
+  <meta property="og:title" content="29 How to Perform a Chi-Square Test in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   <meta name="github-repo" content="https://github.com/tmbuza/data-science-book/" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="25 How to compute the mean, median, and mode of a dataset? | Learn, Compare, and Master Data Science in Python &amp; R" />
+  <meta name="twitter:title" content="29 How to Perform a Chi-Square Test in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
   
   <meta name="twitter:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="how-to-perform-a-t-test-in-python-and-r.html"/>
-<link rel="next" href="what-is-the-difference-between-an-f-test-and-an-anova-test.html"/>
+<link rel="prev" href="how-to-perform-an-anova-test-in-python-and-r.html"/>
+<link rel="next" href="how-to-perform-a-pearson-correlation-test-in-python-and-r.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -364,107 +364,85 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="how-to-compute-the-mean-median-and-mode-of-a-dataset" class="section level1 hasAnchor" number="25">
-<h1><span class="header-section-number">25</span> How to compute the mean, median, and mode of a dataset?<a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#how-to-compute-the-mean-median-and-mode-of-a-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="explanation-23" class="section level2 hasAnchor" number="25.1">
-<h2><span class="header-section-number">25.1</span> Explanation<a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#explanation-23" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="how-to-perform-a-chi-square-test-in-python-and-r" class="section level1 hasAnchor" number="29">
+<h1><span class="header-section-number">29</span> How to Perform a Chi-Square Test in Python and R?<a href="how-to-perform-a-chi-square-test-in-python-and-r.html#how-to-perform-a-chi-square-test-in-python-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="explanation-26" class="section level2 hasAnchor" number="29.1">
+<h2><span class="header-section-number">29.1</span> Explanation<a href="how-to-perform-a-chi-square-test-in-python-and-r.html#explanation-26" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A <strong>Chi-Square Test</strong> is used to determine whether there is a significant association between two categorical variables. It compares the observed frequencies in each category to the frequencies we would expect if the variables were independent.</p>
+<p>The <strong>Chi-Square Statistic</strong> is calculated as:</p>
+<p><span class="math display">\[
+\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}
+\]</span></p>
+<p>Where:
+- <span class="math inline">\(O_i\)</span> is the observed frequency in category <span class="math inline">\(i\)</span>,
+- <span class="math inline">\(E_i\)</span> is the expected frequency in category <span class="math inline">\(i\)</span>.</p>
+<p>The null hypothesis (<span class="math inline">\(H_0\)</span>) assumes that there is no association between the variables (i.e., the variables are independent), while the alternative hypothesis (<span class="math inline">\(H_a\)</span>) states that there is an association between them.</p>
+<p>If the p-value is small (typically <span class="math inline">\(p &lt; 0.05\)</span>), we reject the null hypothesis and conclude that there is a significant association between the variables.</p>
+</div>
+<div id="python-code-26" class="section level2 hasAnchor" number="29.2">
+<h2><span class="header-section-number">29.2</span> Python Code<a href="how-to-perform-a-chi-square-test-in-python-and-r.html#python-code-26" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><strong>Mean</strong>: The average of all values in the dataset.</li>
-<li><strong>Median</strong>: The middle value when the data is sorted.</li>
-<li><strong>Mode</strong>: The value that appears most frequently in the dataset.</li>
+<li><strong>Chi-Square Test</strong> - Association Between Categorical Variables</li>
 </ul>
+<div class="sourceCode" id="cb126"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb126-1"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb126-2"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-2" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> chi2_contingency</span>
+<span id="cb126-3"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-3" tabindex="-1"></a></span>
+<span id="cb126-4"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-4" tabindex="-1"></a><span class="co"># Load dataset</span></span>
+<span id="cb126-5"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-5" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb126-6"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-6" tabindex="-1"></a></span>
+<span id="cb126-7"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-7" tabindex="-1"></a><span class="co"># Create a contingency table for &#39;species&#39; and &#39;sepal_width&#39; (categorical grouping)</span></span>
+<span id="cb126-8"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-8" tabindex="-1"></a>contingency_table <span class="op">=</span> pd.crosstab(df[<span class="st">&#39;species&#39;</span>], pd.cut(df[<span class="st">&#39;sepal_width&#39;</span>], bins<span class="op">=</span><span class="dv">3</span>))</span>
+<span id="cb126-9"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-9" tabindex="-1"></a></span>
+<span id="cb126-10"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-10" tabindex="-1"></a><span class="co"># Perform Chi-Square Test</span></span>
+<span id="cb126-11"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-11" tabindex="-1"></a>chi2_stat, p_value, dof, expected <span class="op">=</span> chi2_contingency(contingency_table)</span>
+<span id="cb126-12"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-12" tabindex="-1"></a></span>
+<span id="cb126-13"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-13" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb126-14"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-14" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Chi-Square Statistic: </span><span class="sc">{</span>chi2_stat<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb126-15"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-15" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;P-value: </span><span class="sc">{</span>p_value<span class="sc">:.4f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb126-16"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-16" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Degrees of Freedom: </span><span class="sc">{</span>dof<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb126-17"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-17" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Expected Frequencies: </span><span class="ch">\n</span><span class="sc">{</span>expected<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb126-18"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-18" tabindex="-1"></a></span>
+<span id="cb126-19"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-19" tabindex="-1"></a><span class="co"># Interpretation</span></span>
+<span id="cb126-20"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-20" tabindex="-1"></a><span class="cf">if</span> p_value <span class="op">&lt;</span> <span class="fl">0.05</span>:</span>
+<span id="cb126-21"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-21" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Reject H0: There is a significant association between species and sepal width.&quot;</span>)</span>
+<span id="cb126-22"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-22" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb126-23"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb126-23" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Fail to reject H0: No significant association between species and sepal width.&quot;</span>)</span></code></pre></div>
+<pre><code>Chi-Square Statistic: 45.1247
+P-value: 0.0000
+Degrees of Freedom: 4
+Expected Frequencies: 
+[[15.66666667 29.33333333  5.        ]
+ [15.66666667 29.33333333  5.        ]
+ [15.66666667 29.33333333  5.        ]]
+Reject H0: There is a significant association between species and sepal width.</code></pre>
 </div>
-<div id="python-code-23" class="section level2 hasAnchor" number="25.2">
-<h2><span class="header-section-number">25.2</span> Python Code<a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#python-code-23" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb104"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb104-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb104-2"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-2" tabindex="-1"></a></span>
-<span id="cb104-3"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-3" tabindex="-1"></a><span class="co"># Load dataset</span></span>
-<span id="cb104-4"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-4" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
-<span id="cb104-5"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-5" tabindex="-1"></a></span>
-<span id="cb104-6"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-6" tabindex="-1"></a><span class="co"># Compute mean, median, and mode</span></span>
-<span id="cb104-7"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-7" tabindex="-1"></a>mean_values <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">&quot;species&quot;</span>]).mean()</span>
-<span id="cb104-8"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-8" tabindex="-1"></a>median_values <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">&quot;species&quot;</span>]).median()</span>
-<span id="cb104-9"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-9" tabindex="-1"></a>mode_values <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">&quot;species&quot;</span>]).mode().iloc[<span class="dv">0</span>]</span>
-<span id="cb104-10"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-10" tabindex="-1"></a></span>
-<span id="cb104-11"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-11" tabindex="-1"></a><span class="co"># Display results</span></span>
-<span id="cb104-12"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Mean:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb104-13"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-13" tabindex="-1"></a><span class="bu">print</span>(mean_values)</span>
-<span id="cb104-14"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-14" tabindex="-1"></a></span>
-<span id="cb104-15"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-15" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Median:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb104-16"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-16" tabindex="-1"></a><span class="bu">print</span>(median_values)</span>
-<span id="cb104-17"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-17" tabindex="-1"></a></span>
-<span id="cb104-18"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-18" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">Mode:</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
-<span id="cb104-19"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb104-19" tabindex="-1"></a><span class="bu">print</span>(mode_values)</span></code></pre></div>
-<pre><code>Mean:
+<div id="r-code-25" class="section level2 hasAnchor" number="29.3">
+<h2><span class="header-section-number">29.3</span> R Code<a href="how-to-perform-a-chi-square-test-in-python-and-r.html#r-code-25" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Chi-Square Test - Association Between Categorical Variables</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-1" tabindex="-1"></a><span class="co"># Load dataset</span></span>
+<span id="cb128-2"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-2" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb128-3"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-3" tabindex="-1"></a></span>
+<span id="cb128-4"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-4" tabindex="-1"></a><span class="co"># Create a contingency table for &#39;species&#39; and &#39;sepal_width&#39; (categorical grouping)</span></span>
+<span id="cb128-5"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-5" tabindex="-1"></a>df<span class="sc">$</span>sepal_width_cat <span class="ot">&lt;-</span> <span class="fu">cut</span>(df<span class="sc">$</span>sepal_width, <span class="at">breaks =</span> <span class="dv">3</span>)</span>
+<span id="cb128-6"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-6" tabindex="-1"></a>contingency_table <span class="ot">&lt;-</span> <span class="fu">table</span>(df<span class="sc">$</span>species, df<span class="sc">$</span>sepal_width_cat)</span>
+<span id="cb128-7"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-7" tabindex="-1"></a></span>
+<span id="cb128-8"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-8" tabindex="-1"></a><span class="co"># Perform Chi-Square Test</span></span>
+<span id="cb128-9"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-9" tabindex="-1"></a>chi2_result <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(contingency_table)</span>
+<span id="cb128-10"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-10" tabindex="-1"></a></span>
+<span id="cb128-11"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-11" tabindex="-1"></a><span class="co"># Display results</span></span>
+<span id="cb128-12"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb128-12" tabindex="-1"></a><span class="fu">print</span>(chi2_result)</span></code></pre></div>
+<pre><code>
+    Pearson&#39;s Chi-squared test
 
-sepal_length    5.843333
-sepal_width     3.057333
-petal_length    3.758000
-petal_width     1.199333
-target          1.000000
-dtype: float64
-
-Median:
-
-sepal_length    5.80
-sepal_width     3.00
-petal_length    4.35
-petal_width     1.30
-target          1.00
-dtype: float64
-
-Mode:
-
-sepal_length    5.0
-sepal_width     3.0
-petal_length    1.4
-petal_width     0.2
-target          0.0
-Name: 0, dtype: float64</code></pre>
-</div>
-<div id="r-code-22" class="section level2 hasAnchor" number="25.3">
-<h2><span class="header-section-number">25.3</span> R Code<a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#r-code-22" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-1" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
-<span id="cb106-2"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb106-3"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-3" tabindex="-1"></a></span>
-<span id="cb106-4"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-4" tabindex="-1"></a><span class="co"># Load dataset</span></span>
-<span id="cb106-5"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
-<span id="cb106-6"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-6" tabindex="-1"></a></span>
-<span id="cb106-7"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-7" tabindex="-1"></a><span class="co"># Compute mean, median, and mode</span></span>
-<span id="cb106-8"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-8" tabindex="-1"></a>mean_values <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb106-9"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-9" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>species) <span class="sc">%&gt;%</span></span>
-<span id="cb106-10"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-10" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), mean))</span>
-<span id="cb106-11"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-11" tabindex="-1"></a></span>
-<span id="cb106-12"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-12" tabindex="-1"></a>median_values <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb106-13"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-13" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>species) <span class="sc">%&gt;%</span></span>
-<span id="cb106-14"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-14" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), median))</span>
-<span id="cb106-15"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-15" tabindex="-1"></a></span>
-<span id="cb106-16"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-16" tabindex="-1"></a>mode_values <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
-<span id="cb106-17"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-17" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>species) <span class="sc">%&gt;%</span></span>
-<span id="cb106-18"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-18" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(.), <span class="at">decreasing =</span> <span class="cn">TRUE</span>))[<span class="dv">1</span>]))</span>
-<span id="cb106-19"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-19" tabindex="-1"></a></span>
-<span id="cb106-20"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-20" tabindex="-1"></a><span class="co"># Display results</span></span>
-<span id="cb106-21"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb106-21" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Mean:&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;Mean:&quot;</code></pre>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb108-1" tabindex="-1"></a><span class="fu">print</span>(mean_values)</span></code></pre></div>
-<pre><code># A tibble: 1 × 4
-  sepal_length sepal_width petal_length petal_width
-         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
-1         5.84        3.06         3.76        1.20</code></pre>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb110-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Median:&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;Median:&quot;</code></pre>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb112-1" tabindex="-1"></a><span class="fu">print</span>(median_values)</span></code></pre></div>
-<pre><code># A tibble: 1 × 4
-  sepal_length sepal_width petal_length petal_width
-         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt;
-1          5.8           3         4.35         1.3</code></pre>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb114-1" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Mode:&quot;</span>)</span></code></pre></div>
-<pre><code>[1] &quot;Mode:&quot;</code></pre>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="how-to-compute-the-mean-median-and-mode-of-a-dataset.html#cb116-1" tabindex="-1"></a><span class="fu">print</span>(mode_values)</span></code></pre></div>
-<pre><code># A tibble: 1 × 4
-  sepal_length sepal_width petal_length petal_width
-  &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;      
-1 5            3           1.4          0.2        </code></pre>
+data:  contingency_table
+X-squared = 45.125, df = 4, p-value = 3.746e-09</code></pre>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb130-1" tabindex="-1"></a><span class="co"># Interpretation</span></span>
+<span id="cb130-2"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb130-2" tabindex="-1"></a><span class="cf">if</span> (chi2_result<span class="sc">$</span>p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>) {</span>
+<span id="cb130-3"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb130-3" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Reject H0: There is a significant association between species and sepal width.&quot;</span>)</span>
+<span id="cb130-4"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb130-4" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb130-5"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb130-5" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Fail to reject H0: No significant association between species and sepal width.&quot;</span>)</span>
+<span id="cb130-6"><a href="how-to-perform-a-chi-square-test-in-python-and-r.html#cb130-6" tabindex="-1"></a>}</span></code></pre></div>
+<pre><code>[1] &quot;Reject H0: There is a significant association between species and sepal width.&quot;</code></pre>
 </div>
 </div>
             </section>
@@ -472,8 +450,8 @@ Name: 0, dtype: float64</code></pre>
           </div>
         </div>
       </div>
-<a href="how-to-perform-a-t-test-in-python-and-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="what-is-the-difference-between-an-f-test-and-an-anova-test.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="how-to-perform-an-anova-test-in-python-and-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="how-to-perform-a-pearson-correlation-test-in-python-and-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

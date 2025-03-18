@@ -7573,29 +7573,31 @@ if(!require("tidyverse")) {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Summary Statistics:
-        sepal_length  sepal_width  petal_length  petal_width
-count    150.000000   150.000000    150.000000   150.000000
-mean       5.843333     3.057333      3.758000     1.199333
-std        0.828066     0.435866      1.765298     0.762238
-min        4.300000     2.000000      1.000000     0.100000
-25%        5.100000     2.800000      1.600000     0.300000
-50%        5.800000     3.000000      4.350000     1.300000
-75%        6.400000     3.300000      5.100000     1.800000
-max        7.900000     4.400000      6.900000     2.500000
+        sepal_length  sepal_width  petal_length  petal_width      target
+count    150.000000   150.000000    150.000000   150.000000  150.000000
+mean       5.843333     3.057333      3.758000     1.199333    1.000000
+std        0.828066     0.435866      1.765298     0.762238    0.819232
+min        4.300000     2.000000      1.000000     0.100000    0.000000
+25%        5.100000     2.800000      1.600000     0.300000    0.000000
+50%        5.800000     3.000000      4.350000     1.300000    1.000000
+75%        6.400000     3.300000      5.100000     1.800000    2.000000
+max        7.900000     4.400000      6.900000     2.500000    2.000000
 
 Variance:
  sepal_length    0.685694
 sepal_width     0.189979
 petal_length    3.116278
 petal_width     0.581006
+target          0.671141
 dtype: float64
 
 Correlation:
-               sepal_length  sepal_width  petal_length  petal_width
-sepal_length      1.000000    -0.117570      0.871754     0.817941
-sepal_width      -0.117570     1.000000     -0.428440    -0.366126
-petal_length      0.871754    -0.428440      1.000000     0.962865
-petal_width       0.817941    -0.366126      0.962865     1.000000
+               sepal_length  sepal_width  petal_length  petal_width    target
+sepal_length      1.000000    -0.117570      0.871754     0.817941  0.782561
+sepal_width      -0.117570     1.000000     -0.428440    -0.366126 -0.426658
+petal_length      0.871754    -0.428440      1.000000     0.962865  0.949035
+petal_width       0.817941    -0.366126      0.962865     1.000000  0.956547
+target            0.782561    -0.426658      0.949035     0.956547  1.000000
 </pre>
 </div>
 </div>
@@ -7654,7 +7656,7 @@ print(correlation)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7689,6 +7691,7 @@ print(correlation)
 sepal_width     0.315767
 petal_length   -0.272128
 petal_width    -0.101934
+target          0.000000
 dtype: float64
 
 Kurtosis:
@@ -7696,6 +7699,7 @@ Kurtosis:
 sepal_width     0.180976
 petal_length   -1.395536
 petal_width    -1.336067
+target         -1.500000
 dtype: float64
 </pre>
 </div>
@@ -7759,7 +7763,7 @@ print(kurtosis_values)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7815,7 +7819,7 @@ print(kurtosis_values)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7855,6 +7859,7 @@ sepal_length    5.843333
 sepal_width     3.057333
 petal_length    3.758000
 petal_width     1.199333
+target          1.000000
 dtype: float64
 
 Median:
@@ -7863,6 +7868,7 @@ sepal_length    5.80
 sepal_width     3.00
 petal_length    4.35
 petal_width     1.30
+target          1.00
 dtype: float64
 
 Mode:
@@ -7871,6 +7877,7 @@ sepal_length    5.0
 sepal_width     3.0
 petal_length    1.4
 petal_width     0.2
+target          0.0
 Name: 0, dtype: float64
 </pre>
 </div>
@@ -7914,6 +7921,730 @@ print(median_values)
 print("Mode:")
 print(mode_values)
 
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="What-is-the-Difference-Between-an-F-test-and-an-ANOVA-Test?">What is the Difference Between an F-test and an ANOVA Test?<a class="anchor-link" href="#What-is-the-Difference-Between-an-F-test-and-an-ANOVA-Test?">¶</a></h1><h2 id="Overview">Overview<a class="anchor-link" href="#Overview">¶</a></h2><p>Both the <strong>F-test</strong> and <strong>ANOVA</strong> use the <strong>F-statistic</strong>, but they serve different purposes in statistical analysis.</p>
+<h2 id="Key-Aspects">Key Aspects<a class="anchor-link" href="#Key-Aspects">¶</a></h2><table>
+<thead>
+<tr>
+<th><strong>Aspect</strong></th>
+<th><strong>F-test</strong> (Variance Comparison)</th>
+<th><strong>ANOVA</strong> (Mean Comparison)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Compares the variances of two groups.</td>
+<td>Compares the means of three or more groups.</td>
+</tr>
+<tr>
+<td><strong>Hypotheses</strong></td>
+<td>- ( H_0 ): Variances are equal. <br/> - ( H_a ): Variances are different.</td>
+<td>- ( H_0 ): All group means are equal. <br/> - ( H_a ): At least one mean is different.</td>
+</tr>
+<tr>
+<td><strong>When to Use?</strong></td>
+<td>Before a t-test, to check variance equality.</td>
+<td>When analyzing differences among multiple groups.</td>
+</tr>
+<tr>
+<td><strong>Test Statistic</strong></td>
+<td>( F = \frac{\sigma_1^2}{\sigma_2^2} )  (Ratio of variances)</td>
+<td>( F = \frac{\text{Between-group variance}}{\text{Within-group variance}} )</td>
+</tr>
+<tr>
+<td><strong>Python Function</strong></td>
+<td><code>levene()</code> or <code>bartlett()</code> from <code>scipy.stats</code>.</td>
+<td><code>f_oneway()</code> from <code>scipy.stats</code> (for means).</td>
+</tr>
+<tr>
+<td><strong>R Function</strong></td>
+<td><code>var.test(group1, group2)</code>.</td>
+<td><code>aov(response ~ group, data = df)</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Key-Differences">Key Differences<a class="anchor-link" href="#Key-Differences">¶</a></h2><ul>
+<li>The <strong>F-test</strong> is used to compare <strong>variances</strong> between two groups.</li>
+<li><strong>ANOVA</strong> is used to compare <strong>means</strong> among <strong>three or more groups</strong>.</li>
+<li>The <strong>F-test</strong> is often used <strong>before ANOVA</strong> to check if the assumption of equal variances holds.</li>
+</ul>
+<h2 id="What-If-Variances-Are-Not-Equal?">What If Variances Are Not Equal?<a class="anchor-link" href="#What-If-Variances-Are-Not-Equal?">¶</a></h2><p>If the assumption of equal variances is violated, consider using:</p>
+<ul>
+<li><strong>Welch’s ANOVA</strong>, which does not assume equal variances.</li>
+<li><strong>Non-parametric tests</strong>, such as the <strong>Kruskal-Wallis test</strong> (for comparing medians).</li>
+</ul>
+<hr/>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Perform-an-F-test-in-Python-and-R?">How to Perform an F-test in Python and R?<a class="anchor-link" href="#How-to-Perform-an-F-test-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>An <strong>F-test</strong> is used to compare the variances of two independent groups. It helps determine if the groups have equal variances, which is important in statistical tests like t-tests and ANOVA.</p>
+<p>The null hypothesis ((H_0)) assumes that the variances of the two groups are equal, while the alternative hypothesis ((H_a)) states that they are different.</p>
+<p>The <strong>F-statistic</strong> for the F-test is calculated as:</p>
+<p>[
+F = \frac{\text{variance of group 1}}{\text{variance of group 2}}
+]</p>
+<p>If the p-value is small (typically ( p &lt; 0.05 )), we reject the null hypothesis and conclude that the variances are significantly different.</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">levene</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+
+<span class="c1"># Select two species for comparison</span>
+<span class="n">group1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"setosa"</span><span class="p">][</span><span class="s2">"sepal_length"</span><span class="p">]</span>
+<span class="n">group2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"versicolor"</span><span class="p">][</span><span class="s2">"sepal_length"</span><span class="p">]</span>
+
+<span class="c1"># Perform F-test for variances (Levene's test)</span>
+<span class="n">f_stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">levene</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">)</span>
+
+<span class="c1"># Display results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"F-statistic: </span><span class="si">{</span><span class="n">f_stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Interpretation</span>
+<span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Reject H0: The variances of Setosa and Versicolor are significantly different."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fail to reject H0: No significant difference in variances."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>F-statistic: 8.1727
+P-value: 0.0052
+Reject H0: The variances of Setosa and Versicolor are significantly different.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
+# Load necessary package
+if (!require(car)) install.packages("car", repos = "https://cloud.r-project.org")
+library(car)
+
+# Load dataset
+df &lt;- read.csv("data/iris.csv")
+
+# Subset data for two species
+group1 &lt;- df[df$species == "setosa", "sepal_length"]
+group2 &lt;- df[df$species == "versicolor", "sepal_length"]
+
+# Perform F-test for variances (Levene's test)
+var_test_result &lt;- var.test(group1, group2)
+print(var_test_result)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Perform-an-ANOVA-Test-in-Python-and-R?">How to Perform an ANOVA Test in Python and R?<a class="anchor-link" href="#How-to-Perform-an-ANOVA-Test-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>An ANOVA (Analysis of Variance) test is used to compare the means of three or more groups. It helps to determine whether there are any statistically significant differences between the means of the groups.</p>
+<p>The null hypothesis ((H_0)) assumes that all group means are equal, while the alternative hypothesis ((H_a)) states that at least one mean is different.</p>
+<p>The F-statistic in ANOVA is calculated as:</p>
+<p>[
+F = \frac{\text{Between-group variance}}{\text{Within-group variance}}
+]</p>
+<p>If the p-value is small (typically ( p &lt; 0.05 )), we reject the null hypothesis and conclude that at least one group mean is significantly different.</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">f_oneway</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+
+<span class="c1"># Select groups for comparison</span>
+<span class="n">group1</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"setosa"</span><span class="p">][</span><span class="s2">"sepal_length"</span><span class="p">]</span>
+<span class="n">group2</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"versicolor"</span><span class="p">][</span><span class="s2">"sepal_length"</span><span class="p">]</span>
+<span class="n">group3</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">"species"</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"virginica"</span><span class="p">][</span><span class="s2">"sepal_length"</span><span class="p">]</span>
+
+<span class="c1"># Perform ANOVA</span>
+<span class="n">f_stat</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">f_oneway</span><span class="p">(</span><span class="n">group1</span><span class="p">,</span> <span class="n">group2</span><span class="p">,</span> <span class="n">group3</span><span class="p">)</span>
+
+<span class="c1"># Display results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"F-statistic: </span><span class="si">{</span><span class="n">f_stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Interpretation</span>
+<span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Reject H0: At least one group mean is significantly different."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fail to reject H0: No significant difference in group means."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>F-statistic: 119.2645
+P-value: 0.0000
+Reject H0: At least one group mean is significantly different.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
+# Load dataset
+df &lt;- read.csv("data/iris.csv")
+
+# Perform ANOVA (sepal length by species)
+anova_result &lt;- aov(sepal_length ~ species, data = df)
+summary(anova_result)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Perform-a-Chi-Square-Test-in-Python-and-R?">How to Perform a Chi-Square Test in Python and R?<a class="anchor-link" href="#How-to-Perform-a-Chi-Square-Test-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>A <strong>Chi-Square Test</strong> is used to determine whether there is a significant association between two categorical variables. It compares the observed frequencies in each category to the frequencies we would expect if the variables were independent.</p>
+<p>The <strong>Chi-Square Statistic</strong> is calculated as:</p>
+<p>[
+\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}
+]</p>
+<p>Where:</p>
+<ul>
+<li>(O_i) is the observed frequency in category (i),</li>
+<li>(E_i) is the expected frequency in category (i).</li>
+</ul>
+<p>The null hypothesis ((H_0)) assumes that there is no association between the variables (i.e., the variables are independent), while the alternative hypothesis ((H_a)) states that there is an association between them.</p>
+<p>If the p-value is small (typically ( p &lt; 0.05 )), we reject the null hypothesis and conclude that there is a significant association between the variables.</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2><ul>
+<li><strong>Chi-Square Test</strong> - Association Between Categorical Variables</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2_contingency</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+
+<span class="c1"># Create a contingency table for 'species' and 'sepal_width' (categorical grouping)</span>
+<span class="n">contingency_table</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'species'</span><span class="p">],</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'sepal_width'</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># Perform Chi-Square Test</span>
+<span class="n">chi2_stat</span><span class="p">,</span> <span class="n">p_value</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">expected</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">contingency_table</span><span class="p">)</span>
+
+<span class="c1"># Display results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Chi-Square Statistic: </span><span class="si">{</span><span class="n">chi2_stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Degrees of Freedom: </span><span class="si">{</span><span class="n">dof</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Expected Frequencies: </span><span class="se">\n</span><span class="si">{</span><span class="n">expected</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Interpretation</span>
+<span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Reject H0: There is a significant association between species and sepal width."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fail to reject H0: No significant association between species and sepal width."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Chi-Square Statistic: 45.1247
+P-value: 0.0000
+Degrees of Freedom: 4
+Expected Frequencies: 
+[[15.66666667 29.33333333  5.        ]
+ [15.66666667 29.33333333  5.        ]
+ [15.66666667 29.33333333  5.        ]]
+Reject H0: There is a significant association between species and sepal width.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><p>Chi-Square Test - Association Between Categorical Variables</p>
+<pre><code class="language-{r}">{r}
+# Load dataset
+df &lt;- read.csv("data/iris.csv")
+
+# Create a contingency table for 'species' and 'sepal_width' (categorical grouping)
+df$sepal_width_cat &lt;- cut(df$sepal_width, breaks = 3)
+contingency_table &lt;- table(df$species, df$sepal_width_cat)
+
+# Perform Chi-Square Test
+chi2_result &lt;- chisq.test(contingency_table)
+
+# Display results
+print(chi2_result)
+
+# Interpretation
+if (chi2_result$p.value &lt; 0.05) {
+    print("Reject H0: There is a significant association between species and sepal width.")
+} else {
+    print("Fail to reject H0: No significant association between species and sepal width.")
+}
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Perform-a-Pearson-Correlation-Test-in-Python-and-R?">How to Perform a Pearson Correlation Test in Python and R?<a class="anchor-link" href="#How-to-Perform-a-Pearson-Correlation-Test-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>The <strong>Pearson Correlation Test</strong> is used to determine the linear relationship between two continuous variables. It measures the strength and direction of the relationship, with a correlation coefficient ((r)) ranging from -1 to 1:</p>
+<ul>
+<li>( r = 1 ) indicates a perfect positive linear relationship.</li>
+<li>( r = -1 ) indicates a perfect negative linear relationship.</li>
+<li>( r = 0 ) indicates no linear relationship.</li>
+</ul>
+<p>The null hypothesis ((H_0)) assumes that there is no linear correlation between the two variables, while the alternative hypothesis ((H_a)) states that there is a linear correlation.</p>
+<p>If the p-value is small (typically ( p &lt; 0.05 )), we reject the null hypothesis and conclude that there is a significant linear relationship between the two variables.</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+
+<span class="c1"># Select two variables for correlation test</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'sepal_length'</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'sepal_width'</span><span class="p">]</span>
+
+<span class="c1"># Perform Pearson Correlation Test</span>
+<span class="n">corr_coefficient</span><span class="p">,</span> <span class="n">p_value</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Display results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Pearson Correlation Coefficient: </span><span class="si">{</span><span class="n">corr_coefficient</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"P-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+
+<span class="c1"># Interpretation</span>
+<span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Reject H0: There is a significant linear correlation between sepal length and sepal width."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fail to reject H0: No significant linear correlation between sepal length and sepal width."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Pearson Correlation Coefficient: -0.1176
+P-value: 0.1519
+Fail to reject H0: No significant linear correlation between sepal length and sepal width.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r}">{r}
+# Load dataset
+df &lt;- read.csv("data/iris.csv")
+
+# Select two variables for correlation test
+x &lt;- df$sepal_length
+y &lt;- df$sepal_width
+
+# Perform Pearson Correlation Test
+cor_result &lt;- cor.test(x, y)
+
+# Display results
+print(cor_result)
+
+# Interpretation
+if (cor_result$p.value &lt; 0.05) {
+    print("Reject H0: There is a significant linear correlation between sepal length and sepal width.")
+} else {
+    print("Fail to reject H0: No significant linear correlation between sepal length and sepal width.")
+}
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Perform-a-Simple-Linear-Regression-in-Python-and-R?">How to Perform a Simple Linear Regression in Python and R?<a class="anchor-link" href="#How-to-Perform-a-Simple-Linear-Regression-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p><strong>Simple Linear Regression</strong> is used to model the relationship between a dependent variable ((Y)) and an independent variable ((X)) by fitting a linear equation to observed data. The goal is to find the best-fitting line, represented by the equation:</p>
+<p>[
+Y = \beta_0 + \beta_1 X + \epsilon
+]</p>
+<p>Where:</p>
+<ul>
+<li>(Y) is the dependent variable,</li>
+<li>(X) is the independent variable,</li>
+<li>(\beta_0) is the intercept,</li>
+<li>(\beta_1) is the slope,</li>
+<li>(\epsilon) is the error term.</li>
+</ul>
+<p>The null hypothesis ((H_0)) assumes that the slope of the regression line is zero, meaning there is no linear relationship between (X) and (Y). The alternative hypothesis ((H_a)) states that the slope is non-zero, indicating a significant relationship.</p>
+<p>If the p-value is small (typically ( p &lt; 0.05 )), we reject the null hypothesis and conclude that there is a significant relationship between (X) and (Y).</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2><p>Simple Linear Regression</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+
+<span class="c1"># Select independent and dependent variables</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'sepal_length'</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'sepal_width'</span><span class="p">]</span>
+
+<span class="c1"># Add a constant (intercept) to the independent variable</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Perform linear regression</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Display results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="c1"># Interpretation</span>
+<span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">pvalues</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Reject H0: There is a significant linear relationship between sepal length and sepal width."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fail to reject H0: No significant linear relationship between sepal length and sepal width."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            sepal_width   R-squared:                       0.014
+Model:                            OLS   Adj. R-squared:                  0.007
+Method:                 Least Squares   F-statistic:                     2.074
+Date:                Tue, 18 Mar 2025   Prob (F-statistic):              0.152
+Time:                        13:06:35   Log-Likelihood:                -86.732
+No. Observations:                 150   AIC:                             177.5
+Df Residuals:                     148   BIC:                             183.5
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P&gt;|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const            3.4189      0.254     13.484      0.000       2.918       3.920
+sepal_length    -0.0619      0.043     -1.440      0.152      -0.147       0.023
+==============================================================================
+Omnibus:                        2.474   Durbin-Watson:                   1.263
+Prob(Omnibus):                  0.290   Jarque-Bera (JB):                1.994
+Skew:                           0.243   Prob(JB):                        0.369
+Kurtosis:                       3.288   Cond. No.                         43.4
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+Fail to reject H0: No significant linear relationship between sepal length and sepal width.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><p>Simple Linear Regression</p>
+<pre><code class="language-{r}">{r}
+# Load dataset
+df &lt;- read.csv("data/iris.csv")
+
+# Select independent and dependent variables
+X &lt;- df$sepal_length
+y &lt;- df$sepal_width
+
+# Perform linear regression
+model &lt;- lm(y ~ X)
+
+# Display results
+summary(model)
+
+# Interpretation
+if (summary(model)$coefficients[2,4] &lt; 0.05) {
+    print("Reject H0: There is a significant linear relationship between sepal length and sepal width.")
+} else {
+    print("Fail to reject H0: No significant linear relationship between sepal length and sepal width.")
+}
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="How-to-Perform-Multiple-Linear-Regression-in-Python-and-R?">How to Perform Multiple Linear Regression in Python and R?<a class="anchor-link" href="#How-to-Perform-Multiple-Linear-Regression-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p><strong>Multiple Linear Regression</strong> is an extension of simple linear regression that models the relationship between a dependent variable ((Y)) and two or more independent variables ((X_1, X_2, ..., X_n)). The equation for multiple linear regression is:</p>
+<p>[
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_n X_n + \epsilon
+]</p>
+<p>Where:</p>
+<ul>
+<li>(Y) is the dependent variable,</li>
+<li>(X_1, X_2, ..., X_n) are the independent variables,</li>
+<li>(\beta_0) is the intercept,</li>
+<li>(\beta_1, \beta_2, ..., \beta_n) are the coefficients (slopes) for the predictors,</li>
+<li>(\epsilon) is the error term.</li>
+</ul>
+<p>The null hypothesis ((H_0)) assumes that all regression coefficients are zero, meaning no relationship exists between the predictors and the dependent variable. The alternative hypothesis ((H_a)) suggests that at least one coefficient is non-zero, indicating a significant relationship.</p>
+<p>If the p-value for a coefficient is small (typically ( p &lt; 0.05 )), we reject the null hypothesis for that predictor and conclude that it significantly affects (Y).</p>
+<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">statsmodels.api</span> <span class="k">as</span> <span class="nn">sm</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
+
+<span class="c1"># Select independent and dependent variables</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'sepal_length'</span><span class="p">,</span> <span class="s1">'sepal_width'</span><span class="p">,</span> <span class="s1">'petal_length'</span><span class="p">,</span> <span class="s1">'petal_width'</span><span class="p">]]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'petal_length'</span><span class="p">]</span>  <span class="c1"># Using 'petal_length' as the dependent variable</span>
+
+<span class="c1"># Add a constant (intercept) to the independent variables</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">add_constant</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+
+<span class="c1"># Perform linear regression</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">sm</span><span class="o">.</span><span class="n">OLS</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># Display results</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+
+<span class="c1"># Interpretation</span>
+<span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">pvalues</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Reject H0: At least one predictor significantly affects the petal length."</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Fail to reject H0: No predictor significantly affects the petal length."</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:           petal_length   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                  1.000
+Method:                 Least Squares   F-statistic:                 4.217e+30
+Date:                Tue, 18 Mar 2025   Prob (F-statistic):               0.00
+Time:                        13:06:35   Log-Likelihood:                 4721.9
+No. Observations:                 150   AIC:                            -9434.
+Df Residuals:                     145   BIC:                            -9419.
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+================================================================================
+                   coef    std err          t      P&gt;|t|      [0.025      0.975]
+--------------------------------------------------------------------------------
+const        -6.217e-15   4.91e-15     -1.267      0.207   -1.59e-14    3.48e-15
+sepal_length  6.661e-16   1.38e-15      0.483      0.630   -2.06e-15    3.39e-15
+sepal_width   6.384e-16   1.43e-15      0.447      0.656   -2.19e-15    3.46e-15
+petal_length     1.0000   1.36e-15   7.35e+14      0.000       1.000       1.000
+petal_width  -5.551e-16   2.26e-15     -0.245      0.806   -5.03e-15    3.92e-15
+==============================================================================
+Omnibus:                      122.099   Durbin-Watson:                   0.017
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               16.136
+Skew:                          -0.464   Prob(JB):                     0.000313
+Kurtosis:                       1.688   Cond. No.                         91.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+Fail to reject H0: No predictor significantly affects the petal length.
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><p>Multiple Linear Regression</p>
+<pre><code class="language-{r}">{r}
+# Load dataset
+df &lt;- read.csv("data/iris.csv")
+
+# Select independent and dependent variables
+X &lt;- df[, c('sepal_length', 'sepal_width', 'petal_width')]  # Independent variables
+y &lt;- df$petal_length  # Dependent variable (petal_length)
+
+# Perform linear regression
+model &lt;- lm(y ~ sepal_length + sepal_width + petal_width, data = df)
+
+# Display results
+summary(model)
+
+# Interpretation
+if (summary(model)$coefficients[2,4] &lt; 0.05) {
+    print("Reject H0: At least one predictor significantly affects the petal length.")
+} else {
+    print("Fail to reject H0: No predictor significantly affects the petal length.")
+}
 </code></pre>
 </div>
 </div>

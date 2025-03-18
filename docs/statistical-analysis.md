@@ -33,29 +33,31 @@ print("\nCorrelation:\n", correlation)
 ```
 
     Summary Statistics:
-            sepal_length  sepal_width  petal_length  petal_width
-    count    150.000000   150.000000    150.000000   150.000000
-    mean       5.843333     3.057333      3.758000     1.199333
-    std        0.828066     0.435866      1.765298     0.762238
-    min        4.300000     2.000000      1.000000     0.100000
-    25%        5.100000     2.800000      1.600000     0.300000
-    50%        5.800000     3.000000      4.350000     1.300000
-    75%        6.400000     3.300000      5.100000     1.800000
-    max        7.900000     4.400000      6.900000     2.500000
+            sepal_length  sepal_width  petal_length  petal_width      target
+    count    150.000000   150.000000    150.000000   150.000000  150.000000
+    mean       5.843333     3.057333      3.758000     1.199333    1.000000
+    std        0.828066     0.435866      1.765298     0.762238    0.819232
+    min        4.300000     2.000000      1.000000     0.100000    0.000000
+    25%        5.100000     2.800000      1.600000     0.300000    0.000000
+    50%        5.800000     3.000000      4.350000     1.300000    1.000000
+    75%        6.400000     3.300000      5.100000     1.800000    2.000000
+    max        7.900000     4.400000      6.900000     2.500000    2.000000
     
     Variance:
      sepal_length    0.685694
     sepal_width     0.189979
     petal_length    3.116278
     petal_width     0.581006
+    target          0.671141
     dtype: float64
     
     Correlation:
-                   sepal_length  sepal_width  petal_length  petal_width
-    sepal_length      1.000000    -0.117570      0.871754     0.817941
-    sepal_width      -0.117570     1.000000     -0.428440    -0.366126
-    petal_length      0.871754    -0.428440      1.000000     0.962865
-    petal_width       0.817941    -0.366126      0.962865     1.000000
+                   sepal_length  sepal_width  petal_length  petal_width    target
+    sepal_length      1.000000    -0.117570      0.871754     0.817941  0.782561
+    sepal_width      -0.117570     1.000000     -0.428440    -0.366126 -0.426658
+    petal_length      0.871754    -0.428440      1.000000     0.962865  0.949035
+    petal_width       0.817941    -0.366126      0.962865     1.000000  0.956547
+    target            0.782561    -0.426658      0.949035     0.956547  1.000000
 
 
 ## R Code
@@ -176,6 +178,7 @@ print("\nKurtosis:\n", kurt)
     sepal_width     0.315767
     petal_length   -0.272128
     petal_width    -0.101934
+    target          0.000000
     dtype: float64
     
     Kurtosis:
@@ -183,6 +186,7 @@ print("\nKurtosis:\n", kurt)
     sepal_width     0.180976
     petal_length   -1.395536
     petal_width    -1.336067
+    target         -1.500000
     dtype: float64
 
 
@@ -323,6 +327,7 @@ print(mode_values)
     sepal_width     3.057333
     petal_length    3.758000
     petal_width     1.199333
+    target          1.000000
     dtype: float64
     
     Median:
@@ -331,6 +336,7 @@ print(mode_values)
     sepal_width     3.00
     petal_length    4.35
     petal_width     1.30
+    target          1.00
     dtype: float64
     
     Mode:
@@ -339,6 +345,7 @@ print(mode_values)
     sepal_width     3.0
     petal_length    1.4
     petal_width     0.2
+    target          0.0
     Name: 0, dtype: float64
 
 
@@ -420,4 +427,650 @@ print(mode_values)
   sepal_length sepal_width petal_length petal_width
   <chr>        <chr>       <chr>        <chr>      
 1 5            3           1.4          0.2        
+```
+
+# What is the Difference Between an F-test and an ANOVA Test?
+
+## Overview  
+Both the **F-test** and **ANOVA** use the **F-statistic**, but they serve different purposes in statistical analysis.  
+
+## Key Aspects  
+
+| **Aspect**         | **F-test** (Variance Comparison)                   | **ANOVA** (Mean Comparison)                     |
+|--------------------|---------------------------------------------------|-------------------------------------------------|
+| **Purpose**       | Compares the variances of two groups.              | Compares the means of three or more groups.     |
+| **Hypotheses**    | - \( H_0 \): Variances are equal. <br> - \( H_a \): Variances are different. | - \( H_0 \): All group means are equal. <br> - \( H_a \): At least one mean is different. |
+| **When to Use?**  | Before a t-test, to check variance equality.        | When analyzing differences among multiple groups. |
+| **Test Statistic** | \( F = \frac{\sigma_1^2}{\sigma_2^2} \)  (Ratio of variances) | \( F = \frac{\text{Between-group variance}}{\text{Within-group variance}} \) |
+| **Python Function** | `levene()` or `bartlett()` from `scipy.stats`.    | `f_oneway()` from `scipy.stats` (for means). |
+| **R Function**     | `var.test(group1, group2)`.                        | `aov(response ~ group, data = df)`. |
+
+## Key Differences  
+
+- The **F-test** is used to compare **variances** between two groups.  
+- **ANOVA** is used to compare **means** among **three or more groups**.  
+- The **F-test** is often used **before ANOVA** to check if the assumption of equal variances holds.  
+
+## What If Variances Are Not Equal?  
+If the assumption of equal variances is violated, consider using:  
+- **Welch’s ANOVA**, which does not assume equal variances.  
+- **Non-parametric tests**, such as the **Kruskal-Wallis test** (for comparing medians).  
+
+---
+
+
+# How to Perform an F-test in Python and R?
+
+## Explanation  
+An **F-test** is used to compare the variances of two independent groups. It helps determine if the groups have equal variances, which is important in statistical tests like t-tests and ANOVA.
+
+The null hypothesis (\(H_0\)) assumes that the variances of the two groups are equal, while the alternative hypothesis (\(H_a\)) states that they are different.
+
+The **F-statistic** for the F-test is calculated as:
+
+\[
+F = \frac{\text{variance of group 1}}{\text{variance of group 2}}
+\]
+
+If the p-value is small (typically \( p < 0.05 \)), we reject the null hypothesis and conclude that the variances are significantly different.
+
+## Python Code
+
+
+```python
+import pandas as pd
+from scipy.stats import levene
+
+# Load dataset
+df = pd.read_csv("data/iris.csv")
+
+# Select two species for comparison
+group1 = df[df["species"] == "setosa"]["sepal_length"]
+group2 = df[df["species"] == "versicolor"]["sepal_length"]
+
+# Perform F-test for variances (Levene's test)
+f_stat, p_value = levene(group1, group2)
+
+# Display results
+print(f"F-statistic: {f_stat:.4f}")
+print(f"P-value: {p_value:.4f}")
+
+# Interpretation
+if p_value < 0.05:
+    print("Reject H0: The variances of Setosa and Versicolor are significantly different.")
+else:
+    print("Fail to reject H0: No significant difference in variances.")
+```
+
+    F-statistic: 8.1727
+    P-value: 0.0052
+    Reject H0: The variances of Setosa and Versicolor are significantly different.
+
+
+## R Code
+
+
+``` r
+# Load necessary package
+if (!require(car)) install.packages("car", repos = "https://cloud.r-project.org")
+library(car)
+
+# Load dataset
+df <- read.csv("data/iris.csv")
+
+# Subset data for two species
+group1 <- df[df$species == "setosa", "sepal_length"]
+group2 <- df[df$species == "versicolor", "sepal_length"]
+
+# Perform F-test for variances (Levene's test)
+var_test_result <- var.test(group1, group2)
+print(var_test_result)
+```
+
+```
+
+	F test to compare two variances
+
+data:  group1 and group2
+F = 0.46634, num df = 49, denom df = 49, p-value = 0.008657
+alternative hypothesis: true ratio of variances is not equal to 1
+95 percent confidence interval:
+ 0.2646385 0.8217841
+sample estimates:
+ratio of variances 
+         0.4663429 
+```
+
+# How to Perform an ANOVA Test in Python and R?
+
+## Explanation
+
+An ANOVA (Analysis of Variance) test is used to compare the means of three or more groups. It helps to determine whether there are any statistically significant differences between the means of the groups.
+
+The null hypothesis ((H_0)) assumes that all group means are equal, while the alternative hypothesis ((H_a)) states that at least one mean is different.
+
+The F-statistic in ANOVA is calculated as:
+
+\[
+F = \frac{\text{Between-group variance}}{\text{Within-group variance}}
+\]
+
+If the p-value is small (typically ( p < 0.05 )), we reject the null hypothesis and conclude that at least one group mean is significantly different.
+
+## Python Code
+
+
+```python
+import pandas as pd
+from scipy.stats import f_oneway
+
+# Load dataset
+df = pd.read_csv("data/iris.csv")
+
+# Select groups for comparison
+group1 = df[df["species"] == "setosa"]["sepal_length"]
+group2 = df[df["species"] == "versicolor"]["sepal_length"]
+group3 = df[df["species"] == "virginica"]["sepal_length"]
+
+# Perform ANOVA
+f_stat, p_value = f_oneway(group1, group2, group3)
+
+# Display results
+print(f"F-statistic: {f_stat:.4f}")
+print(f"P-value: {p_value:.4f}")
+
+# Interpretation
+if p_value < 0.05:
+    print("Reject H0: At least one group mean is significantly different.")
+else:
+    print("Fail to reject H0: No significant difference in group means.")
+```
+
+    F-statistic: 119.2645
+    P-value: 0.0000
+    Reject H0: At least one group mean is significantly different.
+
+
+## R Code 
+
+
+``` r
+# Load dataset
+df <- read.csv("data/iris.csv")
+
+# Perform ANOVA (sepal length by species)
+anova_result <- aov(sepal_length ~ species, data = df)
+summary(anova_result)
+```
+
+```
+             Df Sum Sq Mean Sq F value Pr(>F)    
+species       2  63.21  31.606   119.3 <2e-16 ***
+Residuals   147  38.96   0.265                   
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+```
+
+# How to Perform a Chi-Square Test in Python and R?
+
+## Explanation  
+A **Chi-Square Test** is used to determine whether there is a significant association between two categorical variables. It compares the observed frequencies in each category to the frequencies we would expect if the variables were independent.
+
+The **Chi-Square Statistic** is calculated as:
+
+\[
+\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}
+\]
+
+Where:
+- \(O_i\) is the observed frequency in category \(i\),
+- \(E_i\) is the expected frequency in category \(i\).
+
+The null hypothesis (\(H_0\)) assumes that there is no association between the variables (i.e., the variables are independent), while the alternative hypothesis (\(H_a\)) states that there is an association between them.
+
+If the p-value is small (typically \( p < 0.05 \)), we reject the null hypothesis and conclude that there is a significant association between the variables.
+
+## Python Code 
+- **Chi-Square Test** - Association Between Categorical Variables
+
+
+
+```python
+import pandas as pd
+from scipy.stats import chi2_contingency
+
+# Load dataset
+df = pd.read_csv("data/iris.csv")
+
+# Create a contingency table for 'species' and 'sepal_width' (categorical grouping)
+contingency_table = pd.crosstab(df['species'], pd.cut(df['sepal_width'], bins=3))
+
+# Perform Chi-Square Test
+chi2_stat, p_value, dof, expected = chi2_contingency(contingency_table)
+
+# Display results
+print(f"Chi-Square Statistic: {chi2_stat:.4f}")
+print(f"P-value: {p_value:.4f}")
+print(f"Degrees of Freedom: {dof}")
+print(f"Expected Frequencies: \n{expected}")
+
+# Interpretation
+if p_value < 0.05:
+    print("Reject H0: There is a significant association between species and sepal width.")
+else:
+    print("Fail to reject H0: No significant association between species and sepal width.")
+```
+
+    Chi-Square Statistic: 45.1247
+    P-value: 0.0000
+    Degrees of Freedom: 4
+    Expected Frequencies: 
+    [[15.66666667 29.33333333  5.        ]
+     [15.66666667 29.33333333  5.        ]
+     [15.66666667 29.33333333  5.        ]]
+    Reject H0: There is a significant association between species and sepal width.
+
+
+## R Code
+Chi-Square Test - Association Between Categorical Variables
+
+
+``` r
+# Load dataset
+df <- read.csv("data/iris.csv")
+
+# Create a contingency table for 'species' and 'sepal_width' (categorical grouping)
+df$sepal_width_cat <- cut(df$sepal_width, breaks = 3)
+contingency_table <- table(df$species, df$sepal_width_cat)
+
+# Perform Chi-Square Test
+chi2_result <- chisq.test(contingency_table)
+
+# Display results
+print(chi2_result)
+```
+
+```
+
+	Pearson's Chi-squared test
+
+data:  contingency_table
+X-squared = 45.125, df = 4, p-value = 3.746e-09
+```
+
+``` r
+# Interpretation
+if (chi2_result$p.value < 0.05) {
+    print("Reject H0: There is a significant association between species and sepal width.")
+} else {
+    print("Fail to reject H0: No significant association between species and sepal width.")
+}
+```
+
+```
+[1] "Reject H0: There is a significant association between species and sepal width."
+```
+
+# How to Perform a Pearson Correlation Test in Python and R?
+
+## Explanation  
+The **Pearson Correlation Test** is used to determine the linear relationship between two continuous variables. It measures the strength and direction of the relationship, with a correlation coefficient (\(r\)) ranging from -1 to 1:
+- \( r = 1 \) indicates a perfect positive linear relationship.
+- \( r = -1 \) indicates a perfect negative linear relationship.
+- \( r = 0 \) indicates no linear relationship.
+
+The null hypothesis (\(H_0\)) assumes that there is no linear correlation between the two variables, while the alternative hypothesis (\(H_a\)) states that there is a linear correlation.
+
+If the p-value is small (typically \( p < 0.05 \)), we reject the null hypothesis and conclude that there is a significant linear relationship between the two variables.
+
+## Python Code
+
+
+
+```python
+import pandas as pd
+from scipy.stats import pearsonr
+
+# Load dataset
+df = pd.read_csv("data/iris.csv")
+
+# Select two variables for correlation test
+x = df['sepal_length']
+y = df['sepal_width']
+
+# Perform Pearson Correlation Test
+corr_coefficient, p_value = pearsonr(x, y)
+
+# Display results
+print(f"Pearson Correlation Coefficient: {corr_coefficient:.4f}")
+print(f"P-value: {p_value:.4f}")
+
+# Interpretation
+if p_value < 0.05:
+    print("Reject H0: There is a significant linear correlation between sepal length and sepal width.")
+else:
+    print("Fail to reject H0: No significant linear correlation between sepal length and sepal width.")
+```
+
+    Pearson Correlation Coefficient: -0.1176
+    P-value: 0.1519
+    Fail to reject H0: No significant linear correlation between sepal length and sepal width.
+
+
+## R Code
+
+
+``` r
+# Load dataset
+df <- read.csv("data/iris.csv")
+
+# Select two variables for correlation test
+x <- df$sepal_length
+y <- df$sepal_width
+
+# Perform Pearson Correlation Test
+cor_result <- cor.test(x, y)
+
+# Display results
+print(cor_result)
+```
+
+```
+
+	Pearson's product-moment correlation
+
+data:  x and y
+t = -1.4403, df = 148, p-value = 0.1519
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.27269325  0.04351158
+sample estimates:
+       cor 
+-0.1175698 
+```
+
+``` r
+# Interpretation
+if (cor_result$p.value < 0.05) {
+    print("Reject H0: There is a significant linear correlation between sepal length and sepal width.")
+} else {
+    print("Fail to reject H0: No significant linear correlation between sepal length and sepal width.")
+}
+```
+
+```
+[1] "Fail to reject H0: No significant linear correlation between sepal length and sepal width."
+```
+
+# How to Perform a Simple Linear Regression in Python and R?
+
+## Explanation  
+**Simple Linear Regression** is used to model the relationship between a dependent variable (\(Y\)) and an independent variable (\(X\)) by fitting a linear equation to observed data. The goal is to find the best-fitting line, represented by the equation:
+
+\[
+Y = \beta_0 + \beta_1 X + \epsilon
+\]
+
+Where:
+- \(Y\) is the dependent variable,
+- \(X\) is the independent variable,
+- \(\beta_0\) is the intercept,
+- \(\beta_1\) is the slope,
+- \(\epsilon\) is the error term.
+
+The null hypothesis (\(H_0\)) assumes that the slope of the regression line is zero, meaning there is no linear relationship between \(X\) and \(Y\). The alternative hypothesis (\(H_a\)) states that the slope is non-zero, indicating a significant relationship.
+
+If the p-value is small (typically \( p < 0.05 \)), we reject the null hypothesis and conclude that there is a significant relationship between \(X\) and \(Y\).
+
+## Python Code
+Simple Linear Regression
+
+
+
+
+```python
+import pandas as pd
+import statsmodels.api as sm
+
+# Load dataset
+df = pd.read_csv("data/iris.csv")
+
+# Select independent and dependent variables
+X = df['sepal_length']
+y = df['sepal_width']
+
+# Add a constant (intercept) to the independent variable
+X = sm.add_constant(X)
+
+# Perform linear regression
+model = sm.OLS(y, X).fit()
+
+# Display results
+print(model.summary())
+
+# Interpretation
+if model.pvalues[1] < 0.05:
+    print("Reject H0: There is a significant linear relationship between sepal length and sepal width.")
+else:
+    print("Fail to reject H0: No significant linear relationship between sepal length and sepal width.")
+```
+
+                                OLS Regression Results                            
+    ==============================================================================
+    Dep. Variable:            sepal_width   R-squared:                       0.014
+    Model:                            OLS   Adj. R-squared:                  0.007
+    Method:                 Least Squares   F-statistic:                     2.074
+    Date:                Tue, 18 Mar 2025   Prob (F-statistic):              0.152
+    Time:                        13:06:35   Log-Likelihood:                -86.732
+    No. Observations:                 150   AIC:                             177.5
+    Df Residuals:                     148   BIC:                             183.5
+    Df Model:                           1                                         
+    Covariance Type:            nonrobust                                         
+    ================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+    --------------------------------------------------------------------------------
+    const            3.4189      0.254     13.484      0.000       2.918       3.920
+    sepal_length    -0.0619      0.043     -1.440      0.152      -0.147       0.023
+    ==============================================================================
+    Omnibus:                        2.474   Durbin-Watson:                   1.263
+    Prob(Omnibus):                  0.290   Jarque-Bera (JB):                1.994
+    Skew:                           0.243   Prob(JB):                        0.369
+    Kurtosis:                       3.288   Cond. No.                         43.4
+    ==============================================================================
+    
+    Notes:
+    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+    Fail to reject H0: No significant linear relationship between sepal length and sepal width.
+
+
+## R Code
+Simple Linear Regression
+
+
+
+``` r
+# Load dataset
+df <- read.csv("data/iris.csv")
+
+# Select independent and dependent variables
+X <- df$sepal_length
+y <- df$sepal_width
+
+# Perform linear regression
+model <- lm(y ~ X)
+
+# Display results
+summary(model)
+```
+
+```
+
+Call:
+lm(formula = y ~ X)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.1095 -0.2454 -0.0167  0.2763  1.3338 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  3.41895    0.25356   13.48   <2e-16 ***
+X           -0.06188    0.04297   -1.44    0.152    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.4343 on 148 degrees of freedom
+Multiple R-squared:  0.01382,	Adjusted R-squared:  0.007159 
+F-statistic: 2.074 on 1 and 148 DF,  p-value: 0.1519
+```
+
+``` r
+# Interpretation
+if (summary(model)$coefficients[2,4] < 0.05) {
+    print("Reject H0: There is a significant linear relationship between sepal length and sepal width.")
+} else {
+    print("Fail to reject H0: No significant linear relationship between sepal length and sepal width.")
+}
+```
+
+```
+[1] "Fail to reject H0: No significant linear relationship between sepal length and sepal width."
+```
+
+# How to Perform Multiple Linear Regression in Python and R?
+
+## Explanation  
+**Multiple Linear Regression** is an extension of simple linear regression that models the relationship between a dependent variable (\(Y\)) and two or more independent variables (\(X_1, X_2, ..., X_n\)). The equation for multiple linear regression is:
+
+\[
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_n X_n + \epsilon
+\]
+
+Where:
+- \(Y\) is the dependent variable,
+- \(X_1, X_2, ..., X_n\) are the independent variables,
+- \(\beta_0\) is the intercept,
+- \(\beta_1, \beta_2, ..., \beta_n\) are the coefficients (slopes) for the predictors,
+- \(\epsilon\) is the error term.
+
+The null hypothesis (\(H_0\)) assumes that all regression coefficients are zero, meaning no relationship exists between the predictors and the dependent variable. The alternative hypothesis (\(H_a\)) suggests that at least one coefficient is non-zero, indicating a significant relationship.
+
+If the p-value for a coefficient is small (typically \( p < 0.05 \)), we reject the null hypothesis for that predictor and conclude that it significantly affects \(Y\).
+
+## Python Code
+
+
+
+
+```python
+import pandas as pd
+import statsmodels.api as sm
+
+# Load dataset
+df = pd.read_csv("data/iris.csv")
+
+# Select independent and dependent variables
+X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
+y = df['petal_length']  # Using 'petal_length' as the dependent variable
+
+# Add a constant (intercept) to the independent variables
+X = sm.add_constant(X)
+
+# Perform linear regression
+model = sm.OLS(y, X).fit()
+
+# Display results
+print(model.summary())
+
+# Interpretation
+if model.pvalues[1] < 0.05:
+    print("Reject H0: At least one predictor significantly affects the petal length.")
+else:
+    print("Fail to reject H0: No predictor significantly affects the petal length.")
+```
+
+                                OLS Regression Results                            
+    ==============================================================================
+    Dep. Variable:           petal_length   R-squared:                       1.000
+    Model:                            OLS   Adj. R-squared:                  1.000
+    Method:                 Least Squares   F-statistic:                 4.217e+30
+    Date:                Tue, 18 Mar 2025   Prob (F-statistic):               0.00
+    Time:                        13:06:35   Log-Likelihood:                 4721.9
+    No. Observations:                 150   AIC:                            -9434.
+    Df Residuals:                     145   BIC:                            -9419.
+    Df Model:                           4                                         
+    Covariance Type:            nonrobust                                         
+    ================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+    --------------------------------------------------------------------------------
+    const        -6.217e-15   4.91e-15     -1.267      0.207   -1.59e-14    3.48e-15
+    sepal_length  6.661e-16   1.38e-15      0.483      0.630   -2.06e-15    3.39e-15
+    sepal_width   6.384e-16   1.43e-15      0.447      0.656   -2.19e-15    3.46e-15
+    petal_length     1.0000   1.36e-15   7.35e+14      0.000       1.000       1.000
+    petal_width  -5.551e-16   2.26e-15     -0.245      0.806   -5.03e-15    3.92e-15
+    ==============================================================================
+    Omnibus:                      122.099   Durbin-Watson:                   0.017
+    Prob(Omnibus):                  0.000   Jarque-Bera (JB):               16.136
+    Skew:                          -0.464   Prob(JB):                     0.000313
+    Kurtosis:                       1.688   Cond. No.                         91.9
+    ==============================================================================
+    
+    Notes:
+    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+    Fail to reject H0: No predictor significantly affects the petal length.
+
+
+## R Code
+Multiple Linear Regression
+
+
+``` r
+# Load dataset
+df <- read.csv("data/iris.csv")
+
+# Select independent and dependent variables
+X <- df[, c('sepal_length', 'sepal_width', 'petal_width')]  # Independent variables
+y <- df$petal_length  # Dependent variable (petal_length)
+
+# Perform linear regression
+model <- lm(y ~ sepal_length + sepal_width + petal_width, data = df)
+
+# Display results
+summary(model)
+```
+
+```
+
+Call:
+lm(formula = y ~ sepal_length + sepal_width + petal_width, data = df)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.99333 -0.17656 -0.01004  0.18558  1.06909 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  -0.26271    0.29741  -0.883    0.379    
+sepal_length  0.72914    0.05832  12.502   <2e-16 ***
+sepal_width  -0.64601    0.06850  -9.431   <2e-16 ***
+petal_width   1.44679    0.06761  21.399   <2e-16 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.319 on 146 degrees of freedom
+Multiple R-squared:  0.968,	Adjusted R-squared:  0.9674 
+F-statistic:  1473 on 3 and 146 DF,  p-value: < 2.2e-16
+```
+
+``` r
+# Interpretation
+if (summary(model)$coefficients[2,4] < 0.05) {
+    print("Reject H0: At least one predictor significantly affects the petal length.")
+} else {
+    print("Fail to reject H0: No predictor significantly affects the petal length.")
+}
+```
+
+```
+[1] "Reject H0: At least one predictor significantly affects the petal length."
 ```
