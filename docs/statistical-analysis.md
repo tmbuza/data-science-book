@@ -939,23 +939,197 @@ if (summary(model)$coefficients[2,4] < 0.05) {
 
 # How to Perform Multiple Linear Regression in Python and R?
 
-## Explanation  
-**Multiple Linear Regression** is an extension of simple linear regression that models the relationship between a dependent variable (\(Y\)) and two or more independent variables (\(X_1, X_2, ..., X_n\)). The equation for multiple linear regression is:
+## Explanation
+
+**Multiple Linear Regression** is an extension of simple linear regression that models the relationship between a dependent variable (\(Y\)) and two or more independent variables (\(X_1, X_2, \dots, X_n\)). The equation for multiple linear regression is:
 
 \[
-Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + ... + \beta_n X_n + \epsilon
+Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n + \epsilon
 \]
 
 Where:
 - \(Y\) is the dependent variable,
-- \(X_1, X_2, ..., X_n\) are the independent variables,
+- \(X_1, X_2, \dots, X_n\) are the independent variables,
 - \(\beta_0\) is the intercept,
-- \(\beta_1, \beta_2, ..., \beta_n\) are the coefficients (slopes) for the predictors,
+- \(\beta_1, \beta_2, \dots, \beta_n\) are the coefficients (slopes) for the predictors,
 - \(\epsilon\) is the error term.
 
 The null hypothesis (\(H_0\)) assumes that all regression coefficients are zero, meaning no relationship exists between the predictors and the dependent variable. The alternative hypothesis (\(H_a\)) suggests that at least one coefficient is non-zero, indicating a significant relationship.
 
-If the p-value for a coefficient is small (typically \( p < 0.05 \)), we reject the null hypothesis for that predictor and conclude that it significantly affects \(Y\).
+If the p-value for a coefficient is small (typically \(p < 0.05\)), we reject the null hypothesis for that predictor and conclude that it significantly affects \(Y\).
+
+## Python Code
+
+
+
+```python
+import pandas as pd
+import statsmodels.api as sm
+
+# Load dataset (you can use any dataset here)
+df = pd.read_csv("data/iris.csv")
+
+# Select independent variables (predictors)
+X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]  # Predictors
+
+# Add a constant (intercept) to the model
+X = sm.add_constant(X)
+
+# Dependent variable (response)
+y = df['sepal_length']  # Example of using sepal length as the dependent variable
+
+# Fit the model
+model = sm.OLS(y, X).fit()
+
+# Display the results
+print(model.summary())
+```
+
+                                OLS Regression Results                            
+    ==============================================================================
+    Dep. Variable:           sepal_length   R-squared:                       1.000
+    Model:                            OLS   Adj. R-squared:                  1.000
+    Method:                 Least Squares   F-statistic:                 9.587e+29
+    Date:                Tue, 18 Mar 2025   Prob (F-statistic):               0.00
+    Time:                        13:32:45   Log-Likelihood:                 4724.3
+    No. Observations:                 150   AIC:                            -9439.
+    Df Residuals:                     145   BIC:                            -9424.
+    Df Model:                           4                                         
+    Covariance Type:            nonrobust                                         
+    ================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+    --------------------------------------------------------------------------------
+    const        -9.104e-15   4.83e-15     -1.887      0.061   -1.86e-14    4.34e-16
+    sepal_length     1.0000   1.36e-15   7.36e+14      0.000       1.000       1.000
+    sepal_width    1.11e-15   1.41e-15      0.790      0.431   -1.67e-15    3.89e-15
+    petal_length  2.776e-16   1.34e-15      0.207      0.836   -2.37e-15    2.92e-15
+    petal_width  -1.554e-15   2.23e-15     -0.698      0.486   -5.95e-15    2.84e-15
+    ==============================================================================
+    Omnibus:                        5.539   Durbin-Watson:                   0.030
+    Prob(Omnibus):                  0.063   Jarque-Bera (JB):                3.049
+    Skew:                           0.099   Prob(JB):                        0.218
+    Kurtosis:                       2.330   Cond. No.                         91.9
+    ==============================================================================
+    
+    Notes:
+    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
+## R Code
+Multiple Linear Regression
+
+
+``` r
+# Check if 'caret' is installed, if not, install it
+if (!require(caret)) {
+  # Set CRAN mirror
+  options(repos = c(CRAN = "https://cran.rstudio.com/"))
+  install.packages("caret")
+  library(caret)
+}
+# Load dataset (use any dataset available)
+df <- read.csv("data/iris.csv")
+
+# Create training and test sets
+set.seed(123)  # For reproducibility
+trainIndex <- createDataPartition(df$sepal_length, p = 0.7, list = FALSE)
+trainData <- df[trainIndex, ]
+testData <- df[-trainIndex, ]
+
+# Train the linear regression model
+model <- train(sepal_length ~ sepal_width + petal_length + petal_width,
+               data = trainData,
+               method = "lm")
+
+# Display the model details
+print(model)
+```
+
+```
+Linear Regression 
+
+107 samples
+  3 predictor
+
+No pre-processing
+Resampling: Bootstrapped (25 reps) 
+Summary of sample sizes: 107, 107, 107, 107, 107, 107, ... 
+Resampling results:
+
+  RMSE       Rsquared   MAE    
+  0.3188897  0.8743628  0.26081
+
+Tuning parameter 'intercept' was held constant at a value of TRUE
+```
+
+``` r
+# Predict on the test set
+predictions <- predict(model, testData)
+
+# Display predictions and actual values
+predictions
+```
+
+```
+       1        2        7       15       18       23       25       27 
+5.024336 4.670085 4.878372 5.219239 4.949222 4.776489 5.351858 4.962606 
+      30       31       33       36       42       49       52       56 
+4.971134 4.900284 5.604227 4.652436 4.019344 5.245711 6.305208 6.172036 
+      59       67       68       74       75       77       82       85 
+6.322560 6.163508 6.007830 6.406499 6.083537 6.335945 5.476581 6.163508 
+      87       88       91       93       99      100      105      108 
+6.393707 5.738110 6.025775 5.707077 4.914596 5.853338 6.673476 7.301455 
+     111      116      124      126      127      128      133      142 
+6.407684 6.341690 6.044312 7.274983 6.035488 6.256863 6.372426 6.111491 
+     144      146      149 
+6.819737 6.120315 6.563065 
+```
+
+``` r
+testData$sepal_length
+```
+
+```
+ [1] 5.1 4.9 4.6 5.8 5.1 4.6 4.8 5.0 4.7 4.8 5.2 5.0 4.5 5.3 6.4 5.7 6.6 5.6 5.8
+[20] 6.1 6.4 6.8 5.5 5.4 6.7 6.3 5.5 5.8 5.1 5.7 6.5 7.3 6.5 6.4 6.3 7.2 6.2 6.1
+[39] 6.4 6.9 6.8 6.7 6.2
+```
+
+``` r
+# Evaluate the model using RMSE (Root Mean Squared Error)
+rmse <- sqrt(mean((predictions - testData$sepal_length)^2))
+cat("RMSE: ", rmse)
+```
+
+```
+RMSE:  0.3445695
+```
+
+# How to Perform Logistic Regression in Python and R?
+
+## Explanation
+
+**Logistic Regression** is a statistical method used for binary classification. It models the relationship between a dependent variable (binary outcome, e.g., 0 or 1) and one or more independent variables. The logistic regression equation is:
+
+\[
+\log\left(\frac{p}{1 - p}\right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n
+\]
+
+Where:
+- \( p \) is the probability of the dependent event occurring (i.e., the probability that the output is 1),
+- \( X_1, X_2, \dots, X_n \) are the independent variables (predictors),
+- \( \beta_0 \) is the intercept,
+- \( \beta_1, \beta_2, \dots, \beta_n \) are the coefficients (slopes) for the predictors.
+
+The model estimates the odds of the event occurring by taking the log of the odds ratio. The predicted probabilities are obtained using the logistic function, which is:
+
+\[
+p = \frac{1}{1 + e^{-z}}
+\]
+
+Where \( z = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n \).
+
+If the p-value of a coefficient is small (typically \( p < 0.05 \)), we reject the null hypothesis and conclude that the predictor significantly influences the outcome.
 
 ## Python Code
 
@@ -964,113 +1138,340 @@ If the p-value for a coefficient is small (typically \( p < 0.05 \)), we reject 
 
 ```python
 import pandas as pd
-import statsmodels.api as sm
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, confusion_matrix
 
-# Load dataset
+# Load dataset (you can use any binary classification dataset)
 df = pd.read_csv("data/iris.csv")
 
-# Select independent and dependent variables
-X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]
-y = df['petal_length']  # Using 'petal_length' as the dependent variable
+# Select independent variables (predictors)
+X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]  # Predictors
 
-# Add a constant (intercept) to the independent variables
-X = sm.add_constant(X)
+# Create a binary dependent variable (response)
+df['is_setosa'] = (df['species'] == 'setosa').astype(int)  # Convert 'setosa' to 1, others to 0
+y = df['is_setosa']  # Target variable
 
-# Perform linear regression
-model = sm.OLS(y, X).fit()
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-# Display results
-print(model.summary())
+# Fit the logistic regression model
+model = LogisticRegression()
+model.fit(X_train, y_train)
 
-# Interpretation
-if model.pvalues[1] < 0.05:
-    print("Reject H0: At least one predictor significantly affects the petal length.")
-else:
-    print("Fail to reject H0: No predictor significantly affects the petal length.")
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 ```
 
-                                OLS Regression Results                            
-    ==============================================================================
-    Dep. Variable:           petal_length   R-squared:                       1.000
-    Model:                            OLS   Adj. R-squared:                  1.000
-    Method:                 Least Squares   F-statistic:                 4.217e+30
-    Date:                Tue, 18 Mar 2025   Prob (F-statistic):               0.00
-    Time:                        13:06:35   Log-Likelihood:                 4721.9
-    No. Observations:                 150   AIC:                            -9434.
-    Df Residuals:                     145   BIC:                            -9419.
-    Df Model:                           4                                         
-    Covariance Type:            nonrobust                                         
-    ================================================================================
-                       coef    std err          t      P>|t|      [0.025      0.975]
-    --------------------------------------------------------------------------------
-    const        -6.217e-15   4.91e-15     -1.267      0.207   -1.59e-14    3.48e-15
-    sepal_length  6.661e-16   1.38e-15      0.483      0.630   -2.06e-15    3.39e-15
-    sepal_width   6.384e-16   1.43e-15      0.447      0.656   -2.19e-15    3.46e-15
-    petal_length     1.0000   1.36e-15   7.35e+14      0.000       1.000       1.000
-    petal_width  -5.551e-16   2.26e-15     -0.245      0.806   -5.03e-15    3.92e-15
-    ==============================================================================
-    Omnibus:                      122.099   Durbin-Watson:                   0.017
-    Prob(Omnibus):                  0.000   Jarque-Bera (JB):               16.136
-    Skew:                          -0.464   Prob(JB):                     0.000313
-    Kurtosis:                       1.688   Cond. No.                         91.9
-    ==============================================================================
-    
-    Notes:
-    [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
-    Fail to reject H0: No predictor significantly affects the petal length.
+    Accuracy: 1.0
+    Confusion Matrix:
+     [[26  0]
+     [ 0 19]]
 
 
 ## R Code
-Multiple Linear Regression
 
 
 ``` r
-# Load dataset
+# Load required library
+if (!require(caret)) {
+  install.packages("caret")
+  library(caret)
+}
+
+# Load dataset (use any binary classification dataset)
 df <- read.csv("data/iris.csv")
 
-# Select independent and dependent variables
-X <- df[, c('sepal_length', 'sepal_width', 'petal_width')]  # Independent variables
-y <- df$petal_length  # Dependent variable (petal_length)
+# Create a binary dependent variable (response)
+df$is_setosa <- ifelse(df$species == 'setosa', 1, 0)  # Convert 'setosa' to 1, others to 0
 
-# Perform linear regression
-model <- lm(y ~ sepal_length + sepal_width + petal_width, data = df)
+# Create training and test sets
+set.seed(123)  # For reproducibility
+trainIndex <- createDataPartition(df$is_setosa, p = 0.7, list = FALSE)
+trainData <- df[trainIndex, ]
+testData <- df[-trainIndex, ]
 
-# Display results
-summary(model)
+# Train the logistic regression model
+model <- train(is_setosa ~ sepal_length + sepal_width + petal_length + petal_width,
+               data = trainData,
+               method = "glm",
+               family = "binomial",
+               trControl = trainControl(method = "cv", number = 10))
+
+# Display the model details
+print(model)
+
+# Predict the probabilities using the logistic regression model
+pred_probs <- predict(model, testData, type = "prob")[, 2]  # Get the probability of class 1
+
+# Convert probabilities to class predictions (0 or 1)
+pred_class <- ifelse(pred_probs > 0.5, 1, 0)
+
+# Evaluate the model using confusion matrix
+conf_matrix <- confusionMatrix(factor(pred_class), factor(testData$is_setosa))
+
+# Print confusion matrix
+print(conf_matrix)
 ```
 
+# How to Perform Decision Tree Classification in Python and R?
+
+## Explanation
+
+**Decision Trees** are a non-linear model used for both classification and regression. They split the dataset into subsets based on the most significant features, creating a tree-like structure where each internal node represents a feature or attribute, and each leaf node represents a decision or class label.
+
+The decision tree algorithm works by selecting the feature that best splits the data at each node based on certain criteria (e.g., Gini impurity, entropy for classification, and variance reduction for regression). 
+
+- **Classification Trees**: Used when the target variable is categorical. For example, in a binary classification problem, the decision tree can predict class 0 or class 1 based on the input features.
+- **Regression Trees**: Used when the target variable is continuous.
+
+The tree is built recursively by selecting the best splits at each node and stopping when a stopping criterion (e.g., maximum depth, minimum samples per leaf) is met.
+
+## Python Code
+
+
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+# Load dataset (you can use any dataset)
+df = pd.read_csv("data/iris.csv")
+
+# Select independent variables (predictors)
+X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]  # Features
+
+# Select target variable (species)
+y = df['species']  # Target
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Fit the decision tree classifier
+model = DecisionTreeClassifier(random_state=42)
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 ```
 
-Call:
-lm(formula = y ~ sepal_length + sepal_width + petal_width, data = df)
+    Accuracy: 1.0
+    Confusion Matrix:
+     [[19  0  0]
+     [ 0 13  0]
+     [ 0  0 13]]
 
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.99333 -0.17656 -0.01004  0.18558  1.06909 
 
-Coefficients:
-             Estimate Std. Error t value Pr(>|t|)    
-(Intercept)  -0.26271    0.29741  -0.883    0.379    
-sepal_length  0.72914    0.05832  12.502   <2e-16 ***
-sepal_width  -0.64601    0.06850  -9.431   <2e-16 ***
-petal_width   1.44679    0.06761  21.399   <2e-16 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## R Code
 
-Residual standard error: 0.319 on 146 degrees of freedom
-Multiple R-squared:  0.968,	Adjusted R-squared:  0.9674 
-F-statistic:  1473 on 3 and 146 DF,  p-value: < 2.2e-16
-```
 
 ``` r
-# Interpretation
-if (summary(model)$coefficients[2,4] < 0.05) {
-    print("Reject H0: At least one predictor significantly affects the petal length.")
-} else {
-    print("Fail to reject H0: No predictor significantly affects the petal length.")
-}
+# Load required library
+library(caret)
+
+# Load dataset (use any dataset)
+df <- read.csv("data/iris.csv")
+
+# Create training and test sets
+set.seed(123)  # For reproducibility
+trainIndex <- createDataPartition(df$species, p = 0.7, list = FALSE)
+trainData <- df[trainIndex, ]
+testData <- df[-trainIndex, ]
+
+# Train the model using decision tree classifier
+model <- train(species ~ sepal_length + sepal_width + petal_length + petal_width,
+               data = trainData,
+               method = "rpart",
+               trControl = trainControl(method = "cv", number = 10))
+
+# Display the model details
+print(model)
+
+# Predict using the decision tree model
+pred <- predict(model, testData)
+
+# Evaluate the model using confusion matrix
+confusionMatrix(pred, testData$species)
 ```
 
+# How to Perform Random Forest Classification in Python and R?
+
+## Explanation
+
+**Random Forest** is an ensemble learning method that combines multiple decision trees to improve classification accuracy. Instead of relying on a single decision tree, random forest aggregates the predictions of many trees, reducing overfitting and improving generalization.
+
+- **Bagging (Bootstrap Aggregating)**: Random Forest uses bagging, which means training multiple models (decision trees) on random subsets of the data. Each tree is trained on a different random sample, and the final prediction is made by averaging (for regression) or majority voting (for classification) of all the trees' predictions.
+- **Random Feature Selection**: At each split in the decision tree, a random subset of features is selected, ensuring that trees are diverse and reducing the correlation between them.
+
+The main advantages of random forest are its robustness, the ability to handle a large number of features, and its capacity to deal with overfitting.
+
+## Python Code
+
+
+
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+# Load dataset (you can use any dataset)
+df = pd.read_csv("data/iris.csv")
+
+# Select independent variables (predictors)
+X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]  # Features
+
+# Select target variable (species)
+y = df['species']  # Target
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Fit the random forest classifier
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 ```
-[1] "Reject H0: At least one predictor significantly affects the petal length."
+
+    Accuracy: 1.0
+    Confusion Matrix:
+     [[19  0  0]
+     [ 0 13  0]
+     [ 0  0 13]]
+
+
+## R Code
+
+
+``` r
+# Load required library
+library(caret)
+
+# Load dataset (use any dataset)
+df <- read.csv("data/iris.csv")
+
+# Create training and test sets
+set.seed(123)  # For reproducibility
+trainIndex <- createDataPartition(df$species, p = 0.7, list = FALSE)
+trainData <- df[trainIndex, ]
+testData <- df[-trainIndex, ]
+
+# Train the model using Random Forest
+model <- train(species ~ sepal_length + sepal_width + petal_length + petal_width,
+               data = trainData,
+               method = "rf",
+               trControl = trainControl(method = "cv", number = 10))
+
+# Display the model details
+print(model)
+
+# Predict using the random forest model
+pred <- predict(model, testData)
+
+# Evaluate the model using confusion matrix
+confusionMatrix(pred, testData$species)
+```
+
+# How to Perform Support Vector Machine (SVM) Classification in Python and R?
+
+## Explanation
+
+**Support Vector Machine (SVM)** is a powerful supervised learning algorithm that can be used for both classification and regression tasks. It works by finding the hyperplane that best separates data points of different classes in a high-dimensional space.
+
+- **Linear SVM**: Finds a straight line or hyperplane that divides the classes.
+- **Non-linear SVM**: Uses kernel functions (like Radial Basis Function (RBF)) to transform the data into higher dimensions to make it linearly separable.
+
+The main objective of SVM is to maximize the margin between the two classes. The margin is the distance between the hyperplane and the closest data points from either class, known as support vectors.
+
+The SVM classifier works well for both linear and non-linear classification problems.
+
+## Python Code
+
+
+
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+# Load dataset (you can use any dataset)
+df = pd.read_csv("data/iris.csv")
+
+# Select independent variables (predictors)
+X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]  # Features
+
+# Select target variable (species)
+y = df['species']  # Target
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Fit the SVM classifier
+model = SVC(kernel='linear', random_state=42)
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+```
+
+    Accuracy: 1.0
+    Confusion Matrix:
+     [[19  0  0]
+     [ 0 13  0]
+     [ 0  0 13]]
+
+
+## R Code
+
+
+``` r
+# Load required library
+library(caret)
+
+# Load dataset (use any dataset)
+df <- read.csv("data/iris.csv")
+
+# Create training and test sets
+set.seed(123)  # For reproducibility
+trainIndex <- createDataPartition(df$species, p = 0.7, list = FALSE)
+trainData <- df[trainIndex, ]
+testData <- df[-trainIndex, ]
+
+# Train the model using SVM with a linear kernel
+model <- train(species ~ sepal_length + sepal_width + petal_length + petal_width,
+               data = trainData,
+               method = "svmLinear",
+               trControl = trainControl(method = "cv", number = 10))
+
+# Display the model details
+print(model)
+
+# Predict using the SVM model
+pred <- predict(model, testData)
+
+# Evaluate the model using confusion matrix
+confusionMatrix(pred, testData$species)
 ```

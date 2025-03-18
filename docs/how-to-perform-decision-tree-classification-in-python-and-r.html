@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>18 How to Create a Box Plot in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R</title>
+  <title>34 How to Perform Decision Tree Classification in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R</title>
   <meta name="description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="18 How to Create a Box Plot in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
+  <meta property="og:title" content="34 How to Perform Decision Tree Classification in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   <meta name="github-repo" content="https://github.com/tmbuza/data-science-book/" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="18 How to Create a Box Plot in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
+  <meta name="twitter:title" content="34 How to Perform Decision Tree Classification in Python and R? | Learn, Compare, and Master Data Science in Python &amp; R" />
   
   <meta name="twitter:description" content="A bilingual guide designed to help beginners learn data science using both Python and R. This book presents key data science concepts side by side in both languages, making it easier for learners to understand and compare approaches. Covering essential topics such as data loading, cleaning, visualization, and basic machine learning techniques, this structured guide provides a step-by-step approach to building foundational skills. The content is presented in a Q&amp;A format, making it accessible to both students and instructors." />
   
@@ -28,8 +28,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="how-to-create-a-line-plot-in-python-and-r.html"/>
-<link rel="next" href="how-to-create-a-heatmap-in-python-and-r.html"/>
+<link rel="prev" href="how-to-perform-logistic-regression-in-python-and-r.html"/>
+<link rel="next" href="how-to-perform-random-forest-classification-in-python-and-r.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -388,46 +388,81 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="how-to-create-a-box-plot-in-python-and-r" class="section level1 hasAnchor" number="18">
-<h1><span class="header-section-number">18</span> How to Create a Box Plot in Python and R?<a href="how-to-create-a-box-plot-in-python-and-r.html#how-to-create-a-box-plot-in-python-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="explanation-16" class="section level2 hasAnchor" number="18.1">
-<h2><span class="header-section-number">18.1</span> Explanation<a href="how-to-create-a-box-plot-in-python-and-r.html#explanation-16" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A box plot (or box-and-whisker plot) is used to display the distribution of a continuous variable, highlighting the median, quartiles, and potential outliers.</p>
+<div id="how-to-perform-decision-tree-classification-in-python-and-r" class="section level1 hasAnchor" number="34">
+<h1><span class="header-section-number">34</span> How to Perform Decision Tree Classification in Python and R?<a href="how-to-perform-decision-tree-classification-in-python-and-r.html#how-to-perform-decision-tree-classification-in-python-and-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="explanation-31" class="section level2 hasAnchor" number="34.1">
+<h2><span class="header-section-number">34.1</span> Explanation<a href="how-to-perform-decision-tree-classification-in-python-and-r.html#explanation-31" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Decision Trees</strong> are a non-linear model used for both classification and regression. They split the dataset into subsets based on the most significant features, creating a tree-like structure where each internal node represents a feature or attribute, and each leaf node represents a decision or class label.</p>
+<p>The decision tree algorithm works by selecting the feature that best splits the data at each node based on certain criteria (e.g., Gini impurity, entropy for classification, and variance reduction for regression).</p>
+<ul>
+<li><strong>Classification Trees</strong>: Used when the target variable is categorical. For example, in a binary classification problem, the decision tree can predict class 0 or class 1 based on the input features.</li>
+<li><strong>Regression Trees</strong>: Used when the target variable is continuous.</li>
+</ul>
+<p>The tree is built recursively by selecting the best splits at each node and stopping when a stopping criterion (e.g., maximum depth, minimum samples per leaf) is met.</p>
 </div>
-<div id="python-code-16" class="section level2 hasAnchor" number="18.2">
-<h2><span class="header-section-number">18.2</span> Python Code<a href="how-to-create-a-box-plot-in-python-and-r.html#python-code-16" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-1" tabindex="-1"></a><span class="co"># Import libraries</span></span>
-<span id="cb70-2"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-2" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb70-3"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb70-4"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-4" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb70-5"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-5" tabindex="-1"></a></span>
-<span id="cb70-6"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-6" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb70-7"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-7" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/iris.csv&#39;</span>)</span>
-<span id="cb70-8"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-8" tabindex="-1"></a></span>
-<span id="cb70-9"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-9" tabindex="-1"></a><span class="co"># Create a box plot</span></span>
-<span id="cb70-10"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-10" tabindex="-1"></a>sns.boxplot(x<span class="op">=</span><span class="st">&#39;species&#39;</span>, y<span class="op">=</span><span class="st">&#39;sepal_length&#39;</span>, data<span class="op">=</span>df)</span>
-<span id="cb70-11"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-11" tabindex="-1"></a>plt.title(<span class="st">&quot;Box Plot of Sepal Length by Species&quot;</span>)</span>
-<span id="cb70-12"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-12" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Species&quot;</span>)</span>
-<span id="cb70-13"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-13" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Sepal Length&quot;</span>)</span>
-<span id="cb70-14"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb70-14" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<p><img src="data-visualization_files/data-visualization_14_0.png" /></p>
+<div id="python-code-31" class="section level2 hasAnchor" number="34.2">
+<h2><span class="header-section-number">34.2</span> Python Code<a href="how-to-perform-decision-tree-classification-in-python-and-r.html#python-code-31" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb157"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb157-1"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb157-2"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-2" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
+<span id="cb157-3"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-3" tabindex="-1"></a><span class="im">from</span> sklearn.tree <span class="im">import</span> DecisionTreeClassifier</span>
+<span id="cb157-4"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-4" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> accuracy_score, confusion_matrix</span>
+<span id="cb157-5"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-5" tabindex="-1"></a></span>
+<span id="cb157-6"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-6" tabindex="-1"></a><span class="co"># Load dataset (you can use any dataset)</span></span>
+<span id="cb157-7"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-7" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb157-8"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-8" tabindex="-1"></a></span>
+<span id="cb157-9"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-9" tabindex="-1"></a><span class="co"># Select independent variables (predictors)</span></span>
+<span id="cb157-10"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-10" tabindex="-1"></a>X <span class="op">=</span> df[[<span class="st">&#39;sepal_length&#39;</span>, <span class="st">&#39;sepal_width&#39;</span>, <span class="st">&#39;petal_length&#39;</span>, <span class="st">&#39;petal_width&#39;</span>]]  <span class="co"># Features</span></span>
+<span id="cb157-11"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-11" tabindex="-1"></a></span>
+<span id="cb157-12"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-12" tabindex="-1"></a><span class="co"># Select target variable (species)</span></span>
+<span id="cb157-13"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-13" tabindex="-1"></a>y <span class="op">=</span> df[<span class="st">&#39;species&#39;</span>]  <span class="co"># Target</span></span>
+<span id="cb157-14"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-14" tabindex="-1"></a></span>
+<span id="cb157-15"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-15" tabindex="-1"></a><span class="co"># Split data into training and testing sets</span></span>
+<span id="cb157-16"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-16" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb157-17"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-17" tabindex="-1"></a></span>
+<span id="cb157-18"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-18" tabindex="-1"></a><span class="co"># Fit the decision tree classifier</span></span>
+<span id="cb157-19"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-19" tabindex="-1"></a>model <span class="op">=</span> DecisionTreeClassifier(random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb157-20"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-20" tabindex="-1"></a>model.fit(X_train, y_train)</span>
+<span id="cb157-21"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-21" tabindex="-1"></a></span>
+<span id="cb157-22"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-22" tabindex="-1"></a><span class="co"># Make predictions</span></span>
+<span id="cb157-23"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-23" tabindex="-1"></a>y_pred <span class="op">=</span> model.predict(X_test)</span>
+<span id="cb157-24"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-24" tabindex="-1"></a></span>
+<span id="cb157-25"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-25" tabindex="-1"></a><span class="co"># Evaluate the model</span></span>
+<span id="cb157-26"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-26" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Accuracy:&quot;</span>, accuracy_score(y_test, y_pred))</span>
+<span id="cb157-27"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb157-27" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Confusion Matrix:</span><span class="ch">\n</span><span class="st">&quot;</span>, confusion_matrix(y_test, y_pred))</span></code></pre></div>
+<pre><code>Accuracy: 1.0
+Confusion Matrix:
+ [[19  0  0]
+ [ 0 13  0]
+ [ 0  0 13]]</code></pre>
 </div>
-<div id="r-code-16" class="section level2 hasAnchor" number="18.3">
-<h2><span class="header-section-number">18.3</span> R Code<a href="how-to-create-a-box-plot-in-python-and-r.html#r-code-16" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-1" tabindex="-1"></a><span class="co"># Load the necessary libraries</span></span>
-<span id="cb71-2"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-2" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb71-3"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-3" tabindex="-1"></a></span>
-<span id="cb71-4"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-4" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb71-5"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&#39;data/iris.csv&#39;</span>)</span>
-<span id="cb71-6"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-6" tabindex="-1"></a></span>
-<span id="cb71-7"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-7" tabindex="-1"></a><span class="co"># Create a box plot</span></span>
-<span id="cb71-8"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-8" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x=</span>species, <span class="at">y=</span>sepal_length, <span class="at">fill=</span>species)) <span class="sc">+</span></span>
-<span id="cb71-9"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-9" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb71-10"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb71-11"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-11" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Box Plot of Sepal Length by Species&quot;</span>) <span class="sc">+</span></span>
-<span id="cb71-12"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-12" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Species&quot;</span>) <span class="sc">+</span></span>
-<span id="cb71-13"><a href="how-to-create-a-box-plot-in-python-and-r.html#cb71-13" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Sepal Length&quot;</span>)</span></code></pre></div>
-<p><img src="data-visualization_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div id="r-code-30" class="section level2 hasAnchor" number="34.3">
+<h2><span class="header-section-number">34.3</span> R Code<a href="how-to-perform-decision-tree-classification-in-python-and-r.html#r-code-30" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-1" tabindex="-1"></a><span class="co"># Load required library</span></span>
+<span id="cb159-2"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-2" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
+<span id="cb159-3"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-3" tabindex="-1"></a></span>
+<span id="cb159-4"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-4" tabindex="-1"></a><span class="co"># Load dataset (use any dataset)</span></span>
+<span id="cb159-5"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb159-6"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-6" tabindex="-1"></a></span>
+<span id="cb159-7"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-7" tabindex="-1"></a><span class="co"># Create training and test sets</span></span>
+<span id="cb159-8"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-8" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb159-9"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-9" tabindex="-1"></a>trainIndex <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(df<span class="sc">$</span>species, <span class="at">p =</span> <span class="fl">0.7</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb159-10"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-10" tabindex="-1"></a>trainData <span class="ot">&lt;-</span> df[trainIndex, ]</span>
+<span id="cb159-11"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-11" tabindex="-1"></a>testData <span class="ot">&lt;-</span> df[<span class="sc">-</span>trainIndex, ]</span>
+<span id="cb159-12"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-12" tabindex="-1"></a></span>
+<span id="cb159-13"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-13" tabindex="-1"></a><span class="co"># Train the model using decision tree classifier</span></span>
+<span id="cb159-14"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-14" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">train</span>(species <span class="sc">~</span> sepal_length <span class="sc">+</span> sepal_width <span class="sc">+</span> petal_length <span class="sc">+</span> petal_width,</span>
+<span id="cb159-15"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-15" tabindex="-1"></a>               <span class="at">data =</span> trainData,</span>
+<span id="cb159-16"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-16" tabindex="-1"></a>               <span class="at">method =</span> <span class="st">&quot;rpart&quot;</span>,</span>
+<span id="cb159-17"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-17" tabindex="-1"></a>               <span class="at">trControl =</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">&quot;cv&quot;</span>, <span class="at">number =</span> <span class="dv">10</span>))</span>
+<span id="cb159-18"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-18" tabindex="-1"></a></span>
+<span id="cb159-19"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-19" tabindex="-1"></a><span class="co"># Display the model details</span></span>
+<span id="cb159-20"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-20" tabindex="-1"></a><span class="fu">print</span>(model)</span>
+<span id="cb159-21"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-21" tabindex="-1"></a></span>
+<span id="cb159-22"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-22" tabindex="-1"></a><span class="co"># Predict using the decision tree model</span></span>
+<span id="cb159-23"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-23" tabindex="-1"></a>pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, testData)</span>
+<span id="cb159-24"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-24" tabindex="-1"></a></span>
+<span id="cb159-25"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-25" tabindex="-1"></a><span class="co"># Evaluate the model using confusion matrix</span></span>
+<span id="cb159-26"><a href="how-to-perform-decision-tree-classification-in-python-and-r.html#cb159-26" tabindex="-1"></a><span class="fu">confusionMatrix</span>(pred, testData<span class="sc">$</span>species)</span></code></pre></div>
 </div>
 </div>
             </section>
@@ -435,8 +470,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="how-to-create-a-line-plot-in-python-and-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="how-to-create-a-heatmap-in-python-and-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="how-to-perform-logistic-regression-in-python-and-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="how-to-perform-random-forest-classification-in-python-and-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
