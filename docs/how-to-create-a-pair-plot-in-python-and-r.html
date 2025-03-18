@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.3" data-path="setup-dev-envt.html"><a href="setup-dev-envt.html#installing-extensions-in-vscode"><i class="fa fa-check"></i><b>1.3.3</b> <strong>Installing Extensions in VSCode</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>II QUESTION &amp; ANSWER (Q&amp;A)</b></span></li>
+<li class="part"><span><b>II BASIC KNOWLEDGE</b></span></li>
 <li class="chapter" data-level="2" data-path="how-to-install-basic-libaries-for-python-and-r.html"><a href="how-to-install-basic-libaries-for-python-and-r.html"><i class="fa fa-check"></i><b>2</b> How to Install Basic Libaries for Python and R</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="how-to-install-basic-libaries-for-python-and-r.html"><a href="how-to-install-basic-libaries-for-python-and-r.html#explanation"><i class="fa fa-check"></i><b>2.1</b> Explanation</a></li>
@@ -344,6 +344,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.2" data-path="how-to-perform-multiple-linear-regression-in-python-and-r.html"><a href="how-to-perform-multiple-linear-regression-in-python-and-r.html#python-code-29"><i class="fa fa-check"></i><b>32.2</b> Python Code</a></li>
 <li class="chapter" data-level="32.3" data-path="how-to-perform-multiple-linear-regression-in-python-and-r.html"><a href="how-to-perform-multiple-linear-regression-in-python-and-r.html#r-code-28"><i class="fa fa-check"></i><b>32.3</b> R Code</a></li>
 </ul></li>
+<li class="part"><span><b>V MACHINE LEARNING</b></span></li>
 <li class="chapter" data-level="33" data-path="how-to-perform-logistic-regression-in-python-and-r.html"><a href="how-to-perform-logistic-regression-in-python-and-r.html"><i class="fa fa-check"></i><b>33</b> How to Perform Logistic Regression in Python and R?</a>
 <ul>
 <li class="chapter" data-level="33.1" data-path="how-to-perform-logistic-regression-in-python-and-r.html"><a href="how-to-perform-logistic-regression-in-python-and-r.html#explanation-30"><i class="fa fa-check"></i><b>33.1</b> Explanation</a></li>
@@ -396,24 +397,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="python-code-18" class="section level2 hasAnchor" number="20.2">
 <h2><span class="header-section-number">20.2</span> Python Code<a href="how-to-create-a-pair-plot-in-python-and-r.html#python-code-18" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-1" tabindex="-1"></a><span class="co"># Import libraries</span></span>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-1" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb74-2"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-2" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb74-3"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-3" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb74-4"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-4" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb74-4"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-4" tabindex="-1"></a><span class="im">import</span> warnings  <span class="co"># Suppress warnings</span></span>
 <span id="cb74-5"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-5" tabindex="-1"></a></span>
-<span id="cb74-6"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-6" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
-<span id="cb74-7"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-7" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;data/iris.csv&#39;</span>)</span>
+<span id="cb74-6"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-6" tabindex="-1"></a><span class="co"># Hide warnings</span></span>
+<span id="cb74-7"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-7" tabindex="-1"></a>warnings.filterwarnings(<span class="st">&quot;ignore&quot;</span>)</span>
 <span id="cb74-8"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-8" tabindex="-1"></a></span>
-<span id="cb74-9"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-9" tabindex="-1"></a><span class="co"># Create a pair plot</span></span>
-<span id="cb74-10"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-10" tabindex="-1"></a>sns.pairplot(df, hue<span class="op">=</span><span class="st">&quot;species&quot;</span>)</span>
-<span id="cb74-11"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-11" tabindex="-1"></a>plt.title(<span class="st">&quot;Pair Plot of Iris Dataset&quot;</span>)</span>
-<span id="cb74-12"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-12" tabindex="-1"></a>plt.show()</span></code></pre></div>
-<pre><code>/Users/tmbmacbookair/anaconda3/lib/python3.11/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
-  self._figure.tight_layout(*args, **kwargs)</code></pre>
-<p><img src="data-visualization_files/data-visualization_20_1.png" /></p>
+<span id="cb74-9"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-9" tabindex="-1"></a><span class="co"># Load dataset from CSV</span></span>
+<span id="cb74-10"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-10" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb74-11"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-11" tabindex="-1"></a></span>
+<span id="cb74-12"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-12" tabindex="-1"></a><span class="co"># Exclude the target column and plot pairplot</span></span>
+<span id="cb74-13"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-13" tabindex="-1"></a>sns.pairplot(df, hue<span class="op">=</span><span class="st">&quot;species&quot;</span>)</span>
+<span id="cb74-14"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-14" tabindex="-1"></a></span>
+<span id="cb74-15"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-15" tabindex="-1"></a><span class="co"># Adjust layout to prevent overlapping</span></span>
+<span id="cb74-16"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-16" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb74-17"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-17" tabindex="-1"></a></span>
+<span id="cb74-18"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-18" tabindex="-1"></a><span class="co"># Show the plot</span></span>
+<span id="cb74-19"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb74-19" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<p><img src="data-visualization_files/data-visualization_20_0.png" /></p>
 </div>
 <div id="r-code-18" class="section level2 hasAnchor" number="20.3">
 <h2><span class="header-section-number">20.3</span> R Code<a href="how-to-create-a-pair-plot-in-python-and-r.html#r-code-18" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-1" tabindex="-1"></a><span class="co"># Ensure required packages are installed and loaded</span></span>
+<span id="cb75-2"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(GGally)) <span class="fu">install.packages</span>(<span class="st">&quot;GGally&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cloud.r-project.org/&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb75-3"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-3" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(ggplot2)) <span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cloud.r-project.org/&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb75-4"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-4" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(readr)) <span class="fu">install.packages</span>(<span class="st">&quot;readr&quot;</span>, <span class="at">repos =</span> <span class="st">&quot;https://cloud.r-project.org/&quot;</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb75-5"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-5" tabindex="-1"></a></span>
+<span id="cb75-6"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-6" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb75-7"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-7" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb75-8"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-8" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb75-9"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-9" tabindex="-1"></a></span>
+<span id="cb75-10"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-10" tabindex="-1"></a><span class="co"># Load dataset from CSV</span></span>
+<span id="cb75-11"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-11" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb75-12"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-12" tabindex="-1"></a></span>
+<span id="cb75-13"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-13" tabindex="-1"></a><span class="co"># Plot pairplot excluding the target column but using it as hue</span></span>
+<span id="cb75-14"><a href="how-to-create-a-pair-plot-in-python-and-r.html#cb75-14" tabindex="-1"></a><span class="fu">ggpairs</span>(df, <span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<p><img src="data-visualization_files/figure-html/unnamed-chunk-7-1.png" width="1152" /></p>
 </div>
 </div>
             </section>

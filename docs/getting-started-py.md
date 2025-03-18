@@ -69,7 +69,7 @@ Now, you're ready to start coding in both **Python** and **R** using VSCode! ðŸš
 
 
 
-# (PART) QUESTION & ANSWER (Q&A) {-}
+# (PART) BASIC KNOWLEDGE {-}
 
 # How to Install Basic Libaries for Python and R 
 

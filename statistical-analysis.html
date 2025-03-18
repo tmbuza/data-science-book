@@ -7539,7 +7539,7 @@ if(!require("tidyverse")) {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7573,31 +7573,29 @@ if(!require("tidyverse")) {
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>Summary Statistics:
-        sepal_length  sepal_width  petal_length  petal_width      target
-count    150.000000   150.000000    150.000000   150.000000  150.000000
-mean       5.843333     3.057333      3.758000     1.199333    1.000000
-std        0.828066     0.435866      1.765298     0.762238    0.819232
-min        4.300000     2.000000      1.000000     0.100000    0.000000
-25%        5.100000     2.800000      1.600000     0.300000    0.000000
-50%        5.800000     3.000000      4.350000     1.300000    1.000000
-75%        6.400000     3.300000      5.100000     1.800000    2.000000
-max        7.900000     4.400000      6.900000     2.500000    2.000000
+        sepal_length  sepal_width  petal_length  petal_width
+count    150.000000   150.000000    150.000000   150.000000
+mean       5.843333     3.057333      3.758000     1.199333
+std        0.828066     0.435866      1.765298     0.762238
+min        4.300000     2.000000      1.000000     0.100000
+25%        5.100000     2.800000      1.600000     0.300000
+50%        5.800000     3.000000      4.350000     1.300000
+75%        6.400000     3.300000      5.100000     1.800000
+max        7.900000     4.400000      6.900000     2.500000
 
 Variance:
  sepal_length    0.685694
 sepal_width     0.189979
 petal_length    3.116278
 petal_width     0.581006
-target          0.671141
 dtype: float64
 
 Correlation:
-               sepal_length  sepal_width  petal_length  petal_width    target
-sepal_length      1.000000    -0.117570      0.871754     0.817941  0.782561
-sepal_width      -0.117570     1.000000     -0.428440    -0.366126 -0.426658
-petal_length      0.871754    -0.428440      1.000000     0.962865  0.949035
-petal_width       0.817941    -0.366126      0.962865     1.000000  0.956547
-target            0.782561    -0.426658      0.949035     0.956547  1.000000
+               sepal_length  sepal_width  petal_length  petal_width
+sepal_length      1.000000    -0.117570      0.871754     0.817941
+sepal_width      -0.117570     1.000000     -0.428440    -0.366126
+petal_length      0.871754    -0.428440      1.000000     0.962865
+petal_width       0.817941    -0.366126      0.962865     1.000000
 </pre>
 </div>
 </div>
@@ -7656,7 +7654,7 @@ print(correlation)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7691,7 +7689,6 @@ print(correlation)
 sepal_width     0.315767
 petal_length   -0.272128
 petal_width    -0.101934
-target          0.000000
 dtype: float64
 
 Kurtosis:
@@ -7699,7 +7696,6 @@ Kurtosis:
 sepal_width     0.180976
 petal_length   -1.395536
 petal_width    -1.336067
-target         -1.500000
 dtype: float64
 </pre>
 </div>
@@ -7763,7 +7759,7 @@ print(kurtosis_values)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7819,7 +7815,7 @@ print(kurtosis_values)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -7859,7 +7855,6 @@ sepal_length    5.843333
 sepal_width     3.057333
 petal_length    3.758000
 petal_width     1.199333
-target          1.000000
 dtype: float64
 
 Median:
@@ -7868,7 +7863,6 @@ sepal_length    5.80
 sepal_width     3.00
 petal_length    4.35
 petal_width     1.30
-target          1.00
 dtype: float64
 
 Mode:
@@ -7877,7 +7871,6 @@ sepal_length    5.0
 sepal_width     3.0
 petal_length    1.4
 petal_width     0.2
-target          0.0
 Name: 0, dtype: float64
 </pre>
 </div>
@@ -8011,7 +8004,7 @@ F = \frac{\text{variance of group 1}}{\text{variance of group 2}}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -8105,7 +8098,7 @@ F = \frac{\text{Between-group variance}}{\text{Within-group variance}}
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -8199,7 +8192,7 @@ summary(anova_result)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -8306,7 +8299,7 @@ if (chi2_result$p.value &lt; 0.05) {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -8412,7 +8405,7 @@ Y = \beta_0 + \beta_1 X + \epsilon
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -8457,7 +8450,7 @@ Dep. Variable:            sepal_width   R-squared:                       0.014
 Model:                            OLS   Adj. R-squared:                  0.007
 Method:                 Least Squares   F-statistic:                     2.074
 Date:                Tue, 18 Mar 2025   Prob (F-statistic):              0.152
-Time:                        13:06:35   Log-Likelihood:                -86.732
+Time:                        14:56:34   Log-Likelihood:                -86.732
 No. Observations:                 150   AIC:                             177.5
 Df Residuals:                     148   BIC:                             183.5
 Df Model:                           1                                         
@@ -8544,7 +8537,7 @@ Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n + \epsilon
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -8585,7 +8578,7 @@ Dep. Variable:           sepal_length   R-squared:                       1.000
 Model:                            OLS   Adj. R-squared:                  1.000
 Method:                 Least Squares   F-statistic:                 9.587e+29
 Date:                Tue, 18 Mar 2025   Prob (F-statistic):               0.00
-Time:                        13:32:45   Log-Likelihood:                 4724.3
+Time:                        14:56:34   Log-Likelihood:                 4724.3
 No. Observations:                 150   AIC:                            -9439.
 Df Residuals:                     145   BIC:                            -9424.
 Df Model:                           4                                         
@@ -8656,480 +8649,7 @@ testData$sepal_length
 rmse &lt;- sqrt(mean((predictions - testData$sepal_length)^2))
 cat("RMSE: ", rmse)
 </code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Perform-Logistic-Regression-in-Python-and-R?">How to Perform Logistic Regression in Python and R?<a class="anchor-link" href="#How-to-Perform-Logistic-Regression-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p><strong>Logistic Regression</strong> is a statistical method used for binary classification. It models the relationship between a dependent variable (binary outcome, e.g., 0 or 1) and one or more independent variables. The logistic regression equation is:</p>
-<p>[
-\log\left(\frac{p}{1 - p}\right) = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n
-]</p>
-<p>Where:</p>
-<ul>
-<li>( p ) is the probability of the dependent event occurring (i.e., the probability that the output is 1),</li>
-<li>( X_1, X_2, \dots, X_n ) are the independent variables (predictors),</li>
-<li>( \beta_0 ) is the intercept,</li>
-<li>( \beta_1, \beta_2, \dots, \beta_n ) are the coefficients (slopes) for the predictors.</li>
-</ul>
-<p>The model estimates the odds of the event occurring by taking the log of the odds ratio. The predicted probabilities are obtained using the logistic function, which is:</p>
-<p>[
-p = \frac{1}{1 + e^{-z}}
-]</p>
-<p>Where ( z = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n ).</p>
-<p>If the p-value of a coefficient is small (typically ( p &lt; 0.05 )), we reject the null hypothesis and conclude that the predictor significantly influences the outcome.</p>
-<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
-
-<span class="c1"># Load dataset (you can use any binary classification dataset)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
-
-<span class="c1"># Select independent variables (predictors)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'sepal_length'</span><span class="p">,</span> <span class="s1">'sepal_width'</span><span class="p">,</span> <span class="s1">'petal_length'</span><span class="p">,</span> <span class="s1">'petal_width'</span><span class="p">]]</span>  <span class="c1"># Predictors</span>
-
-<span class="c1"># Create a binary dependent variable (response)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">'is_setosa'</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'species'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'setosa'</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>  <span class="c1"># Convert 'setosa' to 1, others to 0</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'is_setosa'</span><span class="p">]</span>  <span class="c1"># Target variable</span>
-
-<span class="c1"># Split data into training and testing sets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># Fit the logistic regression model</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Make predictions</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Evaluate the model</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Accuracy:"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Confusion Matrix:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Accuracy: 1.0
-Confusion Matrix:
- [[26  0]
- [ 0 19]]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r,">{r,
-# Load required library
-if (!require(caret)) {
-  install.packages("caret")
-  library(caret)
-}
-
-# Load dataset (use any binary classification dataset)
-df &lt;- read.csv("data/iris.csv")
-
-# Create a binary dependent variable (response)
-df$is_setosa &lt;- ifelse(df$species == 'setosa', 1, 0)  # Convert 'setosa' to 1, others to 0
-
-# Create training and test sets
-set.seed(123)  # For reproducibility
-trainIndex &lt;- createDataPartition(df$is_setosa, p = 0.7, list = FALSE)
-trainData &lt;- df[trainIndex, ]
-testData &lt;- df[-trainIndex, ]
-
-# Train the logistic regression model
-model &lt;- train(is_setosa ~ sepal_length + sepal_width + petal_length + petal_width,
-               data = trainData,
-               method = "glm",
-               family = "binomial",
-               trControl = trainControl(method = "cv", number = 10))
-
-# Display the model details
-print(model)
-
-# Predict the probabilities using the logistic regression model
-pred_probs &lt;- predict(model, testData, type = "prob")[, 2]  # Get the probability of class 1
-
-# Convert probabilities to class predictions (0 or 1)
-pred_class &lt;- ifelse(pred_probs &gt; 0.5, 1, 0)
-
-# Evaluate the model using confusion matrix
-conf_matrix &lt;- confusionMatrix(factor(pred_class), factor(testData$is_setosa))
-
-# Print confusion matrix
-print(conf_matrix)
-</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Perform-Decision-Tree-Classification-in-Python-and-R?">How to Perform Decision Tree Classification in Python and R?<a class="anchor-link" href="#How-to-Perform-Decision-Tree-Classification-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p><strong>Decision Trees</strong> are a non-linear model used for both classification and regression. They split the dataset into subsets based on the most significant features, creating a tree-like structure where each internal node represents a feature or attribute, and each leaf node represents a decision or class label.</p>
-<p>The decision tree algorithm works by selecting the feature that best splits the data at each node based on certain criteria (e.g., Gini impurity, entropy for classification, and variance reduction for regression).</p>
-<ul>
-<li><strong>Classification Trees</strong>: Used when the target variable is categorical. For example, in a binary classification problem, the decision tree can predict class 0 or class 1 based on the input features.</li>
-<li><strong>Regression Trees</strong>: Used when the target variable is continuous.</li>
-</ul>
-<p>The tree is built recursively by selecting the best splits at each node and stopping when a stopping criterion (e.g., maximum depth, minimum samples per leaf) is met.</p>
-<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
-
-<span class="c1"># Load dataset (you can use any dataset)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
-
-<span class="c1"># Select independent variables (predictors)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'sepal_length'</span><span class="p">,</span> <span class="s1">'sepal_width'</span><span class="p">,</span> <span class="s1">'petal_length'</span><span class="p">,</span> <span class="s1">'petal_width'</span><span class="p">]]</span>  <span class="c1"># Features</span>
-
-<span class="c1"># Select target variable (species)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'species'</span><span class="p">]</span>  <span class="c1"># Target</span>
-
-<span class="c1"># Split data into training and testing sets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># Fit the decision tree classifier</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Make predictions</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Evaluate the model</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Accuracy:"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Confusion Matrix:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Accuracy: 1.0
-Confusion Matrix:
- [[19  0  0]
- [ 0 13  0]
- [ 0  0 13]]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r,">{r,
-# Load required library
-library(caret)
-
-# Load dataset (use any dataset)
-df &lt;- read.csv("data/iris.csv")
-
-# Create training and test sets
-set.seed(123)  # For reproducibility
-trainIndex &lt;- createDataPartition(df$species, p = 0.7, list = FALSE)
-trainData &lt;- df[trainIndex, ]
-testData &lt;- df[-trainIndex, ]
-
-# Train the model using decision tree classifier
-model &lt;- train(species ~ sepal_length + sepal_width + petal_length + petal_width,
-               data = trainData,
-               method = "rpart",
-               trControl = trainControl(method = "cv", number = 10))
-
-# Display the model details
-print(model)
-
-# Predict using the decision tree model
-pred &lt;- predict(model, testData)
-
-# Evaluate the model using confusion matrix
-confusionMatrix(pred, testData$species)
-</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Perform-Random-Forest-Classification-in-Python-and-R?">How to Perform Random Forest Classification in Python and R?<a class="anchor-link" href="#How-to-Perform-Random-Forest-Classification-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p><strong>Random Forest</strong> is an ensemble learning method that combines multiple decision trees to improve classification accuracy. Instead of relying on a single decision tree, random forest aggregates the predictions of many trees, reducing overfitting and improving generalization.</p>
-<ul>
-<li><strong>Bagging (Bootstrap Aggregating)</strong>: Random Forest uses bagging, which means training multiple models (decision trees) on random subsets of the data. Each tree is trained on a different random sample, and the final prediction is made by averaging (for regression) or majority voting (for classification) of all the trees' predictions.</li>
-<li><strong>Random Feature Selection</strong>: At each split in the decision tree, a random subset of features is selected, ensuring that trees are diverse and reducing the correlation between them.</li>
-</ul>
-<p>The main advantages of random forest are its robustness, the ability to handle a large number of features, and its capacity to deal with overfitting.</p>
-<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
-
-<span class="c1"># Load dataset (you can use any dataset)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
-
-<span class="c1"># Select independent variables (predictors)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'sepal_length'</span><span class="p">,</span> <span class="s1">'sepal_width'</span><span class="p">,</span> <span class="s1">'petal_length'</span><span class="p">,</span> <span class="s1">'petal_width'</span><span class="p">]]</span>  <span class="c1"># Features</span>
-
-<span class="c1"># Select target variable (species)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'species'</span><span class="p">]</span>  <span class="c1"># Target</span>
-
-<span class="c1"># Split data into training and testing sets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># Fit the random forest classifier</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Make predictions</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Evaluate the model</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Accuracy:"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Confusion Matrix:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Accuracy: 1.0
-Confusion Matrix:
- [[19  0  0]
- [ 0 13  0]
- [ 0  0 13]]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r,">{r,
-# Load required library
-library(caret)
-
-# Load dataset (use any dataset)
-df &lt;- read.csv("data/iris.csv")
-
-# Create training and test sets
-set.seed(123)  # For reproducibility
-trainIndex &lt;- createDataPartition(df$species, p = 0.7, list = FALSE)
-trainData &lt;- df[trainIndex, ]
-testData &lt;- df[-trainIndex, ]
-
-# Train the model using Random Forest
-model &lt;- train(species ~ sepal_length + sepal_width + petal_length + petal_width,
-               data = trainData,
-               method = "rf",
-               trControl = trainControl(method = "cv", number = 10))
-
-# Display the model details
-print(model)
-
-# Predict using the random forest model
-pred &lt;- predict(model, testData)
-
-# Evaluate the model using confusion matrix
-confusionMatrix(pred, testData$species)
-</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="How-to-Perform-Support-Vector-Machine-(SVM)-Classification-in-Python-and-R?">How to Perform Support Vector Machine (SVM) Classification in Python and R?<a class="anchor-link" href="#How-to-Perform-Support-Vector-Machine-(SVM)-Classification-in-Python-and-R?">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p><strong>Support Vector Machine (SVM)</strong> is a powerful supervised learning algorithm that can be used for both classification and regression tasks. It works by finding the hyperplane that best separates data points of different classes in a high-dimensional space.</p>
-<ul>
-<li><strong>Linear SVM</strong>: Finds a straight line or hyperplane that divides the classes.</li>
-<li><strong>Non-linear SVM</strong>: Uses kernel functions (like Radial Basis Function (RBF)) to transform the data into higher dimensions to make it linearly separable.</li>
-</ul>
-<p>The main objective of SVM is to maximize the margin between the two classes. The margin is the distance between the hyperplane and the closest data points from either class, known as support vectors.</p>
-<p>The SVM classifier works well for both linear and non-linear classification problems.</p>
-<h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">confusion_matrix</span>
-
-<span class="c1"># Load dataset (you can use any dataset)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">"data/iris.csv"</span><span class="p">)</span>
-
-<span class="c1"># Select independent variables (predictors)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">'sepal_length'</span><span class="p">,</span> <span class="s1">'sepal_width'</span><span class="p">,</span> <span class="s1">'petal_length'</span><span class="p">,</span> <span class="s1">'petal_width'</span><span class="p">]]</span>  <span class="c1"># Features</span>
-
-<span class="c1"># Select target variable (species)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">'species'</span><span class="p">]</span>  <span class="c1"># Target</span>
-
-<span class="c1"># Split data into training and testing sets</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-
-<span class="c1"># Fit the SVM classifier</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s1">'linear'</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
-<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-<span class="c1"># Make predictions</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-
-<span class="c1"># Evaluate the model</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Accuracy:"</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"Confusion Matrix:</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Accuracy: 1.0
-Confusion Matrix:
- [[19  0  0]
- [ 0 13  0]
- [ 0  0 13]]
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><pre><code class="language-{r,">{r,
-# Load required library
-library(caret)
-
-# Load dataset (use any dataset)
-df &lt;- read.csv("data/iris.csv")
-
-# Create training and test sets
-set.seed(123)  # For reproducibility
-trainIndex &lt;- createDataPartition(df$species, p = 0.7, list = FALSE)
-trainData &lt;- df[trainIndex, ]
-testData &lt;- df[-trainIndex, ]
-
-# Train the model using SVM with a linear kernel
-model &lt;- train(species ~ sepal_length + sepal_width + petal_length + petal_width,
-               data = trainData,
-               method = "svmLinear",
-               trControl = trainControl(method = "cv", number = 10))
-
-# Display the model details
-print(model)
-
-# Predict using the SVM model
-pred &lt;- predict(model, testData)
-
-# Evaluate the model using confusion matrix
-confusionMatrix(pred, testData$species)
-</code></pre>
+<hr/>
 </div>
 </div>
 </div>

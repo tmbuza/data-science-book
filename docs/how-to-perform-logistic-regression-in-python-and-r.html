@@ -155,7 +155,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.3.3" data-path="setup-dev-envt.html"><a href="setup-dev-envt.html#installing-extensions-in-vscode"><i class="fa fa-check"></i><b>1.3.3</b> <strong>Installing Extensions in VSCode</strong></a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>II QUESTION &amp; ANSWER (Q&amp;A)</b></span></li>
+<li class="part"><span><b>II BASIC KNOWLEDGE</b></span></li>
 <li class="chapter" data-level="2" data-path="how-to-install-basic-libaries-for-python-and-r.html"><a href="how-to-install-basic-libaries-for-python-and-r.html"><i class="fa fa-check"></i><b>2</b> How to Install Basic Libaries for Python and R</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="how-to-install-basic-libaries-for-python-and-r.html"><a href="how-to-install-basic-libaries-for-python-and-r.html#explanation"><i class="fa fa-check"></i><b>2.1</b> Explanation</a></li>
@@ -344,6 +344,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="32.2" data-path="how-to-perform-multiple-linear-regression-in-python-and-r.html"><a href="how-to-perform-multiple-linear-regression-in-python-and-r.html#python-code-29"><i class="fa fa-check"></i><b>32.2</b> Python Code</a></li>
 <li class="chapter" data-level="32.3" data-path="how-to-perform-multiple-linear-regression-in-python-and-r.html"><a href="how-to-perform-multiple-linear-regression-in-python-and-r.html#r-code-28"><i class="fa fa-check"></i><b>32.3</b> R Code</a></li>
 </ul></li>
+<li class="part"><span><b>V MACHINE LEARNING</b></span></li>
 <li class="chapter" data-level="33" data-path="how-to-perform-logistic-regression-in-python-and-r.html"><a href="how-to-perform-logistic-regression-in-python-and-r.html"><i class="fa fa-check"></i><b>33</b> How to Perform Logistic Regression in Python and R?</a>
 <ul>
 <li class="chapter" data-level="33.1" data-path="how-to-perform-logistic-regression-in-python-and-r.html"><a href="how-to-perform-logistic-regression-in-python-and-r.html#explanation-30"><i class="fa fa-check"></i><b>33.1</b> Explanation</a></li>
@@ -445,45 +446,41 @@ Confusion Matrix:
 </div>
 <div id="r-code-29" class="section level2 hasAnchor" number="33.3">
 <h2><span class="header-section-number">33.3</span> R Code<a href="how-to-perform-logistic-regression-in-python-and-r.html#r-code-29" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-1" tabindex="-1"></a><span class="co"># Load required library</span></span>
-<span id="cb156-2"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-2" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(caret)) {</span>
-<span id="cb156-3"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-3" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">&quot;caret&quot;</span>)</span>
-<span id="cb156-4"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-4" tabindex="-1"></a>  <span class="fu">library</span>(caret)</span>
-<span id="cb156-5"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-5" tabindex="-1"></a>}</span>
-<span id="cb156-6"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-6" tabindex="-1"></a></span>
-<span id="cb156-7"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-7" tabindex="-1"></a><span class="co"># Load dataset (use any binary classification dataset)</span></span>
-<span id="cb156-8"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-8" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
-<span id="cb156-9"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-9" tabindex="-1"></a></span>
-<span id="cb156-10"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-10" tabindex="-1"></a><span class="co"># Create a binary dependent variable (response)</span></span>
-<span id="cb156-11"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-11" tabindex="-1"></a>df<span class="sc">$</span>is_setosa <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(df<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;setosa&#39;</span>, <span class="dv">1</span>, <span class="dv">0</span>)  <span class="co"># Convert &#39;setosa&#39; to 1, others to 0</span></span>
-<span id="cb156-12"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-12" tabindex="-1"></a></span>
-<span id="cb156-13"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-13" tabindex="-1"></a><span class="co"># Create training and test sets</span></span>
-<span id="cb156-14"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-14" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
-<span id="cb156-15"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-15" tabindex="-1"></a>trainIndex <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(df<span class="sc">$</span>is_setosa, <span class="at">p =</span> <span class="fl">0.7</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb156-16"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-16" tabindex="-1"></a>trainData <span class="ot">&lt;-</span> df[trainIndex, ]</span>
-<span id="cb156-17"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-17" tabindex="-1"></a>testData <span class="ot">&lt;-</span> df[<span class="sc">-</span>trainIndex, ]</span>
-<span id="cb156-18"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-18" tabindex="-1"></a></span>
-<span id="cb156-19"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-19" tabindex="-1"></a><span class="co"># Train the logistic regression model</span></span>
-<span id="cb156-20"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-20" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">train</span>(is_setosa <span class="sc">~</span> sepal_length <span class="sc">+</span> sepal_width <span class="sc">+</span> petal_length <span class="sc">+</span> petal_width,</span>
-<span id="cb156-21"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-21" tabindex="-1"></a>               <span class="at">data =</span> trainData,</span>
-<span id="cb156-22"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-22" tabindex="-1"></a>               <span class="at">method =</span> <span class="st">&quot;glm&quot;</span>,</span>
-<span id="cb156-23"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-23" tabindex="-1"></a>               <span class="at">family =</span> <span class="st">&quot;binomial&quot;</span>,</span>
-<span id="cb156-24"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-24" tabindex="-1"></a>               <span class="at">trControl =</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">&quot;cv&quot;</span>, <span class="at">number =</span> <span class="dv">10</span>))</span>
-<span id="cb156-25"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-25" tabindex="-1"></a></span>
-<span id="cb156-26"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-26" tabindex="-1"></a><span class="co"># Display the model details</span></span>
-<span id="cb156-27"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-27" tabindex="-1"></a><span class="fu">print</span>(model)</span>
-<span id="cb156-28"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-28" tabindex="-1"></a></span>
-<span id="cb156-29"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-29" tabindex="-1"></a><span class="co"># Predict the probabilities using the logistic regression model</span></span>
-<span id="cb156-30"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-30" tabindex="-1"></a>pred_probs <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, testData, <span class="at">type =</span> <span class="st">&quot;prob&quot;</span>)[, <span class="dv">2</span>]  <span class="co"># Get the probability of class 1</span></span>
-<span id="cb156-31"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-31" tabindex="-1"></a></span>
-<span id="cb156-32"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-32" tabindex="-1"></a><span class="co"># Convert probabilities to class predictions (0 or 1)</span></span>
-<span id="cb156-33"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-33" tabindex="-1"></a>pred_class <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(pred_probs <span class="sc">&gt;</span> <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb156-34"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-34" tabindex="-1"></a></span>
-<span id="cb156-35"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-35" tabindex="-1"></a><span class="co"># Evaluate the model using confusion matrix</span></span>
-<span id="cb156-36"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-36" tabindex="-1"></a>conf_matrix <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(<span class="fu">factor</span>(pred_class), <span class="fu">factor</span>(testData<span class="sc">$</span>is_setosa))</span>
-<span id="cb156-37"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-37" tabindex="-1"></a></span>
-<span id="cb156-38"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-38" tabindex="-1"></a><span class="co"># Print confusion matrix</span></span>
-<span id="cb156-39"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-39" tabindex="-1"></a><span class="fu">print</span>(conf_matrix)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-1" tabindex="-1"></a><span class="fu">library</span>(caret)</span>
+<span id="cb156-2"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-2" tabindex="-1"></a></span>
+<span id="cb156-3"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-3" tabindex="-1"></a><span class="co"># Load dataset (use any binary classification dataset)</span></span>
+<span id="cb156-4"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-4" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/iris.csv&quot;</span>)</span>
+<span id="cb156-5"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-5" tabindex="-1"></a></span>
+<span id="cb156-6"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-6" tabindex="-1"></a><span class="co"># Create a binary dependent variable (response)</span></span>
+<span id="cb156-7"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-7" tabindex="-1"></a>df<span class="sc">$</span>is_setosa <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(df<span class="sc">$</span>species <span class="sc">==</span> <span class="st">&#39;setosa&#39;</span>, <span class="dv">1</span>, <span class="dv">0</span>)  <span class="co"># Convert &#39;setosa&#39; to 1, others to 0</span></span>
+<span id="cb156-8"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-8" tabindex="-1"></a></span>
+<span id="cb156-9"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-9" tabindex="-1"></a><span class="co"># Create training and test sets</span></span>
+<span id="cb156-10"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-10" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)  <span class="co"># For reproducibility</span></span>
+<span id="cb156-11"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-11" tabindex="-1"></a>trainIndex <span class="ot">&lt;-</span> <span class="fu">createDataPartition</span>(df<span class="sc">$</span>is_setosa, <span class="at">p =</span> <span class="fl">0.7</span>, <span class="at">list =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb156-12"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-12" tabindex="-1"></a>trainData <span class="ot">&lt;-</span> df[trainIndex, ]</span>
+<span id="cb156-13"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-13" tabindex="-1"></a>testData <span class="ot">&lt;-</span> df[<span class="sc">-</span>trainIndex, ]</span>
+<span id="cb156-14"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-14" tabindex="-1"></a></span>
+<span id="cb156-15"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-15" tabindex="-1"></a><span class="co"># Train the logistic regression model</span></span>
+<span id="cb156-16"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-16" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">train</span>(is_setosa <span class="sc">~</span> sepal_length <span class="sc">+</span> sepal_width <span class="sc">+</span> petal_length <span class="sc">+</span> petal_width,</span>
+<span id="cb156-17"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-17" tabindex="-1"></a>               <span class="at">data =</span> trainData,</span>
+<span id="cb156-18"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-18" tabindex="-1"></a>               <span class="at">method =</span> <span class="st">&quot;glm&quot;</span>,</span>
+<span id="cb156-19"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-19" tabindex="-1"></a>               <span class="at">family =</span> <span class="st">&quot;binomial&quot;</span>,</span>
+<span id="cb156-20"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-20" tabindex="-1"></a>               <span class="at">trControl =</span> <span class="fu">trainControl</span>(<span class="at">method =</span> <span class="st">&quot;cv&quot;</span>, <span class="at">number =</span> <span class="dv">10</span>))</span>
+<span id="cb156-21"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-21" tabindex="-1"></a></span>
+<span id="cb156-22"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-22" tabindex="-1"></a><span class="co"># Display the model details</span></span>
+<span id="cb156-23"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-23" tabindex="-1"></a><span class="fu">print</span>(model)</span>
+<span id="cb156-24"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-24" tabindex="-1"></a></span>
+<span id="cb156-25"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-25" tabindex="-1"></a><span class="co"># Predict the probabilities using the logistic regression model</span></span>
+<span id="cb156-26"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-26" tabindex="-1"></a>pred_probs <span class="ot">&lt;-</span> <span class="fu">predict</span>(model, testData, <span class="at">type =</span> <span class="st">&quot;prob&quot;</span>)[, <span class="dv">2</span>]  <span class="co"># Get the probability of class 1</span></span>
+<span id="cb156-27"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-27" tabindex="-1"></a></span>
+<span id="cb156-28"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-28" tabindex="-1"></a><span class="co"># Convert probabilities to class predictions (0 or 1)</span></span>
+<span id="cb156-29"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-29" tabindex="-1"></a>pred_class <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(pred_probs <span class="sc">&gt;</span> <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb156-30"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-30" tabindex="-1"></a></span>
+<span id="cb156-31"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-31" tabindex="-1"></a><span class="co"># Evaluate the model using confusion matrix</span></span>
+<span id="cb156-32"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-32" tabindex="-1"></a>conf_matrix <span class="ot">&lt;-</span> <span class="fu">confusionMatrix</span>(<span class="fu">factor</span>(pred_class), <span class="fu">factor</span>(testData<span class="sc">$</span>is_setosa))</span>
+<span id="cb156-33"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-33" tabindex="-1"></a></span>
+<span id="cb156-34"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-34" tabindex="-1"></a><span class="co"># Print confusion matrix</span></span>
+<span id="cb156-35"><a href="how-to-perform-logistic-regression-in-python-and-r.html#cb156-35" tabindex="-1"></a><span class="fu">print</span>(conf_matrix)</span></code></pre></div>
 </div>
 </div>
             </section>

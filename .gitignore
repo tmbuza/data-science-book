@@ -24,3 +24,8 @@ library/
 .Rproj.user
 
 format.md
+
+./*.ipynb
+./*.Rmd
+./*.html
+*.html

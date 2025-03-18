@@ -312,31 +312,29 @@ plt.show()
 
 ## R Code
 
-```{r, eval=FALSE}
-# Load the necessary libraries
-library(ggplot2)
-library(RColorBrewer)
+```{r}
+# Import libraries
+library(readr)    # For reading CSV
+library(corrplot) # For correlation matrix visualization
+library(dplyr)    # For data manipulation
 
 # Load the dataset
-df <- read.csv('data/iris.csv')
+df <- read_csv("data/iris.csv")
 
-# Ensure the numeric columns are selected
-df_numeric <- df[, sapply(df, is.numeric)]
+# Select only numeric columns for correlation
+numeric_df <- df %>% select(where(is.numeric))
 
-# Create a correlation matrix for the numeric data
-corr <- cor(df_numeric)
+# Create a correlation matrix
+corr <- cor(numeric_df)
 
-# Define the color palette
-colors <- brewer.pal(9, "YlGnBu")
-
-# Create a heatmap with a specified range
-heatmap(corr, 
-        main="Heatmap of Iris Dataset Correlations", 
-        col=colors, 
-        scale="none", 
-        cexCol=0.75, 
-        cexRow=0.75, 
-        breaks=seq(-1, 1, length.out=100))
+# Create a heatmap using corrplot with adjusted x-axis label position
+corrplot(corr, method = "color", 
+         col = colorRampPalette(c("blue", "white", "red"))(200), 
+         addCoef.col = "black", 
+         number.cex = 0.7, 
+         title = "Heatmap of Iris Dataset Correlations",
+         mar = c(0, 0, 2, 0),   # Adjust margin size to create space for the title
+         las = 1)               # Rotate x-axis labels for better spacing
 ```
 
 # How to Create a Pair Plot in Python and R?
@@ -349,34 +347,50 @@ A pair plot is used to visualize pairwise relationships between multiple variabl
 
 
 ```python
-# Import libraries
+import seaborn as sns
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
+import warnings  # Suppress warnings
 
-# Load the dataset
-df = pd.read_csv('data/iris.csv')
+# Hide warnings
+warnings.filterwarnings("ignore")
 
-# Create a pair plot
+# Load dataset from CSV
+df = pd.read_csv("data/iris.csv")
+
+# Exclude the target column and plot pairplot
 sns.pairplot(df, hue="species")
-plt.title("Pair Plot of Iris Dataset")
+
+# Adjust layout to prevent overlapping
+plt.tight_layout()
+
+# Show the plot
 plt.show()
 ```
 
-    /Users/tmbmacbookair/anaconda3/lib/python3.11/site-packages/seaborn/axisgrid.py:118: UserWarning: The figure layout has changed to tight
-      self._figure.tight_layout(*args, **kwargs)
-
-
 
     
-![](data-visualization_files/data-visualization_20_1.png)
+![](data-visualization_files/data-visualization_20_0.png)
     
 
 
 ## R Code
 
-```{r}
+```{r fig.width=12, fig.height=6, echo=TRUE, warning=FALSE, message=FALSE}
+# Ensure required packages are installed and loaded
+if (!require(GGally)) install.packages("GGally", repos = "https://cloud.r-project.org/", dependencies = TRUE)
+if (!require(ggplot2)) install.packages("ggplot2", repos = "https://cloud.r-project.org/", dependencies = TRUE)
+if (!require(readr)) install.packages("readr", repos = "https://cloud.r-project.org/", dependencies = TRUE)
 
+library(GGally)
+library(ggplot2)
+library(readr)
+
+# Load dataset from CSV
+df <- read_csv("data/iris.csv")
+
+# Plot pairplot excluding the target column but using it as hue
+ggpairs(df, aes(color = species)) + theme_minimal()
 ```
 
 # How to Create a Violin Plot in Python and R?

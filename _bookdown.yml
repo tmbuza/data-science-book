@@ -9,10 +9,11 @@ output_dir: docs
 new_session: yes
 
 rmd_files:
-- index.Rmd
-- getting-started-py.Rmd
-- data-visualization.Rmd
-- statistical-analysis.Rmd
+  - index.Rmd
+  - getting-started-py.Rmd
+  - data-visualization.Rmd
+  - statistical-analysis.Rmd
+  - machine-learning.Rmd
 
 
 
