@@ -7516,7 +7516,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="(PART)-GETTING-STARTED-%7B-%7D">(PART) GETTING STARTED {-}<a class="anchor-link" href="#(PART)-GETTING-STARTED-%7B-%7D">¶</a></h1><h1 id="Setting-Up-Your-Development-Environment-%7B%23setup-dev-envt%7D">Setting Up Your Development Environment {#setup-dev-envt}<a class="anchor-link" href="#Setting-Up-Your-Development-Environment-%7B%23setup-dev-envt%7D">¶</a></h1><p>Before diving into the Q&amp;A sections, it's important to ensure your environment is properly set up. This section will guide you through the steps to prepare everything you need to start working with both Python and R. To begin working with data science, you’ll need to set up your development environment. Follow the steps below to install and configure the necessary tools.</p>
+<h1 id="(PART)-SETTING-UP-DEV-ENVT-%7B-%7D">(PART) SETTING UP DEV ENVT {-}<a class="anchor-link" href="#(PART)-SETTING-UP-DEV-ENVT-%7B-%7D">¶</a></h1><h1 id="How-to-Set-Up-Your-Development-Environment">How to Set Up Your Development Environment<a class="anchor-link" href="#How-to-Set-Up-Your-Development-Environment">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Setting up the right environment is crucial for coding in Python and R. Follow these steps to ensure you're ready for the journey ahead.
+Before diving into the Q&amp;A sections, it's important to ensure your development environment is set up properly. This section will guide you through the steps needed to install and configure the necessary tools to get started with both Python and R for data science. Once your environment is ready, you'll be able to follow the Q&amp;A sections effectively.</p>
 <pre><code class="language-{r,">{r,
 knitr::opts_chunk$set(
   echo  =TRUE,
@@ -7532,54 +7533,72 @@ if(!require("tidyverse")) {
 </code></pre>
 <h2 id="Install-Python">Install Python<a class="anchor-link" href="#Install-Python">¶</a></h2><ol>
 <li>Visit the official <a href="https://www.python.org/downloads/">Python website</a> to download and install the latest version of Python.</li>
-<li>During installation, ensure that you check the box to <strong>add Python to your PATH</strong>.</li>
+<li>During installation, make sure to check the box to <strong>add Python to your PATH</strong>.</li>
 </ol>
 <h2 id="Install-R">Install R<a class="anchor-link" href="#Install-R">¶</a></h2><ol>
 <li>Visit the official <a href="https://cran.r-project.org/">R Project website</a> to download and install the latest version of R.</li>
-<li>Follow the installation instructions for your operating system.</li>
+<li>Follow the installation instructions based on your operating system.</li>
 </ol>
-<h2 id="Install-VSCode">Install VSCode<a class="anchor-link" href="#Install-VSCode">¶</a></h2><h3 id="Why-Use-VSCode?">Why Use VSCode?<a class="anchor-link" href="#Why-Use-VSCode?">¶</a></h3><p><strong>Visual Studio Code (VSCode)</strong> is a lightweight, free, and powerful code editor that supports multiple programming languages, including <strong>Python</strong> and <strong>R</strong>. It provides an interactive environment for writing, running, and debugging code efficiently.</p>
-<h3 id="Installation-Steps:">Installation Steps:<a class="anchor-link" href="#Installation-Steps:">¶</a></h3><ol>
+<h2 id="Install-VSCode">Install VSCode<a class="anchor-link" href="#Install-VSCode">¶</a></h2><p>Visual Studio Code (VSCode) is a free and powerful code editor that supports both Python and R. It offers an interactive environment for writing, running, and debugging code efficiently.</p>
+<ol>
 <li>Download and install <strong>Visual Studio Code (VSCode)</strong> from the <a href="https://code.visualstudio.com/">official VSCode website</a>.</li>
-<li>Once installed, open VSCode and install the necessary extensions to enable support for Python and R.</li>
+<li>After installation, open VSCode and install the necessary extensions for Python and R.</li>
 </ol>
-<h3 id="Installing-Extensions-in-VSCode"><strong>Installing Extensions in VSCode</strong><a class="anchor-link" href="#Installing-Extensions-in-VSCode">¶</a></h3><p>Extensions enhance the functionality of VSCode by adding language support, debugging tools, and other useful features.</p>
-<p><strong>For Python:</strong></p>
+<h3 id="Installing-Extensions-in-VSCode-%7B-%7D">Installing Extensions in VSCode {-}<a class="anchor-link" href="#Installing-Extensions-in-VSCode-%7B-%7D">¶</a></h3><p><strong>For Python</strong>:</p>
 <ul>
 <li>Open VSCode.</li>
 <li>Press <code>Ctrl + Shift + X</code> (Windows/Linux) or <code>Cmd + Shift + X</code> (Mac) to open the Extensions Marketplace.</li>
-<li>Search for <strong>Python</strong> (developed by Microsoft).</li>
-<li>Click <strong>Install</strong>.</li>
-<li>This extension provides:<ul>
+<li>Search for <strong>Python</strong> (developed by Microsoft) and click <strong>Install</strong>.</li>
+</ul>
+<p>This extension provides:</p>
+<ul>
 <li><strong>IntelliSense</strong> (code completion, function suggestions, and real-time error checking).</li>
 <li>Debugging support.</li>
 <li>Jupyter Notebook integration.</li>
 <li>Formatting and linting tools.</li>
 </ul>
-</li>
-</ul>
-<p><strong>For R:</strong></p>
+<p><strong>For R</strong>:</p>
 <ul>
-<li>In the Extensions Marketplace, search for <strong>R</strong>.</li>
-<li>Click <strong>Install</strong>.</li>
-<li>This extension provides:<ul>
+<li>In the Extensions Marketplace, search for <strong>R</strong> and click <strong>Install</strong>.</li>
+</ul>
+<p>This extension provides:</p>
+<ul>
 <li><strong>IntelliSense</strong> for R functions and datasets.</li>
-<li>Integrated R terminal for running scripts.</li>
+<li>An integrated R terminal for running scripts.</li>
 <li>Debugging support.</li>
 </ul>
-</li>
-</ul>
-<p><strong>What is IntelliSense?</strong></p>
-<p><strong>IntelliSense</strong> is an advanced code assistance feature that helps you write code faster and with fewer errors by providing <strong>autocomplete suggestions, function hints, and real-time error checking</strong>. It makes coding in Python and R easier by suggesting function names, displaying expected arguments, and highlighting errors before you run the code.</p>
-<p><strong>Verify Installation</strong></p>
-<p>After installing VSCode and the extensions:</p>
+<blockquote>
+<p><strong>IntelliSense</strong> is a code assistance feature that helps you write code faster and with fewer errors. It provides <strong>autocomplete suggestions</strong>, <strong>function hints</strong>, and <strong>real-time error checking</strong>, making coding in both Python and R more efficient.</p>
+</blockquote>
+<h3 id="Verify-Installation-%7B-%7D">Verify Installation {-}<a class="anchor-link" href="#Verify-Installation-%7B-%7D">¶</a></h3><p>After installing VSCode and the necessary extensions:</p>
 <ul>
-<li>Open VSCode and check if the extensions are enabled.</li>
-<li>Open a Python or R script to ensure syntax highlighting and <strong>IntelliSense</strong> work correctly.</li>
-<li>If using R, ensure you have R installed on your system so that the R extension can detect it.</li>
+<li>Open VSCode and ensure that the extensions are enabled.</li>
+<li>Open a Python or R script to ensure that syntax highlighting and IntelliSense work correctly.</li>
+<li>If you're using R, ensure R is installed on your system so that the R extension can detect it.</li>
 </ul>
-<p>Now, you're ready to start coding in both <strong>Python</strong> and <strong>R</strong> using VSCode! 🚀</p>
 <hr/>
+<h2 id="How-to-Navigate-This-Guide">How to Navigate This Guide<a class="anchor-link" href="#How-to-Navigate-This-Guide">¶</a></h2><p>This guide follows a <strong>Q&amp;A format</strong>, where each section presents a question, an explanation, and solutions in both <strong>Python</strong> and <strong>R</strong>. This structure allows you to compare approaches side by side, reinforcing your understanding of data science concepts.</p>
+<h3 id="Q&amp;A-Format-%7B-%7D">Q&amp;A Format {-}<a class="anchor-link" href="#Q&amp;A-Format-%7B-%7D">¶</a></h3><p>Each topic is structured as follows:</p>
+<ul>
+<li><strong>Question</strong>: A clear problem statement.</li>
+<li><strong>Explanation</strong>: A breakdown of the concept with key insights.</li>
+<li><strong>Python Code</strong>: Solution using Python.</li>
+<li><strong>R Code</strong>: Solution using R.</li>
+</ul>
+<hr/>
+<h2 id="Best-Practices-for-Trying-Python-&amp;-R-Side-by-Side">Best Practices for Trying Python &amp; R Side by Side<a class="anchor-link" href="#Best-Practices-for-Trying-Python-&amp;-R-Side-by-Side">¶</a></h2><p>To get the most out of this guide, follow these best practices:</p>
+<p><strong>1. Run Python and R Solutions Separately</strong><br/>
+Each language has its own syntax and libraries, so run the solutions independently in <strong>Jupyter Notebook (Python)</strong> and <strong>RStudio (R)</strong>.</p>
+<p><strong>2. Experiment with Code</strong><br/>
+Modify the examples, change values, and try new functions to deepen your understanding.</p>
+<p><strong>3. Compare Outputs</strong><br/>
+Observe how results differ between Python and R, especially in data visualization and statistical analysis.</p>
+<p><strong>4. Use the Same Dataset</strong><br/>
+Ensure you're using the same dataset in both Python and R to maintain consistency when comparing results.</p>
+<p>By following this approach, you'll develop <strong>a strong foundation</strong> in both languages and gain confidence in handling data science tasks.</p>
+<hr/>
+<h2 id="Transition-to-Data-Science-Q&amp;A-%7B-%7D">Transition to Data Science Q&amp;A {-}<a class="anchor-link" href="#Transition-to-Data-Science-Q&amp;A-%7B-%7D">¶</a></h2><p>Now that you’ve set up your development environment and understood how to navigate this guide, you are ready to dive into the first Q&amp;A section. This section will introduce the <strong>first practical task</strong> in data science: <strong>How to Install Basic Libraries for Python and R</strong>.</p>
+<p>Installing essential libraries is the first step in using Python and R for data science. Let’s get started! 🚀</p>
 </div>
 </div>
 </div>
@@ -7590,7 +7609,7 @@ if(!require("tidyverse")) {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="(PART)-BASIC-KNOWLEDGE-%7B-%7D">(PART) BASIC KNOWLEDGE {-}<a class="anchor-link" href="#(PART)-BASIC-KNOWLEDGE-%7B-%7D">¶</a></h1><h1 id="How-to-Install-Basic-Libaries-for-Python-and-R">How to Install Basic Libaries for Python and R<a class="anchor-link" href="#How-to-Install-Basic-Libaries-for-Python-and-R">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Before you can load datasets in Python and R, you need to install the necessary libraries. Here's how you can install the basic libraries required for this guide:</p>
+<h1 id="(PART)-DATA-SCIENCE-Q&amp;A-%7B-%7D">(PART) DATA SCIENCE Q&amp;A {-}<a class="anchor-link" href="#(PART)-DATA-SCIENCE-Q&amp;A-%7B-%7D">¶</a></h1><h1 id="How-to-Install-Basic-Libaries-for-Python-and-R">How to Install Basic Libaries for Python and R<a class="anchor-link" href="#How-to-Install-Basic-Libaries-for-Python-and-R">¶</a></h1><h2 id="Explanation">Explanation<a class="anchor-link" href="#Explanation">¶</a></h2><p>Before you can load datasets in Python and R, you need to install the necessary libraries. Here's how you can install the basic libraries required for this guide:</p>
 <h2 id="Python-Code">Python Code<a class="anchor-link" href="#Python-Code">¶</a></h2><p>In your terminal, run the following command to install the necessary libraries for data manipulation, visualization, and machine learning:</p>
 <div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pandas<span class="w"> </span>matplotlib<span class="w"> </span>scikit-learn
 </pre></div>
@@ -7607,6 +7626,9 @@ if(!require("tidyverse")) {
 <h2 id="R-Code">R Code<a class="anchor-link" href="#R-Code">¶</a></h2><p>In R, install the following packages to help with data manipulation and visualization:</p>
 <div class="highlight"><pre><span></span><span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">require</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="nf">install.packages</span><span class="p">(</span><span class="s">'tidyverse'</span><span class="p">)}</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+
+<span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">require</span><span class="p">(</span><span class="n">GGally</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="nf">install.packages</span><span class="p">(</span><span class="s">'GGally'</span><span class="p">)}</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">GGally</span><span class="p">)</span>
 
 <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">require</span><span class="p">(</span><span class="n">caret</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="nf">install.packages</span><span class="p">(</span><span class="s">'caret'</span><span class="p">)}</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">caret</span><span class="p">)</span>

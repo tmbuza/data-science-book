@@ -6,9 +6,10 @@
 
 A bar plot is used to visualize categorical data with rectangular bars representing the frequency or value of categories.
 
+
+
+
 ## Python Code
-
-
 
 
 ```python
@@ -30,7 +31,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_2_0.png)
+![](data-visualization_files/data-visualization_1_0.png)
     
 
 
@@ -53,7 +54,7 @@ ggplot(df, aes(x=species, fill=species)) +
   ylab("Count")
 ```
 
-<img src="data-visualization_files/figure-html/unnamed-chunk-1-1.png" width="672" />
+<img src="data-visualization_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 # How to Create a Histogram in Python and R?
 
@@ -83,7 +84,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_5_0.png)
+![](data-visualization_files/data-visualization_4_0.png)
     
 
 
@@ -106,7 +107,7 @@ ggplot(df, aes(x=sepal_length)) +
   ylab("Frequency")
 ```
 
-<img src="data-visualization_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+<img src="data-visualization_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 # How to Create a Scatter Plot in Python and R?
 
@@ -146,7 +147,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_8_0.png)
+![](data-visualization_files/data-visualization_7_0.png)
     
 
 
@@ -169,7 +170,7 @@ ggplot(df, aes(x=sepal_length, y=sepal_width, color=species)) +
   ylab("Sepal Width")
 ```
 
-<img src="data-visualization_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="data-visualization_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 # How to Create a Line Plot in Python and R?
 
@@ -199,7 +200,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_11_0.png)
+![](data-visualization_files/data-visualization_10_0.png)
     
 
 
@@ -222,7 +223,7 @@ ggplot(df, aes(x=sepal_length, y=sepal_width)) +
   ylab("Sepal Width")
 ```
 
-<img src="data-visualization_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="data-visualization_files/figure-html/unnamed-chunk-5-1.png" width="672" />
 
 # How to Create a Box Plot in Python and R?
 
@@ -252,7 +253,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_14_0.png)
+![](data-visualization_files/data-visualization_13_0.png)
     
 
 
@@ -275,7 +276,7 @@ ggplot(df, aes(x=species, y=sepal_length, fill=species)) +
   ylab("Sepal Length")
 ```
 
-<img src="data-visualization_files/figure-html/unnamed-chunk-5-1.png" width="672" />
+<img src="data-visualization_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 
 # How to Create a Heatmap in Python and R?
 
@@ -309,7 +310,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_17_0.png)
+![](data-visualization_files/data-visualization_16_0.png)
     
 
 
@@ -341,7 +342,7 @@ corrplot(corr, method = "color",
          las = 1)               # Rotate x-axis labels for better spacing
 ```
 
-<img src="data-visualization_files/figure-html/unnamed-chunk-6-1.png" width="672" />
+<img src="data-visualization_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 # How to Create a Pair Plot in Python and R?
 
@@ -376,7 +377,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_20_0.png)
+![](data-visualization_files/data-visualization_19_0.png)
     
 
 
@@ -400,7 +401,7 @@ df <- read_csv("data/iris.csv")
 ggpairs(df, aes(color = species)) + theme_minimal()
 ```
 
-<img src="data-visualization_files/figure-html/unnamed-chunk-7-1.png" width="1152" />
+<img src="data-visualization_files/figure-html/unnamed-chunk-8-1.png" width="1152" />
 
 # How to Create a Violin Plot in Python and R?
 
@@ -430,7 +431,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_23_0.png)
+![](data-visualization_files/data-visualization_22_0.png)
     
 
 
@@ -453,4 +454,4 @@ ggplot(df, aes(x=species, y=sepal_length, fill=species)) +
   ylab("Sepal Length")
 ```
 
-<img src="data-visualization_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+<img src="data-visualization_files/figure-html/unnamed-chunk-9-1.png" width="672" />

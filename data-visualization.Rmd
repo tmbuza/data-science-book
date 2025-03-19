@@ -6,9 +6,8 @@
 
 A bar plot is used to visualize categorical data with rectangular bars representing the frequency or value of categories.
 
-## Python Code
 
-```{r setup, echo=FALSE, include=FALSE}
+```{r, echo=FALSE, include=FALSE}
 knitr::opts_chunk$set(
   echo  =TRUE,
   message  =FALSE,
@@ -21,6 +20,8 @@ if(!require("tidyverse")) {
   install.packages("tidyverse")
   library(tidyverse)}
 ```
+
+## Python Code
 
 
 ```python
@@ -42,7 +43,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_2_0.png)
+![](data-visualization_files/data-visualization_1_0.png)
     
 
 
@@ -92,7 +93,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_5_0.png)
+![](data-visualization_files/data-visualization_4_0.png)
     
 
 
@@ -152,7 +153,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_8_0.png)
+![](data-visualization_files/data-visualization_7_0.png)
     
 
 
@@ -202,7 +203,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_11_0.png)
+![](data-visualization_files/data-visualization_10_0.png)
     
 
 
@@ -252,7 +253,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_14_0.png)
+![](data-visualization_files/data-visualization_13_0.png)
     
 
 
@@ -306,7 +307,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_17_0.png)
+![](data-visualization_files/data-visualization_16_0.png)
     
 
 
@@ -370,7 +371,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_20_0.png)
+![](data-visualization_files/data-visualization_19_0.png)
     
 
 
@@ -421,7 +422,7 @@ plt.show()
 
 
     
-![](data-visualization_files/data-visualization_23_0.png)
+![](data-visualization_files/data-visualization_22_0.png)
     
 
 

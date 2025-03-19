@@ -1,8 +1,10 @@
-# (PART) GETTING STARTED {-}
+# (PART) SETTING UP DEV ENVT {-}
 
-#  Setting Up Your Development Environment {#setup-dev-envt}
+# How to Set Up Your Development Environment
 
-Before diving into the Q&A sections, it's important to ensure your environment is properly set up. This section will guide you through the steps to prepare everything you need to start working with both Python and R. To begin working with data science, you’ll need to set up your development environment. Follow the steps below to install and configure the necessary tools.
+## Explanation
+Setting up the right environment is crucial for coding in Python and R. Follow these steps to ensure you're ready for the journey ahead.
+Before diving into the Q&A sections, it's important to ensure your development environment is set up properly. This section will guide you through the steps needed to install and configure the necessary tools to get started with both Python and R for data science. Once your environment is ready, you'll be able to follow the Q&A sections effectively.
 
 
 ```{r, echo=FALSE, include=FALSE}
@@ -19,69 +21,103 @@ if(!require("tidyverse")) {
   library(tidyverse)}
 ```
 
+
 ## Install Python
 
 1. Visit the official [Python website](https://www.python.org/downloads/) to download and install the latest version of Python.
-2. During installation, ensure that you check the box to **add Python to your PATH**.
+2. During installation, make sure to check the box to **add Python to your PATH**.
 
 ## Install R
 
 1. Visit the official [R Project website](https://cran.r-project.org/) to download and install the latest version of R.
-2. Follow the installation instructions for your operating system.
+2. Follow the installation instructions based on your operating system.
 
 ## Install VSCode
 
-### Why Use VSCode?
-**Visual Studio Code (VSCode)** is a lightweight, free, and powerful code editor that supports multiple programming languages, including **Python** and **R**. It provides an interactive environment for writing, running, and debugging code efficiently.  
+Visual Studio Code (VSCode) is a free and powerful code editor that supports both Python and R. It offers an interactive environment for writing, running, and debugging code efficiently.
 
-### Installation Steps:
 1. Download and install **Visual Studio Code (VSCode)** from the [official VSCode website](https://code.visualstudio.com/).
-2. Once installed, open VSCode and install the necessary extensions to enable support for Python and R.
+2. After installation, open VSCode and install the necessary extensions for Python and R.
 
-### **Installing Extensions in VSCode**
-Extensions enhance the functionality of VSCode by adding language support, debugging tools, and other useful features.
+### Installing Extensions in VSCode {-}
 
-**For Python:**
+**For Python**:
 
 - Open VSCode.
 - Press `Ctrl + Shift + X` (Windows/Linux) or `Cmd + Shift + X` (Mac) to open the Extensions Marketplace.
-- Search for **Python** (developed by Microsoft).
-- Click **Install**.
-- This extension provides:
-  - **IntelliSense** (code completion, function suggestions, and real-time error checking).
-  - Debugging support.
-  - Jupyter Notebook integration.
-  - Formatting and linting tools.
+- Search for **Python** (developed by Microsoft) and click **Install**.
 
-**For R:**
+This extension provides:
 
-- In the Extensions Marketplace, search for **R**.
-- Click **Install**.
-- This extension provides:
-  - **IntelliSense** for R functions and datasets.
-  - Integrated R terminal for running scripts.
-  - Debugging support.
+- **IntelliSense** (code completion, function suggestions, and real-time error checking).
+- Debugging support.
+- Jupyter Notebook integration.
+- Formatting and linting tools.
 
-**What is IntelliSense?**
+**For R**:
 
-**IntelliSense** is an advanced code assistance feature that helps you write code faster and with fewer errors by providing **autocomplete suggestions, function hints, and real-time error checking**. It makes coding in Python and R easier by suggesting function names, displaying expected arguments, and highlighting errors before you run the code.
+- In the Extensions Marketplace, search for **R** and click **Install**.
 
-**Verify Installation**
+This extension provides:
 
-After installing VSCode and the extensions:
+- **IntelliSense** for R functions and datasets.
+- An integrated R terminal for running scripts.
+- Debugging support.
 
-- Open VSCode and check if the extensions are enabled.
-- Open a Python or R script to ensure syntax highlighting and **IntelliSense** work correctly.
-- If using R, ensure you have R installed on your system so that the R extension can detect it.
+> **IntelliSense** is a code assistance feature that helps you write code faster and with fewer errors. It provides **autocomplete suggestions**, **function hints**, and **real-time error checking**, making coding in both Python and R more efficient.
 
-Now, you're ready to start coding in both **Python** and **R** using VSCode! 🚀
+### Verify Installation {-}
 
+After installing VSCode and the necessary extensions:
+
+- Open VSCode and ensure that the extensions are enabled.
+- Open a Python or R script to ensure that syntax highlighting and IntelliSense work correctly.
+- If you're using R, ensure R is installed on your system so that the R extension can detect it.
 
 ---
 
+## How to Navigate This Guide
 
+This guide follows a **Q&A format**, where each section presents a question, an explanation, and solutions in both **Python** and **R**. This structure allows you to compare approaches side by side, reinforcing your understanding of data science concepts.
 
-# (PART) BASIC KNOWLEDGE {-}
+### Q&A Format {-}
+
+Each topic is structured as follows:
+
+- **Question**: A clear problem statement.
+- **Explanation**: A breakdown of the concept with key insights.
+- **Python Code**: Solution using Python.
+- **R Code**: Solution using R.
+
+---
+
+## Best Practices for Trying Python & R Side by Side
+
+To get the most out of this guide, follow these best practices:
+
+**1. Run Python and R Solutions Separately**  
+Each language has its own syntax and libraries, so run the solutions independently in **Jupyter Notebook (Python)** and **RStudio (R)**.
+
+**2. Experiment with Code**  
+Modify the examples, change values, and try new functions to deepen your understanding.
+
+**3. Compare Outputs**  
+Observe how results differ between Python and R, especially in data visualization and statistical analysis.
+
+**4. Use the Same Dataset**  
+Ensure you're using the same dataset in both Python and R to maintain consistency when comparing results.
+
+By following this approach, you'll develop **a strong foundation** in both languages and gain confidence in handling data science tasks.
+
+---
+
+## Transition to Data Science Q&A {-}
+
+Now that you’ve set up your development environment and understood how to navigate this guide, you are ready to dive into the first Q&A section. This section will introduce the **first practical task** in data science: **How to Install Basic Libraries for Python and R**.
+
+Installing essential libraries is the first step in using Python and R for data science. Let’s get started! 🚀
+
+# (PART) DATA SCIENCE Q&A {-}
 
 # How to Install Basic Libaries for Python and R 
 
@@ -104,6 +140,9 @@ In R, install the following packages to help with data manipulation and visualiz
 ```r
 if (!require(tidyverse)) {install.packages('tidyverse')}
 library(tidyverse)
+
+if (!require(GGally)) {install.packages('GGally')}
+library(GGally)
 
 if (!require(caret)) {install.packages('caret')}
 library(caret)

@@ -1,10 +1,50 @@
-# (PART) STATISTICAL ANALYSIS {-}
+# (PART) HYPOTHESIS TESTING {-}
 
-# How to Perform Statistical Analysis in Python and R?
+# What is Hypothesis Testing?*
 
 ## Explanation
+Hypothesis testing is a statistical method used to make inferences or draw conclusions about a population based on a sample. It involves formulating a hypothesis, collecting data, and using statistical tests to determine whether there is enough evidence to reject the hypothesis.  
 
-Statistical analysis helps us understand the characteristics of our dataset, identify patterns, and make data-driven decisions. In this section, we will cover basic statistical measures such as mean, median, variance, and correlation.
+### **Key Terms in Hypothesis Testing:**  
+- **Null Hypothesis (H₀):** Assumes no effect or no difference (e.g., "There is no difference in average heights between two groups").  
+- **Alternative Hypothesis (H₁ or Ha):** The statement we aim to test (e.g., "There is a difference in average heights between two groups").  
+- **Significance Level (α):** The probability threshold for rejecting H₀ (commonly set at 0.05).  
+- **p-value:** The probability of observing the data if H₀ is true. If **p < α**, we reject H₀.  
+- **Type I Error:** Incorrectly rejecting H₀ (false positive).  
+- **Type II Error:** Failing to reject H₀ when it is false (false negative).  
+
+### **Steps in Hypothesis Testing:**  
+1. Formulate **H₀** and **H₁**.  
+2. Choose a significance level (α).  
+3. Select the appropriate statistical test.  
+4. Compute the test statistic and p-value.  
+5. Compare the p-value with α and draw conclusions.  
+
+### **Common Hypothesis Tests:**  
+- **t-tests** (Comparing means of one or two groups)  
+- **ANOVA** (Comparing means of multiple groups)  
+- **Chi-Square Test** (Testing independence in categorical data)  
+- **Non-parametric tests** (For non-normally distributed data)  
+
+
+### **Hypothesis Testing Q&A Topics**
+
+1.	What is Hypothesis Testing? (Introduction)
+2.	How to Perform a One-Sample t-test in Python and R?
+3.	How to Perform a Two-Sample t-test in Python and R?
+4.	How to Perform a Paired t-test in Python and R?
+5.	How to Perform a One-Way ANOVA in Python and R?
+6.	How to Perform a Two-Way ANOVA in Python and R?
+7.	How to Perform a Repeated Measures ANOVA in Python and R?
+8.	How to Perform a Chi-Square Test in Python and R?
+9.	How to Perform a Mann-Whitney U Test in Python and R? (Non-parametric alternative to t-test)
+10.	How to Perform a Kruskal-Wallis Test in Python and R? (Non-parametric alternative to One-Way ANOVA)
+11.	How to Perform a Friedman Test in Python and R? (Non-parametric alternative to Repeated Measures ANOVA)
+12.	How to Check Normality in Python and R? (Shapiro-Wilk, Kolmogorov-Smirnov tests)
+13.	How to Perform a Levene’s Test in Python and R? (Checking homogeneity of variances)
+
+Now, let’s move to the first statistical test:  
+
 
 ```{r, echo=FALSE, include=FALSE}
 knitr::opts_chunk$set(
@@ -20,197 +60,1011 @@ if(!require("tidyverse")) {
   library(tidyverse)}
 ```
 
-## Python Code
+
+---
 
 
-```python
-import pandas as pd
+# **How to Perform a One-Sample t-test in Python and R using the iris dataset?**
 
-# Load dataset
-df = pd.read_csv("data/iris.csv")
+## Explanation  
+A **One-Sample t-test** compares the mean of a sample to a known or hypothesized population mean. In this case, we’ll test whether the mean `sepal_length` of the **iris dataset** is significantly different from a hypothesized population mean of 5.8 cm.
 
-# Summary statistics
-summary_stats = df.describe()
+### Hypotheses 
+- **H0 (Null Hypothesis):** The mean `sepal_length` in the sample is equal to 5.8 cm.  
+- **H1 (Alternative Hypothesis):** The mean `sepal_length` in the sample is different from 5.8 cm.  
 
-# Calculate variance for numerical columns
-variance = df.var(numeric_only=True)
+### **Dataset:**  
+We will use the `iris` dataset with columns: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`, and `species`, stored in `data/iris.csv`.
 
-# Calculate correlation between numerical variables
-correlation = df.corr(numeric_only=True)
+---
 
-# Display results
-print("Summary Statistics:\n", summary_stats)
-print("\nVariance:\n", variance)
-print("\nCorrelation:\n", correlation)
-```
-
-    Summary Statistics:
-            sepal_length  sepal_width  petal_length  petal_width      target
-    count    150.000000   150.000000    150.000000   150.000000  150.000000
-    mean       5.843333     3.057333      3.758000     1.199333    1.000000
-    std        0.828066     0.435866      1.765298     0.762238    0.819232
-    min        4.300000     2.000000      1.000000     0.100000    0.000000
-    25%        5.100000     2.800000      1.600000     0.300000    0.000000
-    50%        5.800000     3.000000      4.350000     1.300000    1.000000
-    75%        6.400000     3.300000      5.100000     1.800000    2.000000
-    max        7.900000     4.400000      6.900000     2.500000    2.000000
-    
-    Variance:
-     sepal_length    0.685694
-    sepal_width     0.189979
-    petal_length    3.116278
-    petal_width     0.581006
-    target          0.671141
-    dtype: float64
-    
-    Correlation:
-                   sepal_length  sepal_width  petal_length  petal_width    target
-    sepal_length      1.000000    -0.117570      0.871754     0.817941  0.782561
-    sepal_width      -0.117570     1.000000     -0.428440    -0.366126 -0.426658
-    petal_length      0.871754    -0.428440      1.000000     0.962865  0.949035
-    petal_width       0.817941    -0.366126      0.962865     1.000000  0.956547
-    target            0.782561    -0.426658      0.949035     0.956547  1.000000
-
-
-## R Code
-
-```{r}
-# Load dataset
-df <- read.csv("data/iris.csv")
-
-# Summary statistics
-summary_stats <- summary(df)
-
-# Calculate variance for numerical columns
-variance <- apply(df[, 1:4], 2, var)
-
-# Calculate correlation between numerical variables
-correlation <- cor(df[, 1:4])
-
-# Display results
-print("Summary Statistics:")
-print(summary_stats)
-print("\nVariance:")
-print(variance)
-print("\nCorrelation:")
-print(correlation)
-
-```
-
-# How to Calculate Skewness and Kurtosis in Python and R?
-
-## Explanation
-
-Skewness and kurtosis help us understand the distribution of data.  
-- **Skewness** measures the asymmetry of the data distribution. A skewness of 0 indicates a perfectly symmetric distribution.  
-- **Kurtosis** measures the "tailedness" of the distribution. A normal distribution has a kurtosis of 3. Values greater than 3 indicate heavy tails, while values less than 3 indicate light tails.
-
-## Python Code
-
+## Python Code 
 
 
 
 ```python
 import pandas as pd
-from scipy.stats import skew, kurtosis
+import scipy.stats as stats
 
-# Load dataset
+# Load the iris dataset
 df = pd.read_csv("data/iris.csv")
 
-# Compute skewness
-skewness = df.iloc[:, :-1].apply(skew)
+# Extract Sepal Length column
+sepal_length = df["sepal_length"]
 
-# Compute kurtosis
-kurt = df.iloc[:, :-1].apply(kurtosis)
+# Hypothesized population mean
+pop_mean = 5.8
+
+# Perform one-sample t-test
+t_stat, p_value = stats.ttest_1samp(sepal_length, pop_mean)
 
 # Display results
-print("Skewness:\n", skewness)
-print("\nKurtosis:\n", kurt)
+print(f"T-Statistic: {t_stat:.4f}")
+print(f"P-Value: {p_value:.4f}")
+
+# Interpretation
+if p_value < 0.05:
+    print("Reject the null hypothesis: The mean sepal length is significantly different from 5.8 cm.")
+else:
+    print("Fail to reject the null hypothesis: No significant difference from 5.8 cm.")
 ```
 
-    Skewness:
-     sepal_length    0.311753
-    sepal_width     0.315767
-    petal_length   -0.272128
-    petal_width    -0.101934
-    target          0.000000
-    dtype: float64
-    
-    Kurtosis:
-     sepal_length   -0.573568
-    sepal_width     0.180976
-    petal_length   -1.395536
-    petal_width    -1.336067
-    target         -1.500000
-    dtype: float64
+    T-Statistic: 0.6409
+    P-Value: 0.5226
+    Fail to reject the null hypothesis: No significant difference from 5.8 cm.
 
 
 ## R Code
 
 ```{r}
-# Check and load necessary libraries from CRAN mirror
-if(!require(tidyverse)) install.packages("tidyverse", dependencies = TRUE, repos = "https://cloud.r-project.org/")
-if(!require(e1071)) install.packages("e1071", dependencies = TRUE, repos = "https://cloud.r-project.org/")
+# Load necessary libraries
+library(readr)
 
-library(tidyverse)
-library(e1071)
-
-# Load dataset
+# Load the iris dataset
 df <- read_csv("data/iris.csv")
 
-# Compute skewness and kurtosis
-skewness_values <- df %>%
-  select(-species) %>%
-  summarise(across(everything(), skewness))
+# Extract Sepal Length column
+sepal_length <- df$sepal_length
 
-kurtosis_values <- df %>%
-  select(-species) %>%
-  summarise(across(everything(), kurtosis))
+# Hypothesized population mean
+pop_mean <- 5.8
+
+# Perform one-sample t-test
+t_test_result <- t.test(sepal_length, mu = pop_mean)
 
 # Display results
-print("Skewness:")
-print(skewness_values)
+print(t_test_result)
 
-print("Kurtosis:")
-print(kurtosis_values)
+# Interpretation
+if (t_test_result$p.value < 0.05) {
+  print("Reject the null hypothesis: The mean sepal length is significantly different from 5.8 cm.")
+} else {
+  print("Fail to reject the null hypothesis: No significant difference from 5.8 cm.")
+}
 ```
 
-# How to Perform a t-test in Python and R?
+# **How to Perform a Two-Sample t-test in Python and R using the iris dataset?**
 
-## Explanation
+## **Explanation**  
+A **Two-Sample t-test** is used to determine if there is a significant difference between the means of two independent groups. In this case, we will compare the `sepal_length` between two species of iris flowers: **setosa** and **versicolor**.
 
-**t-tests** are used to compare the means of two groups and determine whether they are significantly different from each other. In the iris dataset, we can compare the sepal length of two species to see if their means differ significantly.
+### **Hypotheses:**  
+- **H0 (Null Hypothesis):** The mean `sepal_length` of the two species is equal.  
+- **H1 (Alternative Hypothesis):** The mean `sepal_length` of the two species is not equal.
 
-There are different types of t-tests:
+### **Dataset:**  
+We will use the `iris` dataset with columns: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`, and `species`, stored in `data/iris.csv`.
 
-**Independent t-test**: Compares means between two independent groups.
+---
 
-**Paired t-test**: Compares means from the same group at different time points.
+## **Python Code**  
 
-## Python Code
 
-In Python, we use **scipy.stats.ttest_ind()** for an independent t-test.
+
+
+```python
+import pandas as pd
+import scipy.stats as stats
+
+# Load the iris dataset
+df = pd.read_csv("data/iris.csv")
+
+# Filter sepal_length for setosa and versicolor species
+setosa_sepal_length = df[df["species"] == "setosa"]["sepal_length"]
+versicolor_sepal_length = df[df["species"] == "versicolor"]["sepal_length"]
+
+# Perform two-sample t-test
+t_stat, p_value = stats.ttest_ind(setosa_sepal_length, versicolor_sepal_length)
+
+# Display results
+print(f"T-Statistic: {t_stat:.4f}")
+print(f"P-Value: {p_value:.4f}")
+
+# Interpretation
+if p_value < 0.05:
+    print("Reject the null hypothesis: The mean sepal lengths of setosa and versicolor are significantly different.")
+else:
+    print("Fail to reject the null hypothesis: No significant difference between the mean sepal lengths of setosa and versicolor.")
+```
+
+    T-Statistic: -10.5210
+    P-Value: 0.0000
+    Reject the null hypothesis: The mean sepal lengths of setosa and versicolor are significantly different.
+
+
+## R Code
+
+```{r}
+# Load necessary libraries
+library(readr)
+
+# Load the iris dataset
+df <- read_csv("data/iris.csv")
+
+# Filter sepal_length for setosa and versicolor species
+setosa_sepal_length <- df[df$species == "setosa", "sepal_length"]
+versicolor_sepal_length <- df[df$species == "versicolor", "sepal_length"]
+
+# Perform two-sample t-test
+t_test_result <- t.test(setosa_sepal_length, versicolor_sepal_length)
+
+# Display results
+print(t_test_result)
+
+# Interpretation
+if (t_test_result$p.value < 0.05) {
+  print("Reject the null hypothesis: The mean sepal lengths of setosa and versicolor are significantly different.")
+} else {
+  print("Fail to reject the null hypothesis: No significant difference between the mean sepal lengths of setosa and versicolor.")
+}
+```
+
+# **Q&A: How to Perform a Paired t-test (Dependent t-test) in Python and R?**
+
+## **Explanation**
+
+A **Paired t-test** (also known as the **Dependent t-test**) is used to compare the means of two related groups. It is typically applied when you have two measurements from the same subjects, such as **before** and **after** treatment.
+
+The test helps determine if the mean difference between two related variables is significantly different from zero. The assumptions of a paired t-test are that the differences between the paired samples are normally distributed.
+
+### **Null Hypothesis (H₀)**:
+- The mean difference between the paired samples is equal to zero (no difference).
+
+### **Alternative Hypothesis (H₁)**:
+- The mean difference between the paired samples is not equal to zero (a difference exists).
+
+---
+
+## **Python Code**
+
+
+
+```python
+import pandas as pd
+from scipy import stats
+import warnings
+
+# Suppress the specific warning
+warnings.filterwarnings("ignore", category=RuntimeWarning, message=".*catastrophic cancellation.*")
+
+# Load the dataset
+df = pd.read_csv('data/iris.csv')
+
+# Simulate before and after sepal_length data (for example purposes)
+# Assuming 'sepal_length_before' and 'sepal_length_after' are our paired data
+df['sepal_length_before'] = df['sepal_length']  # Example column
+df['sepal_length_after'] = df['sepal_length'] + 0.2  # Example: adding a change
+
+# Perform the Paired t-test
+t_stat, p_value = stats.ttest_rel(df['sepal_length_before'], df['sepal_length_after'])
+
+# Print the results
+print(f"T-statistic: {t_stat}")
+print(f"P-value: {p_value}")
+
+# Conclusion based on significance level (alpha = 0.05)
+if p_value < 0.05:
+    print("Reject the null hypothesis: There is a significant difference.")
+else:
+    print("Fail to reject the null hypothesis: There is no significant difference.")
+```
+
+    T-statistic: -3.2333821133348364e+16
+    P-value: 0.0
+    Reject the null hypothesis: There is a significant difference.
+
+
+## R Code
+
+```{r} 
+library(readr)
+library(stats)
+
+# Load the dataset
+df <- read_csv("data/iris.csv")
+
+# Simulate before and after sepal_length data (for example purposes)
+# Assuming 'sepal_length_before' and 'sepal_length_after' are our paired data
+df$sepal_length_before <- df$sepal_length  # Using original data for "before"
+df$sepal_length_after <- df$sepal_length + rnorm(n = nrow(df), mean = 0.2, sd = 0.1)  # Adding some random variation to simulate a change
+
+# Perform the Paired t-test
+test_result <- t.test(df$sepal_length_before, df$sepal_length_after, paired = TRUE)
+
+# Print the results
+print(test_result)
+
+# Conclusion based on significance level (alpha = 0.05)
+if(test_result$p.value < 0.05) {
+  print("Reject the null hypothesis: There is a significant difference.")
+} else {
+  print("Fail to reject the null hypothesis: There is no significant difference.")
+}
+```
+
+# **How to Perform One-Way ANOVA in Python and R using the iris dataset?**
+
+## **Explanation**  
+**One-Way ANOVA** (Analysis of Variance) is used to determine if there is a significant difference in the means of three or more independent groups. In this case, we will compare the `sepal_length` across the three species of iris flowers: **setosa**, **versicolor**, and **virginica**.
+
+### **Hypotheses:**  
+- **H0 (Null Hypothesis):** The mean `sepal_length` of all three species is equal.  
+- **H1 (Alternative Hypothesis):** At least one of the species has a mean `sepal_length` different from the others.
+
+### **Dataset:**  
+We will use the `iris` dataset with columns: `sepal_length`, `sepal_width`, `petal_length`, `petal_width`, and `species`, stored in `data/iris.csv`.
+
+---
+
+## **Python Code**
+
+
+
+```python
+import pandas as pd
+import scipy.stats as stats
+
+# Load the iris dataset
+df = pd.read_csv("data/iris.csv")
+
+# Perform One-Way ANOVA
+f_stat, p_value = stats.f_oneway(
+    df[df["species"] == "setosa"]["sepal_length"],
+    df[df["species"] == "versicolor"]["sepal_length"],
+    df[df["species"] == "virginica"]["sepal_length"]
+)
+
+# Display results
+print(f"F-Statistic: {f_stat:.4f}")
+print(f"P-Value: {p_value:.4f}")
+
+# Interpretation
+if p_value < 0.05:
+    print("Reject the null hypothesis: At least one species has a significantly different mean sepal length.")
+else:
+    print("Fail to reject the null hypothesis: No significant difference in mean sepal length among the species.")
+```
+
+    F-Statistic: 119.2645
+    P-Value: 0.0000
+    Reject the null hypothesis: At least one species has a significantly different mean sepal length.
+
+
+## R Code
+
+```{r}
+# Load necessary libraries
+library(readr)
+
+# Load the iris dataset
+df <- read_csv("data/iris.csv")
+
+# Perform One-Way ANOVA
+anova_result <- aov(sepal_length ~ species, data = df)
+
+# Display results
+summary(anova_result)
+
+# Interpretation
+if (summary(anova_result)[[1]]$`Pr(>F)`[1] < 0.05) {
+  print("Reject the null hypothesis: At least one species has a significantly different mean sepal length.")
+} else {
+  print("Fail to reject the null hypothesis: No significant difference in mean sepal length among the species.")
+}
+```
+
+## How to Perform One-Way ANOVA in Python and R?
+
+### Explanation
+One-Way ANOVA (Analysis of Variance) is used to compare the means of three or more independent groups to see if there is a significant difference between them. It assumes the groups are independent, the data is normally distributed, and the variances are homogeneous across groups.
+
+### Python Code
+
 
 
 ```python
 import pandas as pd
 from scipy import stats
 
-# Load dataset
+# Load the dataset
 df = pd.read_csv("data/iris.csv")
 
-# Filter two species for comparison
-setosa = df[df['species'] == 'setosa']['sepal_length']
-versicolor = df[df['species'] == 'versicolor']['sepal_length']
+# Perform One-Way ANOVA: Comparing sepal_length across different species
+f_stat, p_value = stats.f_oneway(
+    df[df['species'] == 'setosa']['sepal_length'],
+    df[df['species'] == 'versicolor']['sepal_length'],
+    df[df['species'] == 'virginica']['sepal_length']
+)
 
-# Perform independent t-test
-t_stat, p_value = stats.ttest_ind(setosa, versicolor)
+# Print the results
+print(f"F-statistic: {f_stat}")
+print(f"P-value: {p_value}")
 
-print(f"t-statistic: {t_stat}, p-value: {p_value}")
+# Conclusion based on significance level (alpha = 0.05)
+if p_value < 0.05:
+    print("Reject the null hypothesis: There is a significant difference between at least one species.")
+else:
+    print("Fail to reject the null hypothesis: There is no significant difference between species.")
 ```
 
-    t-statistic: -10.52098626754911, p-value: 8.985235037487079e-18
+    F-statistic: 119.26450218450468
+    P-value: 1.6696691907693826e-31
+    Reject the null hypothesis: There is a significant difference between at least one species.
 
+
+## R Code
+```{r}
+library(readr)
+
+# Load the dataset
+df <- read_csv("data/iris.csv")
+
+# Perform One-Way ANOVA: Comparing sepal_length across different species
+test_result <- aov(sepal_length ~ species, data = df)
+
+# Print the summary of the ANOVA test
+summary_result <- summary(test_result)
+
+# Extract the F-statistic and p-value from the summary
+f_stat <- summary_result[[1]]$`F value`[1]
+p_value <- summary_result[[1]]$`Pr(>F)`[1]
+
+# Print the results
+cat("F-statistic:", f_stat, "\n")
+cat("P-value:", p_value, "\n")
+
+# Conclusion based on significance level (alpha = 0.05)
+if (p_value < 0.05) {
+  print("Reject the null hypothesis: There is a significant difference between at least one species.")
+} else {
+  print("Fail to reject the null hypothesis: There is no significant difference between species.")
+}
+```
+
+# How to Perform Two-Way ANOVA in Python and R?
+
+### Explanation
+Two-Way ANOVA is used when we have two independent variables (factors) and want to understand their individual and combined effects on a dependent variable. It is useful to examine the interaction between two factors, in addition to their main effects. For example, we may want to explore how species and petal length interact to affect the sepal length.
+
+### Python Code
+
+
+
+
+```python
+import pandas as pd
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+
+# Load the dataset
+df = pd.read_csv("data/iris.csv")
+
+# Fit the model
+model = ols('sepal_length ~ C(species) + C(petal_length)', data=df).fit()
+
+# Perform Two-Way ANOVA
+anova_result = anova_lm(model)
+
+# Print the results
+print(anova_result)
+
+# Conclusion based on significance level (alpha = 0.05)
+if anova_result['PR(>F)'][0] < 0.05:
+    print("Reject the null hypothesis: There is a significant difference between the groups.")
+else:
+    print("Fail to reject the null hypothesis: There is no significant difference between the groups.")
+
+```
+
+                        df     sum_sq    mean_sq           F        PR(>F)
+    C(species)         2.0  63.212133  31.606067  294.278523  5.378870e-44
+    C(petal_length)   42.0  27.612422   0.657439    6.121295  2.322488e-14
+    Residual         106.0  11.384599   0.107402         NaN           NaN
+    Reject the null hypothesis: There is a significant difference between the groups.
+
+
+## R Code
+
+```{r}
+library(readr)
+library(stats)
+
+# Load the dataset
+df <- read_csv("data/iris.csv")
+
+# Fit the model
+model <- lm(sepal_length ~ species + petal_length, data = df)
+
+# Perform Two-Way ANOVA
+anova_result <- anova(model)
+
+# Print the results
+print(anova_result)
+
+# Conclusion based on significance level (alpha = 0.05)
+if (anova_result["species", "Pr(>F)"] < 0.05) {
+  print("Reject the null hypothesis: There is a significant difference between the groups.")
+} else {
+  print("Fail to reject the null hypothesis: There is no significant difference between the groups.")
+}
+```
+
+# How to Perform a Repeated Measures ANOVA in Python and R? {#repeated-measures-anova}
+
+## Explanation
+A Repeated Measures ANOVA is used when you have multiple measurements taken on the same subjects, e.g., before and after treatment on the same individuals. It’s used to determine if there is a significant difference between the means of three or more groups that are related.
+
+## Python Code
+
+
+```python
+import pandas as pd
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+
+# Load the dataset
+df = pd.read_csv('data/iris.csv')
+
+# Simulate repeated measures by duplicating rows for a "before" and "after" condition
+df_long = pd.concat([df.assign(time='before'), df.assign(time='after')], ignore_index=True)
+
+# Assign subject IDs (assuming each row in original df is a different subject)
+df_long['subject'] = df_long.index % len(df)  # Assign a unique subject ID per original row
+
+# Fit the model for Repeated Measures ANOVA
+model = ols('sepal_length ~ C(time) + C(subject)', data=df_long).fit()
+
+# Perform Repeated Measures ANOVA
+anova_result = anova_lm(model)
+
+# Print the results
+print(anova_result)
+
+# Conclusion based on significance level (alpha = 0.05)
+if anova_result['PR(>F)'][0] < 0.05:
+    print("Reject the null hypothesis: There is a significant difference between before and after.")
+else:
+    print("Fail to reject the null hypothesis: There is no significant difference.")
+```
+
+                   df        sum_sq       mean_sq             F    PR(>F)
+    C(time)       1.0  2.608171e-29  2.608171e-29  1.631499e-01  0.686852
+    C(subject)  149.0  2.043367e+02  1.371387e+00  8.578490e+27  0.000000
+    Residual    149.0  2.381966e-26  1.598635e-28           NaN       NaN
+    Fail to reject the null hypothesis: There is no significant difference.
+
+
+## R Code
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+library(car)  # For Anova function
+
+# Load the dataset
+df <- read.csv("data/iris.csv")
+
+# Simulate repeated measures by duplicating rows for "before" and "after" conditions
+df_long <- df %>%
+  mutate(time = "before") %>%
+  bind_rows(df %>% mutate(time = "after"))
+
+# Assign subject IDs (assuming each row in original df is a different subject)
+df_long$subject <- rep(1:nrow(df), times = 2)
+
+# Convert factors
+df_long$time <- as.factor(df_long$time)
+df_long$subject <- as.factor(df_long$subject)
+
+# Fit the model for Repeated Measures ANOVA
+model <- aov(sepal_length ~ time + Error(subject), data = df_long)
+
+# Perform Repeated Measures ANOVA
+anova_result <- summary(model)
+
+# Print the results
+print(anova_result)
+```
+
+# How to Perform a Chi-Square Test in Python and R? {#chi-square-test}
+
+## Explanation
+The Chi-Square Test is used to determine if there is a significant association between two categorical variables. It compares the observed frequencies to the expected frequencies under the assumption that no relationship exists between the variables.
+
+## Python Code
+
+
+```python
+import pandas as pd
+from scipy import stats
+
+# Load the dataset
+df = pd.read_csv('data/iris.csv')
+
+# Create a contingency table (example)
+contingency_table = pd.crosstab(df['species'], df['sepal_length'])
+
+# Perform the Chi-Square Test
+chi2_stat, p_value, dof, expected = stats.chi2_contingency(contingency_table)
+
+# Print the results
+print(f"Chi2 Stat: {chi2_stat}")
+print(f"P-value: {p_value}")
+print(f"Degrees of freedom: {dof}")
+print(f"Expected frequencies:\n{expected}")
+
+# Conclusion based on significance level (alpha = 0.05)
+if p_value < 0.05:
+    print("Reject the null hypothesis: There is a significant association between the variables.")
+else:
+    print("Fail to reject the null hypothesis: There is no significant association between the variables.")
+```
+
+    Chi2 Stat: 156.26666666666668
+    P-value: 6.665987344005466e-09
+    Degrees of freedom: 68
+    Expected frequencies:
+    [[0.33333333 1.         0.33333333 1.33333333 0.66666667 1.66666667
+      2.         3.33333333 3.         1.33333333 0.33333333 2.
+      2.33333333 2.         2.66666667 2.33333333 1.         2.
+      2.         1.33333333 3.         2.33333333 1.66666667 0.66666667
+      2.66666667 1.         1.33333333 0.33333333 0.33333333 1.
+      0.33333333 0.33333333 0.33333333 1.33333333 0.33333333]
+     [0.33333333 1.         0.33333333 1.33333333 0.66666667 1.66666667
+      2.         3.33333333 3.         1.33333333 0.33333333 2.
+      2.33333333 2.         2.66666667 2.33333333 1.         2.
+      2.         1.33333333 3.         2.33333333 1.66666667 0.66666667
+      2.66666667 1.         1.33333333 0.33333333 0.33333333 1.
+      0.33333333 0.33333333 0.33333333 1.33333333 0.33333333]
+     [0.33333333 1.         0.33333333 1.33333333 0.66666667 1.66666667
+      2.         3.33333333 3.         1.33333333 0.33333333 2.
+      2.33333333 2.         2.66666667 2.33333333 1.         2.
+      2.         1.33333333 3.         2.33333333 1.66666667 0.66666667
+      2.66666667 1.         1.33333333 0.33333333 0.33333333 1.
+      0.33333333 0.33333333 0.33333333 1.33333333 0.33333333]]
+    Reject the null hypothesis: There is a significant association between the variables.
+
+
+## R Code
+
+```{r}
+library(readr)
+
+# Load the dataset
+df <- read_csv('data/iris.csv')
+
+# Create a contingency table (example)
+contingency_table <- table(df$species, df$sepal_length)
+
+# Perform the Chi-Square Test
+chi2_result <- chisq.test(contingency_table)
+
+# Print the results
+print(chi2_result)
+
+# Conclusion based on significance level (alpha = 0.05)
+if(chi2_result$p.value < 0.05) {
+  print("Reject the null hypothesis: There is a significant association between the variables.")
+} else {
+  print("Fail to reject the null hypothesis: There is no significant association between the variables.")
+}
+```
+
+# How to Perform a Mann-Whitney U Test in Python and R? {#mann-whitney-u-test}
+
+## Explanation
+The Mann-Whitney U Test is a non-parametric test (Non-parametric alternative to t-test), that is used to determine whether there is a significant difference between the distributions of two independent groups. It is the non-parametric alternative to the independent two-sample t-test.
+
+## Python Code
+
+
+```python
+import pandas as pd
+from scipy import stats
+
+# Load the dataset
+df = pd.read_csv('data/iris.csv')
+
+# Perform the Mann-Whitney U Test: Comparing sepal_length between two species
+group_1 = df[df['species'] == 'setosa']['sepal_length']
+group_2 = df[df['species'] == 'versicolor']['sepal_length']
+
+# Perform the test
+u_stat, p_value = stats.mannwhitneyu(group_1, group_2)
+
+# Print the results
+print(f"U-statistic: {u_stat}")
+print(f"P-value: {p_value}")
+
+# Conclusion based on significance level (alpha = 0.05)
+if p_value < 0.05:
+    print("Reject the null hypothesis: There is a significant difference between the groups.")
+else:
+    print("Fail to reject the null hypothesis: There is no significant difference between the groups.")
+```
+
+    U-statistic: 168.5
+    P-value: 8.34582714594069e-14
+    Reject the null hypothesis: There is a significant difference between the groups.
+
+
+## R Code
+
+```{r}
+library(readr)
+
+# Load the dataset
+df <- read_csv("data/iris.csv", show_col_types = FALSE)
+
+# Perform the Mann-Whitney U Test: Comparing sepal_length between two species
+group_1 <- df$sepal_length[df$species == "setosa"]
+group_2 <- df$sepal_length[df$species == "versicolor"]
+
+# Perform the test
+test_result <- wilcox.test(group_1, group_2, exact = FALSE)
+
+# Print the results
+print(test_result)
+
+# Conclusion based on significance level (alpha = 0.05)
+if (test_result$p.value < 0.05) {
+  print("Reject the null hypothesis: There is a significant difference between the groups.")
+} else {
+  print("Fail to reject the null hypothesis: There is no significant difference between the groups.")
+}
+```
+
+
+# How to Perform a Kruskal-Wallis Test in Python and R?
+
+(Non-parametric alternative to One-Way ANOVA)
+
+## Explanation
+
+The Kruskal-Wallis Test is a non-parametric alternative to One-Way ANOVA used when the assumption of normality is violated. It determines whether there is a statistically significant difference between three or more independent groups.
+
+- **H₀ (Null Hypothesis):** The distributions of the groups are identical.  
+- **H₁ (Alternative Hypothesis):** At least one group has a significantly different distribution.
+
+## Python Code
+
+
+
+
+```python
+import pandas as pd
+from scipy import stats
+
+# Load the dataset
+df = pd.read_csv('data/iris.csv')
+
+# Perform the Kruskal-Wallis Test: Comparing sepal_length across species
+group_1 = df[df['species'] == 'setosa']['sepal_length']
+group_2 = df[df['species'] == 'versicolor']['sepal_length']
+group_3 = df[df['species'] == 'virginica']['sepal_length']
+
+# Perform the test
+h_stat, p_value = stats.kruskal(group_1, group_2, group_3)
+
+# Print the results
+print(f"H-statistic: {h_stat}")
+print(f"P-value: {p_value}")
+
+# Conclusion based on significance level (alpha = 0.05)
+if p_value < 0.05:
+    print("Reject the null hypothesis: At least one species has a significantly different sepal length distribution.")
+else:
+    print("Fail to reject the null hypothesis: No significant difference between species.")
+```
+
+    H-statistic: 96.93743600064833
+    P-value: 8.91873433246198e-22
+    Reject the null hypothesis: At least one species has a significantly different sepal length distribution.
+
+
+## R Code
+
+```{r}
+# Load necessary library
+library(dplyr)
+
+# Load the dataset
+df <- read.csv("data/iris.csv")
+
+# Perform the Kruskal-Wallis Test: Comparing sepal_length across species
+kruskal_result <- kruskal.test(sepal_length ~ species, data = df)
+
+# Print the results
+print(kruskal_result)
+
+# Conclusion based on significance level (alpha = 0.05)
+if (kruskal_result$p.value < 0.05) {
+  print("Reject the null hypothesis: At least one species has a significantly different sepal length distribution.")
+} else {
+  print("Fail to reject the null hypothesis: No significant difference between species.")
+}
+```
+
+# How to Perform a Friedman Test in Python and R?
+
+(Non-parametric alternative to Repeated Measures ANOVA)
+
+## Explanation
+
+The Friedman Test is a non-parametric alternative to Repeated Measures ANOVA used when the assumption of normality is violated. It evaluates whether there are significant differences between three or more related groups.
+
+- **H₀ (Null Hypothesis):** The distributions of the related groups are identical.  
+- **H₁ (Alternative Hypothesis):** At least one related group has a significantly different distribution.
+
+## Python Code
+
+
+
+```python
+import pandas as pd
+import numpy as np
+from scipy.stats import friedmanchisquare
+
+# Load the dataset
+df = pd.read_csv('data/iris.csv')
+
+# Simulate repeated measures data by duplicating rows for different time points
+df_wide = pd.DataFrame({
+    'subject': np.arange(len(df)),  # Assign unique subject IDs
+    'time1': df['sepal_length'],
+    'time2': df['sepal_length'] + 0.2,  # Simulating a change
+    'time3': df['sepal_length'] + 0.4
+})
+
+# Optional: Add small noise (jitter) to avoid division by zero errors
+# This is useful when there are tied ranks causing infinite Friedman statistic
+df_wide[['time1', 'time2', 'time3']] += np.random.normal(0, 0.001, df_wide[['time1', 'time2', 'time3']].shape)
+
+# Perform Friedman Test
+stat, p_value = friedmanchisquare(df_wide['time1'], df_wide['time2'], df_wide['time3'])
+
+# Print the results
+print(f"Friedman statistic: {stat}")
+print(f"P-value: {p_value}")
+
+# Conclusion based on significance level (alpha = 0.05)
+if p_value < 0.05:
+    print("Reject the null hypothesis: At least one time point has a significantly different distribution.")
+else:
+    print("Fail to reject the null hypothesis: No significant difference between time points.")
+```
+
+    Friedman statistic: 300.0
+    P-value: 7.175095973164448e-66
+    Reject the null hypothesis: At least one time point has a significantly different distribution.
+
+
+## R Code
+
+```{r}
+# Load necessary libraries
+library(dplyr)
+library(tidyr)
+
+# Load the dataset
+df <- read.csv("data/iris.csv")
+
+# Simulate repeated measures by duplicating rows for different conditions
+df_long <- bind_rows(
+  df %>% mutate(time = "before"),
+  df %>% mutate(time = "after"),
+  df %>% mutate(time = "followup")
+)
+
+# Assign subject IDs (assuming each row in original df is a different subject)
+df_long$subject <- rep(1:nrow(df), times = 3)
+
+# Add a small noise (jitter) to avoid division by zero
+set.seed(123)  # Ensures reproducibility
+df_long$sepal_length <- df_long$sepal_length + rnorm(nrow(df_long), mean = 0, sd = 0.001)
+
+# Reshape data for Friedman test
+df_wide <- pivot_wider(df_long, names_from = time, values_from = sepal_length)
+
+# Perform the Friedman Test
+friedman_result <- friedman.test(as.matrix(df_wide[, c("before", "after", "followup")]))
+
+# Print the results
+print(friedman_result)
+
+# Conclusion based on significance level (alpha = 0.05)
+if (friedman_result$p.value < 0.05) {
+  print("Reject the null hypothesis: At least one time point has a significantly different distribution.")
+} else {
+  print("Fail to reject the null hypothesis: No significant difference between time points.")
+}
+```
+
+# How to Check Normality in Python and R? 
+(Shapiro-Wilk, Kolmogorov-Smirnov tests)
+
+## Explanation
+
+Normality tests are used to determine whether a dataset follows a normal (Gaussian) distribution. This is an important assumption for many statistical tests, including t-tests and ANOVA.
+
+### Common Normality Tests:
+- **Shapiro-Wilk Test**: Recommended for small to medium sample sizes (\< 50 observations).
+- **Kolmogorov-Smirnov (KS) Test**: Suitable for larger samples but more sensitive to distribution shape.
+
+### Hypotheses:
+- **H₀ (Null Hypothesis)**: The data is normally distributed.
+- **H₁ (Alternative Hypothesis)**: The data is not normally distributed.
+
+## Python Code
+
+
+
+
+```python
+import pandas as pd
+from scipy import stats
+
+# Load the dataset
+df = pd.read_csv('data/iris.csv')
+
+# Extract the column to test for normality
+data = df['sepal_length']
+
+# Perform Shapiro-Wilk Test
+shapiro_stat, shapiro_p = stats.shapiro(data)
+print(f"Shapiro-Wilk Test: W={shapiro_stat}, p-value={shapiro_p}")
+
+# Perform Kolmogorov-Smirnov Test
+ks_stat, ks_p = stats.kstest(data, 'norm', args=(data.mean(), data.std()))
+print(f"Kolmogorov-Smirnov Test: KS={ks_stat}, p-value={ks_p}")
+
+# Conclusion
+alpha = 0.05
+if shapiro_p < alpha:
+    print("Shapiro-Wilk: Reject the null hypothesis (Data is not normally distributed).")
+else:
+    print("Shapiro-Wilk: Fail to reject the null hypothesis (Data is normally distributed).")
+
+if ks_p < alpha:
+    print("Kolmogorov-Smirnov: Reject the null hypothesis (Data is not normally distributed).")
+else:
+    print("Kolmogorov-Smirnov: Fail to reject the null hypothesis (Data is normally distributed).")
+```
+
+    Shapiro-Wilk Test: W=0.9760899543762207, p-value=0.01018026564270258
+    Kolmogorov-Smirnov Test: KS=0.08865361377316233, p-value=0.1781373784859196
+    Shapiro-Wilk: Reject the null hypothesis (Data is not normally distributed).
+    Kolmogorov-Smirnov: Fail to reject the null hypothesis (Data is normally distributed).
+
+
+## R Code
+
+```{r}
+# Load necessary library
+library(readr)
+
+# Load the dataset
+df <- read_csv("data/iris.csv")
+
+# Extract the column to test for normality
+data <- df$sepal_length
+
+# Perform Shapiro-Wilk Test
+shapiro_test <- shapiro.test(data)
+print(shapiro_test)
+
+# Perform Kolmogorov-Smirnov Test
+ks_test <- ks.test(data, "pnorm", mean=mean(data), sd=sd(data))
+print(ks_test)
+
+# Conclusion
+alpha <- 0.05
+if (shapiro_test$p.value < alpha) {
+  print("Shapiro-Wilk: Reject the null hypothesis (Data is not normally distributed).")
+} else {
+  print("Shapiro-Wilk: Fail to reject the null hypothesis (Data is normally distributed).")
+}
+
+if (ks_test$p.value < alpha) {
+  print("Kolmogorov-Smirnov: Reject the null hypothesis (Data is not normally distributed).")
+} else {
+  print("Kolmogorov-Smirnov: Fail to reject the null hypothesis (Data is normally distributed).")
+}
+```
+
+# How to Perform a Levene’s Test in Python and R? (Checking homogeneity of variances)
+
+## Explanation
+
+Levene’s test is used to assess the homogeneity of variances across different groups. Homogeneity of variances is a key assumption for parametric tests like ANOVA.
+
+### Hypotheses:
+- **H₀ (Null Hypothesis)**: The variances of the groups are equal (homoscedasticity).
+- **H₁ (Alternative Hypothesis)**: At least one group has a significantly different variance (heteroscedasticity).
+
+## Python Code
+
+
+
+
+```python
+import pandas as pd
+from scipy import stats
+
+# Load the dataset
+df = pd.read_csv('data/iris.csv')
+
+# Extract groups based on species
+group_1 = df[df['species'] == 'setosa']['sepal_length']
+group_2 = df[df['species'] == 'versicolor']['sepal_length']
+group_3 = df[df['species'] == 'virginica']['sepal_length']
+
+# Perform Levene’s Test
+levene_stat, p_value = stats.levene(group_1, group_2, group_3)
+
+# Print the results
+print(f"Levene’s Test Statistic: {levene_stat}")
+print(f"P-value: {p_value}")
+
+# Conclusion based on significance level (alpha = 0.05)
+alpha = 0.05
+if p_value < alpha:
+    print("Reject the null hypothesis: Variances are significantly different.")
+else:
+    print("Fail to reject the null hypothesis: Variances are equal.")
+```
+
+    Levene’s Test Statistic: 6.35272002048269
+    P-value: 0.0022585277836218586
+    Reject the null hypothesis: Variances are significantly different.
+
+
+## R Code
+
+```{r}
+# Load necessary libraries
+library(car)
+library(readr)
+
+# Load the dataset
+df <- read_csv("data/iris.csv")
+
+# Perform Levene’s Test
+levene_test <- leveneTest(sepal_length ~ species, data = df)
+
+# Print the results
+print(levene_test)
+
+# Conclusion
+alpha <- 0.05
+if (levene_test$"Pr(>F)"[1] < alpha) {
+  print("Reject the null hypothesis: Variances are significantly different.")
+} else {
+  print("Fail to reject the null hypothesis: Variances are equal.")
+}
+```
 
 # How to compute the mean, median, and mode of a dataset?
 
@@ -251,7 +1105,6 @@ print(mode_values)
     sepal_width     3.057333
     petal_length    3.758000
     petal_width     1.199333
-    target          1.000000
     dtype: float64
     
     Median:
@@ -260,7 +1113,6 @@ print(mode_values)
     sepal_width     3.00
     petal_length    4.35
     petal_width     1.30
-    target          1.00
     dtype: float64
     
     Mode:
@@ -269,7 +1121,6 @@ print(mode_values)
     sepal_width     3.0
     petal_length    1.4
     petal_width     0.2
-    target          0.0
     Name: 0, dtype: float64
 
 
@@ -305,249 +1156,6 @@ print(median_values)
 print("Mode:")
 print(mode_values)
 
-```
-
-# What is the Difference Between an F-test and an ANOVA Test?
-
-## Overview  
-Both the **F-test** and **ANOVA** use the **F-statistic**, but they serve different purposes in statistical analysis.  
-
-## Key Aspects  
-
-| **Aspect**         | **F-test** (Variance Comparison)                   | **ANOVA** (Mean Comparison)                     |
-|--------------------|---------------------------------------------------|-------------------------------------------------|
-| **Purpose**       | Compares the variances of two groups.              | Compares the means of three or more groups.     |
-| **Hypotheses**    | - \( H_0 \): Variances are equal. <br> - \( H_a \): Variances are different. | - \( H_0 \): All group means are equal. <br> - \( H_a \): At least one mean is different. |
-| **When to Use?**  | Before a t-test, to check variance equality.        | When analyzing differences among multiple groups. |
-| **Test Statistic** | \( F = \frac{\sigma_1^2}{\sigma_2^2} \)  (Ratio of variances) | \( F = \frac{\text{Between-group variance}}{\text{Within-group variance}} \) |
-| **Python Function** | `levene()` or `bartlett()` from `scipy.stats`.    | `f_oneway()` from `scipy.stats` (for means). |
-| **R Function**     | `var.test(group1, group2)`.                        | `aov(response ~ group, data = df)`. |
-
-## Key Differences  
-
-- The **F-test** is used to compare **variances** between two groups.  
-- **ANOVA** is used to compare **means** among **three or more groups**.  
-- The **F-test** is often used **before ANOVA** to check if the assumption of equal variances holds.  
-
-## What If Variances Are Not Equal?  
-If the assumption of equal variances is violated, consider using:  
-- **Welch’s ANOVA**, which does not assume equal variances.  
-- **Non-parametric tests**, such as the **Kruskal-Wallis test** (for comparing medians).  
-
----
-
-
-# How to Perform an F-test in Python and R?
-
-## Explanation  
-An **F-test** is used to compare the variances of two independent groups. It helps determine if the groups have equal variances, which is important in statistical tests like t-tests and ANOVA.
-
-The null hypothesis (\(H_0\)) assumes that the variances of the two groups are equal, while the alternative hypothesis (\(H_a\)) states that they are different.
-
-The **F-statistic** for the F-test is calculated as:
-
-\[
-F = \frac{\text{variance of group 1}}{\text{variance of group 2}}
-\]
-
-If the p-value is small (typically \( p < 0.05 \)), we reject the null hypothesis and conclude that the variances are significantly different.
-
-## Python Code
-
-
-```python
-import pandas as pd
-from scipy.stats import levene
-
-# Load dataset
-df = pd.read_csv("data/iris.csv")
-
-# Select two species for comparison
-group1 = df[df["species"] == "setosa"]["sepal_length"]
-group2 = df[df["species"] == "versicolor"]["sepal_length"]
-
-# Perform F-test for variances (Levene's test)
-f_stat, p_value = levene(group1, group2)
-
-# Display results
-print(f"F-statistic: {f_stat:.4f}")
-print(f"P-value: {p_value:.4f}")
-
-# Interpretation
-if p_value < 0.05:
-    print("Reject H0: The variances of Setosa and Versicolor are significantly different.")
-else:
-    print("Fail to reject H0: No significant difference in variances.")
-```
-
-    F-statistic: 8.1727
-    P-value: 0.0052
-    Reject H0: The variances of Setosa and Versicolor are significantly different.
-
-
-## R Code
-
-```{r}
-# Load necessary package
-if (!require(car)) install.packages("car", repos = "https://cloud.r-project.org")
-library(car)
-
-# Load dataset
-df <- read.csv("data/iris.csv")
-
-# Subset data for two species
-group1 <- df[df$species == "setosa", "sepal_length"]
-group2 <- df[df$species == "versicolor", "sepal_length"]
-
-# Perform F-test for variances (Levene's test)
-var_test_result <- var.test(group1, group2)
-print(var_test_result)
-```
-
-# How to Perform an ANOVA Test in Python and R?
-
-## Explanation
-
-An ANOVA (Analysis of Variance) test is used to compare the means of three or more groups. It helps to determine whether there are any statistically significant differences between the means of the groups.
-
-The null hypothesis ((H_0)) assumes that all group means are equal, while the alternative hypothesis ((H_a)) states that at least one mean is different.
-
-The F-statistic in ANOVA is calculated as:
-
-\[
-F = \frac{\text{Between-group variance}}{\text{Within-group variance}}
-\]
-
-If the p-value is small (typically ( p < 0.05 )), we reject the null hypothesis and conclude that at least one group mean is significantly different.
-
-## Python Code
-
-
-```python
-import pandas as pd
-from scipy.stats import f_oneway
-
-# Load dataset
-df = pd.read_csv("data/iris.csv")
-
-# Select groups for comparison
-group1 = df[df["species"] == "setosa"]["sepal_length"]
-group2 = df[df["species"] == "versicolor"]["sepal_length"]
-group3 = df[df["species"] == "virginica"]["sepal_length"]
-
-# Perform ANOVA
-f_stat, p_value = f_oneway(group1, group2, group3)
-
-# Display results
-print(f"F-statistic: {f_stat:.4f}")
-print(f"P-value: {p_value:.4f}")
-
-# Interpretation
-if p_value < 0.05:
-    print("Reject H0: At least one group mean is significantly different.")
-else:
-    print("Fail to reject H0: No significant difference in group means.")
-```
-
-    F-statistic: 119.2645
-    P-value: 0.0000
-    Reject H0: At least one group mean is significantly different.
-
-
-## R Code 
-
-```{r}
-# Load dataset
-df <- read.csv("data/iris.csv")
-
-# Perform ANOVA (sepal length by species)
-anova_result <- aov(sepal_length ~ species, data = df)
-summary(anova_result)
-```
-
-# How to Perform a Chi-Square Test in Python and R?
-
-## Explanation  
-A **Chi-Square Test** is used to determine whether there is a significant association between two categorical variables. It compares the observed frequencies in each category to the frequencies we would expect if the variables were independent.
-
-The **Chi-Square Statistic** is calculated as:
-
-\[
-\chi^2 = \sum \frac{(O_i - E_i)^2}{E_i}
-\]
-
-Where:
-- \(O_i\) is the observed frequency in category \(i\),
-- \(E_i\) is the expected frequency in category \(i\).
-
-The null hypothesis (\(H_0\)) assumes that there is no association between the variables (i.e., the variables are independent), while the alternative hypothesis (\(H_a\)) states that there is an association between them.
-
-If the p-value is small (typically \( p < 0.05 \)), we reject the null hypothesis and conclude that there is a significant association between the variables.
-
-## Python Code 
-- **Chi-Square Test** - Association Between Categorical Variables
-
-
-
-```python
-import pandas as pd
-from scipy.stats import chi2_contingency
-
-# Load dataset
-df = pd.read_csv("data/iris.csv")
-
-# Create a contingency table for 'species' and 'sepal_width' (categorical grouping)
-contingency_table = pd.crosstab(df['species'], pd.cut(df['sepal_width'], bins=3))
-
-# Perform Chi-Square Test
-chi2_stat, p_value, dof, expected = chi2_contingency(contingency_table)
-
-# Display results
-print(f"Chi-Square Statistic: {chi2_stat:.4f}")
-print(f"P-value: {p_value:.4f}")
-print(f"Degrees of Freedom: {dof}")
-print(f"Expected Frequencies: \n{expected}")
-
-# Interpretation
-if p_value < 0.05:
-    print("Reject H0: There is a significant association between species and sepal width.")
-else:
-    print("Fail to reject H0: No significant association between species and sepal width.")
-```
-
-    Chi-Square Statistic: 45.1247
-    P-value: 0.0000
-    Degrees of Freedom: 4
-    Expected Frequencies: 
-    [[15.66666667 29.33333333  5.        ]
-     [15.66666667 29.33333333  5.        ]
-     [15.66666667 29.33333333  5.        ]]
-    Reject H0: There is a significant association between species and sepal width.
-
-
-## R Code
-Chi-Square Test - Association Between Categorical Variables
-
-```{r}
-# Load dataset
-df <- read.csv("data/iris.csv")
-
-# Create a contingency table for 'species' and 'sepal_width' (categorical grouping)
-df$sepal_width_cat <- cut(df$sepal_width, breaks = 3)
-contingency_table <- table(df$species, df$sepal_width_cat)
-
-# Perform Chi-Square Test
-chi2_result <- chisq.test(contingency_table)
-
-# Display results
-print(chi2_result)
-
-# Interpretation
-if (chi2_result$p.value < 0.05) {
-    print("Reject H0: There is a significant association between species and sepal width.")
-} else {
-    print("Fail to reject H0: No significant association between species and sepal width.")
-}
 ```
 
 # How to Perform a Pearson Correlation Test in Python and R?
@@ -678,8 +1286,8 @@ else:
     Dep. Variable:            sepal_width   R-squared:                       0.014
     Model:                            OLS   Adj. R-squared:                  0.007
     Method:                 Least Squares   F-statistic:                     2.074
-    Date:                Tue, 18 Mar 2025   Prob (F-statistic):              0.152
-    Time:                        15:22:54   Log-Likelihood:                -86.732
+    Date:                Wed, 19 Mar 2025   Prob (F-statistic):              0.152
+    Time:                        23:05:02   Log-Likelihood:                -86.732
     No. Observations:                 150   AIC:                             177.5
     Df Residuals:                     148   BIC:                             183.5
     Df Model:                           1                                         
@@ -780,8 +1388,8 @@ print(model.summary())
     Dep. Variable:           sepal_length   R-squared:                       1.000
     Model:                            OLS   Adj. R-squared:                  1.000
     Method:                 Least Squares   F-statistic:                 9.587e+29
-    Date:                Tue, 18 Mar 2025   Prob (F-statistic):               0.00
-    Time:                        15:22:54   Log-Likelihood:                 4724.3
+    Date:                Wed, 19 Mar 2025   Prob (F-statistic):               0.00
+    Time:                        23:05:02   Log-Likelihood:                 4724.3
     No. Observations:                 150   AIC:                            -9439.
     Df Residuals:                     145   BIC:                            -9424.
     Df Model:                           4                                         

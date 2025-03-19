@@ -26,6 +26,10 @@ Where \( z = \beta_0 + \beta_1 X_1 + \beta_2 X_2 + \dots + \beta_n X_n \).
 
 If the p-value of a coefficient is small (typically \( p < 0.05 \)), we reject the null hypothesis and conclude that the predictor significantly influences the outcome.
 
+
+
+
+
 ## Python Code
 
 
@@ -125,3 +129,61 @@ Predicted  0  1
         0 33  0
         1  0 12
 ```
+
+# How to Perform Support Vector Machine (SVM) Classification in Python and R?
+
+## Explanation
+
+**Support Vector Machine (SVM)** is a powerful supervised learning algorithm that can be used for both classification and regression tasks. It works by finding the hyperplane that best separates data points of different classes in a high-dimensional space.
+
+- **Linear SVM**: Finds a straight line or hyperplane that divides the classes.
+- **Non-linear SVM**: Uses kernel functions (like Radial Basis Function (RBF)) to transform the data into higher dimensions to make it linearly separable.
+
+The main objective of SVM is to maximize the margin between the two classes. The margin is the distance between the hyperplane and the closest data points from either class, known as support vectors.
+
+The SVM classifier works well for both linear and non-linear classification problems.
+
+## Python Code
+
+
+
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score, confusion_matrix
+
+# Load dataset (you can use any dataset)
+df = pd.read_csv("data/iris.csv")
+
+# Select independent variables (predictors)
+X = df[['sepal_length', 'sepal_width', 'petal_length', 'petal_width']]  # Features
+
+# Select target variable (species)
+y = df['species']  # Target
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Fit the SVM classifier
+model = SVC(kernel='linear', random_state=42)
+model.fit(X_train, y_train)
+
+# Make predictions
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
+```
+
+    Accuracy: 1.0
+    Confusion Matrix:
+     [[19  0  0]
+     [ 0 13  0]
+     [ 0  0 13]]
+
+
+## R Code
+
